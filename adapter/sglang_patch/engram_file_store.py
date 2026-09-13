@@ -170,6 +170,27 @@ def install(model_path: str) -> None:
             "dsv41 sm12x gate: DeepGEMM fp4 indexer disabled (cap=%s); "
             "decode/verify route to Triton fallback", _cap)
 
+    # OPTIMAL HYBRID sparse-MLA (SM12x): flashinfer's decode kernel (<=64
+    # tokens, incl. all DSPARK verify batches at bs8x6=48) accepts the DSV4.1
+    # extra-KV config and is fast; only its PREFILL path rejects it. Route
+    # >64-token calls through upstream's Triton kernel (handles the 256-token
+    # page layout natively) and keep flashinfer for decode.
+    import sglang.kernels.ops.attention.flash_mla_sm120 as _fm
+    from sglang.kernels.ops.attention.flash_mla_sm120_triton import (
+        flash_mla_sparse_decode_triton as _triton_sparse_mla,
+    )
+
+    def _prefill_via_triton(q, k_cache, indices, topk_length, attn_sink,
+                            head_dim_v, softmax_scale, extra_k_cache,
+                            extra_indices, extra_topk_length):
+        return _triton_sparse_mla(
+            q, k_cache, indices, topk_length, attn_sink, head_dim_v,
+            softmax_scale, extra_k_cache, extra_indices, extra_topk_length,
+        )
+
+    _fm._flash_mla_sm120_prefill = _prefill_via_triton
+    logger.info("dsv41 sm12x hybrid sparse-MLA: flashinfer decode + triton prefill")
+
     import sglang.srt.layers.attention.dsv4.metadata as _meta
     _orig_post = _meta.PagedIndexerMetadata.__post_init__
 
