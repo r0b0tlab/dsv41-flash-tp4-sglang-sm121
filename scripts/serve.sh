@@ -52,9 +52,15 @@ EOF
 launch_rank() {
   local r=$1
   echo "[$(date -u +%H:%M:%S)] launching rank $r on ${HOST[$r]}"
+  # ship the preparer + run it (fail-closed admission: checkpoint files,
+  # MemAvailable floor, page-cache drop; root cause fix for the 2026-09-13
+  # N1/N3 unified-memory freeze)
+  scp -q -i "$SSH_KEY" -o IdentitiesOnly=yes -o BatchMode=yes \
+      -o UserKnownHostsFile=$HOME/.ssh/known_hosts_crs812_fabric \
+      "$REPO/scripts/node_prepare.sh" "r0b0tdgx@${MGMT[$r]}:/tmp/node_prepare.sh" \
+    && ssh "${SSH_OPTS[@]}" "r0b0tdgx@${MGMT[$r]}" "bash /tmp/node_prepare.sh $r 24000"
   ssh "${SSH_OPTS[@]}" "r0b0tdgx@${MGMT[$r]}" bash -s <<REMOTE
 set -euo pipefail
-# preflight: checkpoint index + engram shards present
 for f in model.safetensors.index.json model-00047-of-00048.safetensors model-00048-of-00048.safetensors; do
   [[ -f \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash/\$f ]] || { echo "rank $r preflight: missing \$f"; exit 3; }
 done
@@ -88,6 +94,7 @@ docker run -d --name dsv41-rank --network host --ipc host \
     --mem-fraction-static $MEM_FRACTION_STATIC \
     --speculative-algorithm DSPARK \
     --speculative-dspark-block-size $DSPARK_BLOCK_SIZE \
+    --weight-loader-drop-cache-after-load \
     --reasoning-parser auto --tool-call-parser auto \
     $EXTRA_SGLANG_ARGS \
   > $HOME/dsv4.1-flash-rank.log 2>&1 || { docker rm -f dsv41-rank >/dev/null 2>&1 || true; exit 5; }
