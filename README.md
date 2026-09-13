@@ -36,6 +36,7 @@ after warm-up (phase-8 protocol) or numbers understate by ~4×.
 ## Reproduce
 
 ```bash
+docker pull ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121:overlay-v1   # anonymous pull
 scripts/serve.sh prod        # launches ranks on all 4 nodes (workers first)
 scripts/bench_orchestrator.sh prod   # serial phase-9 lanes with memory gates
 ```
