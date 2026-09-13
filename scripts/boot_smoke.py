@@ -116,14 +116,17 @@ def main():
     ok = "first=blue" in txt and "second=red" in txt
     results.append(gate("vision-counterfactual", ok, repr(txt[:60])))
 
-    # 6. effort control (no Jinja template: prove the knob reaches encoding)
-    tok = {}
+    # 6. effort control (no Jinja template: prove the knob reaches encoding).
+    # V4.1 reasoning_effort scales generated reasoning, not prompt length:
+    # compare reasoning_content length on a reasoning-heavy prompt.
+    rl = {}
     for effort in (5, 100):
-        r = chat(base, {"model": model, "max_tokens": 1, "temperature": 0,
+        r = chat(base, {"model": model, "max_tokens": 1500, "temperature": 0,
                         "chat_template_kwargs": {"thinking": True, "reasoning_effort": effort},
-                        "messages": [{"role": "user", "content": "Solve: 12*11?"}]})
-        tok[effort] = r.get("usage", {}).get("prompt_tokens", -1)
-    results.append(gate("effort-control", tok[5] != tok[100], f"prompt_tokens 5->{tok[5]} 100->{tok[100]}"))
+                        "messages": [{"role": "user", "content": "Prove that the square root of 2 is irrational."}]})
+        rl[effort] = len(r["choices"][0]["message"].get("reasoning_content") or "")
+    results.append(gate("effort-control", rl[100] > rl[5] * 1.2,
+                        f"reasoning_len 5->{rl[5]} 100->{rl[100]}"))
 
     # 7. determinism: same greedy prompt x3
     outs = []
