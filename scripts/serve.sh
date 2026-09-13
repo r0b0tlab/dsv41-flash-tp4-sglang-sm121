@@ -66,7 +66,9 @@ FAB_IF=\$(ip -o addr | awk -v ip="${FAB[$r]}/" 'index(\$4, ip)==1{print \$2; exi
 [[ -n "\$FAB_IF" ]] || { echo "rank $r: no iface holds ${FAB[$r]}"; exit 2; }
 echo "rank $r fabric iface: \$FAB_IF"
 docker run -d --name dsv41-rank --network host --ipc host \
-  --runtime nvidia --device /dev/infiniband -e HOSTNAME=${HOST[$r]} \
+  --runtime nvidia --device /dev/infiniband \
+  --cap-add CAP_IPC_LOCK --ulimit memlock=-1 \
+  -e HOSTNAME=${HOST[$r]} \
   -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \
   $(remote_env $r) ${NCCL_ENV} \
   -e GLOO_SOCKET_IFNAME=\$FAB_IF -e NCCL_SOCKET_IFNAME=\$FAB_IF \
