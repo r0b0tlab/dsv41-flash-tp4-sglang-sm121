@@ -23,9 +23,15 @@ after warm-up (phase-8 protocol) or numbers understate by ~4×.
 ## Ongoing (post-publication)
 
 - **1M-context multineedle (two-key 33/66)** on the long profile
-  (`profiles/dsv41-1m.env`, 1 048 576 ctx) — launched after package
-  publication; result appended to this table and `evidence/phase9/niah-1m/`
-  when complete.
+  (`profiles/dsv41-1m.env`, 1 048 576 ctx) — **running** (launched
+  2026-09-13T21:53Z; ~1 M-token prefill at 2048 chunked prefill takes hours).
+  Result lands in `evidence/phase9/niah-1m/twokey-33-66.json`.
+- **Certified Q200v2 text-180** (sandbox-graded humaneval, strict ifeval,
+  manual rubric; admission-gated two-rank memory guards) — **queued behind
+  the multineedle**, `scripts/q200v2_post_niah.sh` runs it automatically
+  after the NIAH result lands (relaunches the serve on
+  `overlay-v1-q200` with guard labels first). Evidence:
+  `evidence/phase9/q200v2-proper/`.
 
 ## Reproduce
 
