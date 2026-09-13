@@ -151,6 +151,25 @@ def install(model_path: str) -> None:
     if getattr(up.EngramEmbedding, "_dsv41_file_store", False):
         return
 
+    # TEMP DIAGNOSTIC (remove after root-cause): trace any PagedIndexerMetadata
+    # whose deep_gemm_metadata comes out None — the decode indexer passes it
+    # straight to deep_gemm which rejects None.
+    import sglang.srt.layers.attention.dsv4.metadata as _meta
+    _orig_post = _meta.PagedIndexerMetadata.__post_init__
+
+    def _traced_post(self):
+        _orig_post(self)
+        if getattr(self, "deep_gemm_metadata", "unset") is None:
+            import logging, traceback
+            logging.getLogger(__name__).error(
+                "DSV41 DIAG: PagedIndexerMetadata.deep_gemm_metadata is None "
+                "(compress_ratio=%s rows=%s) stack:\n%s",
+                self.compress_ratio, self.c4_seq_lens.shape,
+                "".join(traceback.format_stack()[-12:-1]),
+            )
+
+    _meta.PagedIndexerMetadata.__post_init__ = _traced_post
+
     def patched_init(self, num_embeddings: int, dim: int, layer_id: int):
         # NOTE: deliberately NOT calling the stock __init__ — it would
         # allocate the sharded parameters (~55 GiB unified across the two
