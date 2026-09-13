@@ -73,9 +73,24 @@ docker rm -f dsv41-rank >/dev/null 2>&1 || true
 FAB_IF=\$(ip -o addr | awk -v ip="${FAB[$r]}/" 'index(\$4, ip)==1{print \$2; exit}')
 [[ -n "\$FAB_IF" ]] || { echo "rank $r: no iface holds ${FAB[$r]}"; exit 2; }
 echo "rank $r fabric iface: \$FAB_IF"
+# Optional guard labels (q200v2 admission system): set DSV41_GUARD_EPOCH to
+# have every rank launched with org.r0b0tlab.* identity labels.
+GUARD_LABEL_ARGS=()
+if [[ -n "\${DSV41_GUARD_EPOCH:-}" ]]; then
+  GUARD_LABEL_ARGS=(
+    --label "org.r0b0tlab.candidate_id=\${DSV41_GUARD_CANDIDATE:-}"
+    --label "org.r0b0tlab.candidate_source_sha=\${DSV41_GUARD_SOURCE_SHA:-}"
+    --label "org.r0b0tlab.profile_sha256=\${DSV41_GUARD_PROFILE_SHA:-}"
+    --label "org.r0b0tlab.epoch=\${DSV41_GUARD_EPOCH}"
+    --label "org.r0b0tlab.rank=$r"
+    --label "org.r0b0tlab.owner_nonce=\${DSV41_GUARD_NONCE:-}"
+    --label "org.r0b0tlab.image_id=\${DSV41_GUARD_IMAGE_ID:-}"
+  )
+fi
 docker run -d --name dsv41-rank --network host --ipc host \
   --runtime nvidia --device /dev/infiniband \
   --cap-add CAP_IPC_LOCK --ulimit memlock=-1 \
+  "${GUARD_LABEL_ARGS[@]}" \
   -e HOSTNAME=${HOST[$r]} \
   -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \\
   $(remote_env $r) ${NCCL_ENV} \\
