@@ -24,17 +24,20 @@ LOGDIR=$REPO/logs
 mkdir -p "$LOGDIR"
 
 # --- NCCL application env (never global) ------------------------------
-# Ship the qualified fabric env verbatim into every container. GLOO must
-# ALSO be pinned to the fabric NIC: with only NCCL_SOCKET_IFNAME set, Gloo
-# resolves its hostname through the default route and pairs connect to
-# 127.0.0.1 -> "Connection refused" cross-node (GB10 loopback-rank pitfall).
+# Ship the qualified fabric env into every container, with two per-node
+# corrections applied INSIDE each rank's script (they are node-local facts):
+#   1. GLOO_SOCKET_IFNAME must be the fabric-side NIC: with only
+#      NCCL_SOCKET_IFNAME set, Gloo resolves through the default route and
+#      cross-node pairs hit 127.0.0.1 -> "Connection refused".
+#   2. NCCL_SOCKET_IFNAME must be the rank's own fabric interface, not the
+#      management NIC the shared file names.
 NCCL_ENV_FILE=$HOME/projects/crs812-cluster/hosts/crs812-nccl.env
 NCCL_ENV=""
 if [[ -f "$NCCL_ENV_FILE" ]]; then
   NCCL_ENV=$(grep -E '^export NCCL_' "$NCCL_ENV_FILE" \
+             | grep -v 'NCCL_SOCKET_IFNAME' \
              | sed -e 's/^export /-e /' -e "s/'//g" | tr '\n' ' ')
 fi
-NCCL_ENV="$NCCL_ENV -e GLOO_SOCKET_IFNAME=enP7s7"
 
 remote_env() { # rank -> env string consumed inside docker run
   cat <<EOF
@@ -57,10 +60,16 @@ for f in model.safetensors.index.json model-00047-of-00048.safetensors model-000
 done
 # idle-gated: refuse if another container is already up
 [[ -z \$(docker ps -q) ]] || { echo "rank $r preflight: containers running: \$(docker ps --format '{{.Names}}')"; exit 4; }
+# Resolve THIS node's fabric interface (holds 192.168.100.<r+1>) and pin
+# both Gloo and NCCL's TCP bootstrap to it.
+FAB_IF=\$(ip -o addr | awk '\$4=="${FAB[$r]}"+"/"{print \$2; exit}')
+[[ -n "\$FAB_IF" ]] || { echo "rank $r: no iface holds ${FAB[$r]}"; exit 2; }
+echo "rank $r fabric iface: \$FAB_IF"
 docker run -d --name dsv41-rank --network host --ipc host \
-  --runtime nvidia -e HOSTNAME=${HOST[$r]} \
+  --runtime nvidia --device /dev/infiniband -e HOSTNAME=${HOST[$r]} \
   -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \
   $(remote_env $r) ${NCCL_ENV} \
+  -e GLOO_SOCKET_IFNAME=\$FAB_IF -e NCCL_SOCKET_IFNAME=\$FAB_IF \
   $IMAGE \
   python3 -m sglang.launch_server \
     --model-path /model \
