@@ -60,7 +60,7 @@ def main():
     def run(c):
         req = urllib.request.Request(
             f"{args.base_url}/v1/chat/completions",
-            data=json.dumps({"model": "/model", "max_tokens": 2048,
+            data=json.dumps({"model": "/model", "max_tokens": 12288,
                              "temperature": 0,
                              "chat_template_kwargs": {"thinking": False},
                              "messages": [{"role": "user", "content": c["prompt"]}]}).encode(),

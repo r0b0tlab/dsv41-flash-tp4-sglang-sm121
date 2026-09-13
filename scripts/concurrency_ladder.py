@@ -8,6 +8,8 @@ benchmarks may be in flight (2026-09-13 freeze root cause).
 
 import argparse
 import json
+import re
+import subprocess
 import threading
 import time
 import urllib.request
@@ -16,10 +18,17 @@ PROMPT = ("Count from 1 to {n}, one number per line, no other text.")
 
 
 def server_running(base):
+    """Live running-request count is not exposed on /get_server_info (config
+    only) with metrics disabled; sample the scheduler's own decode-log lines
+    from the rank container instead (authoritative source)."""
     try:
-        with urllib.request.urlopen(f"{base}/get_server_info", timeout=10) as r:
-            d = json.loads(r.read())
-        return int(d.get("num_running_reqs", d.get("running_requests", 0)) or 0)
+        out = subprocess.run(
+            ["docker", "logs", "--since", "30s", "dsv41-rank"],
+            capture_output=True, text=True, timeout=15)
+        text = out.stdout + out.stderr  # sglang logs to stderr
+        running = [int(m) for m in re.findall(
+            r"running-req: (\d+)", text)]
+        return max(running) if running else 0
     except Exception:
         return -1
 
