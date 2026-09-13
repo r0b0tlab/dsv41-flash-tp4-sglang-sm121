@@ -63,7 +63,7 @@ docker run -d --name dsv41-rank --network host --ipc host \
     --trust-remote-code \
     --tp-size $TP_SIZE --ep-size $EP_SIZE \
     --nnodes $NNODES --node-rank $r \
-    --dist-init-addr tcp://${FAB[0]}:$DIST_PORT \
+    --dist-init-addr ${FAB[0]}:$DIST_PORT \
     --host 0.0.0.0 --port $PORT \
     --context-length $CONTEXT_LENGTH \
     --max-total-tokens $MAX_TOTAL_TOKENS \
