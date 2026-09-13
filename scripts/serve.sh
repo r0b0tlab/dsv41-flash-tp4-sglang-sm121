@@ -24,8 +24,13 @@ LOGDIR=$REPO/logs
 mkdir -p "$LOGDIR"
 
 # --- NCCL application env (never global) ------------------------------
+# Ship the qualified fabric env verbatim into every container.
 NCCL_ENV_FILE=$HOME/projects/crs812-cluster/hosts/crs812-nccl.env
-[[ -f "$NCCL_ENV_FILE" ]] || { echo "missing $NCCL_ENV_FILE"; exit 1; }
+NCCL_ENV=""
+if [[ -f "$NCCL_ENV_FILE" ]]; then
+  NCCL_ENV=$(grep -E '^export NCCL_' "$NCCL_ENV_FILE" \
+             | sed -e 's/^export /-e /' -e "s/'//g" | tr '\n' ' ')
+fi
 
 remote_env() { # rank -> env string consumed inside docker run
   cat <<EOF
@@ -51,7 +56,7 @@ done
 docker run -d --name dsv41-rank --network host --ipc host \
   --runtime nvidia -e HOSTNAME=${HOST[$r]} \
   -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \
-  $(remote_env $r) \
+  $(remote_env $r) ${NCCL_ENV} \
   $IMAGE \
   python3 -m sglang.launch_server \
     --model-path /model \
