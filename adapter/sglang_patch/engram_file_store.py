@@ -154,6 +154,22 @@ def install(model_path: str) -> None:
     # TEMP DIAGNOSTIC (remove after root-cause): trace any PagedIndexerMetadata
     # whose deep_gemm_metadata comes out None — the decode indexer passes it
     # straight to deep_gemm which rejects None.
+    # ROOT CAUSE FOUND (2026-09-13): upstream's SM120 model hook force-sets
+    # SGLANG_FP8_PAGED_MQA_LOGITS_TORCH=1 (no tcgen05/TMEM => no DeepGEMM
+    # indexer on SM12x), which nulls deep_gemm_metadata — but the V4.1
+    # low-ratio decode dispatch (_is_sm100_or_newer, major>=10) still routes
+    # SM121 into the DeepGEMM fp8_fp4 kernel with that None. Fix: exclude
+    # SM12x from that module's DeepGEMM-indexer gate so decode takes the
+    # upstream Triton fallback (_low_ratio_index_topk_sm90_decode), exactly
+    # the knob the hook documents for stock DeepGEMM builds.
+    import sglang.srt.layers.attention.deepseek_v4_backend as _dbe
+    _cap = torch.cuda.get_device_capability()
+    if _cap[0] >= 12:  # SM12x: consumer/GB10 Blackwell without tcgen05
+        _dbe._is_sm100_or_newer = lambda: False
+        logger.info(
+            "dsv41 sm12x gate: DeepGEMM fp4 indexer disabled (cap=%s); "
+            "decode/verify route to Triton fallback", _cap)
+
     import sglang.srt.layers.attention.dsv4.metadata as _meta
     _orig_post = _meta.PagedIndexerMetadata.__post_init__
 
