@@ -1,0 +1,22 @@
+[2026-09-13 05:44:38 TP0 EP0] engram file store armed: layer 1 rows=384006168 dim=256 shard=/model/model-00047-of-00048.safetensors (shared file-backed layout — no lookup all-reduce)
+[2026-09-13 05:44:39 TP0 EP0] engram file store armed: layer 14 rows=384016682 dim=256 shard=/model/model-00048-of-00048.safetensors (shared file-backed layout — no lookup all-reduce)
+[2026-09-13 05:52:39 TP0 EP0] DSV4 memory calculation: bytes_per_full_token=1670.75, available_bytes=10.62 GB, c128_state_fixed=0.00 GB, swa_fixed=0.67 GB, full_token=6392320
+[2026-09-13 05:52:39 TP0 EP0] DSV4 pool sizes: full=6392320, swa=30208, c4=1598080, c128=49940, c4_state=3776, c128_state=0
+[2026-09-13 05:52:39 TP0 EP0] DSV4 pool sizes: full=1099776, swa=30208, c4=274944, c128=8592, c4_state=3776, c128_state=0
+[2026-09-13 05:56:04 TP0 EP0] Capture target verify CUDA graph end. elapsed=79.08 s, mem usage=1.38 GB, avail mem=21.83 GB.
+[2026-09-13 05:56:22 TP0 EP0] Capture draft verify CUDA graph end. elapsed=17.56 s, mem usage=0.14 GB, avail mem=20.90 GB.
+[2026-09-13 05:56:22 TP0 EP0] max_total_num_tokens=1099776, chunked_prefill_size=4096, max_prefill_tokens=16384, max_running_requests=8, context_len=524288, available_gpu_mem=20.90 GB
+[2026-09-13 05:56:54] The server is fired up and ready to roll!
+---
+{"object":"list","data":[{"id":"/model","object":"model","created":1789279461,"owned_by":"sglang","root":"/model","parent":null,"max_model_len":524288}]}
+--- smoke ---
+served model: /model
+[PASS] arithmetic: '42'
+[PASS] codegen: "```python\ndef is_palindrome(s):\n    s = ''.join(c.lower() for c in s if c.isalnu"
+[PASS] toolcall: [{"id": "call_6600b64ac8164f2abc43b500", "index": 0, "type": "function", "function": {"name": "get_weather", "arguments"
+[PASS] vision-order: 'first=red, second=blue' prompt_tokens=397
+[PASS] vision-counterfactual: 'first=blue,second=red'
+[PASS] effort-control: reasoning_len 5->469 100->711
+[PASS] determinism: 1 distinct outputs
+
+7/7 gates passed
