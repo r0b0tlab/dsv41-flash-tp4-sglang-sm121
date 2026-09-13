@@ -1,0 +1,59 @@
+=== cvbench: loading ===
+=== cvbench: 60 rows, running with 1 workers ===
+{
+  "benchmark": "r0b0bench-vision",
+  "candidate_id": "dsv41-tp4-sm121-overlay",
+  "contract_sha256": "2b80e543d489e86eb8fd2abf145ae2c5647166f8a9ef5567a243d0974c4ef210",
+  "generated_utc": "2026-09-13T20:31:27Z",
+  "image_id": "local",
+  "mean_row_seconds": 2.062,
+  "model": "/model",
+  "profile_id": "phase9-serial",
+  "protocol": {
+    "answer_instruction": "Answer with the letter or value only.",
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "image_transport": "base64 data URL (jpeg/png)",
+    "max_tokens": {
+      "cvbench": 32,
+      "mmvp": 32,
+      "ocrbench": 64,
+      "realworldqa": 32
+    },
+    "serve_requirement": "max_model_len >= 32768 (image prefill + 64 output)",
+    "temperature": 0.0,
+    "workers_default": 4
+  },
+  "runner_sha256": "2b3ce03faf30e26f27d29dd3aabb03859bbaf55272899bf67e9550cd8b81449e",
+  "schema": "r0b0bench.vision.v1",
+  "suites": {
+    "cvbench": {
+      "accuracy": 0.6333,
+      "correct": 38,
+      "license": "Apache-2.0",
+      "revision": "bc284db50d036958861cb60cdd7b77612052ce0d",
+      "rows": 60,
+      "subaxes": {
+        "Count": {
+          "accuracy": 0.6333,
+          "correct": 38,
+          "n": 60
+        }
+      },
+      "wall_seconds": 123.8,
+      "wilson95": [
+        0.5068,
+        0.7438
+      ]
+    }
+  },
+  "total_accuracy": 0.6333,
+  "total_correct": 38,
+  "total_rows": 60,
+  "total_wilson95": [
+    0.5068,
+    0.7438
+  ],
+  "version": "1.0.0"
+}

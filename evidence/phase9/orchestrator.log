@@ -1,0 +1,15 @@
+[20:25:54] === orchestrator start profile=prod host=r0b0t-dgx ===
+[20:25:54] lanes: short_lanes vision q200 concurrency_ladder
+[20:25:54] gate OK MemAvailable=20577MiB
+[20:25:54] LANE short_lanes START
+[20:29:22] LANE short_lanes DONE rc=0
+[20:29:22] gate OK MemAvailable=18614MiB
+[20:29:22] LANE vision START
+[20:31:27] LANE vision DONE rc=0
+[20:31:27] gate OK MemAvailable=18720MiB
+[20:31:27] LANE q200 START
+[20:50:21] LANE q200 DONE rc=0
+[20:50:21] gate OK MemAvailable=22524MiB
+[20:50:21] LANE concurrency_ladder START
+[20:54:42] LANE concurrency_ladder DONE rc=0
+[20:54:42] === orchestrator done ===

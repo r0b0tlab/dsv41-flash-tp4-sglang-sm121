@@ -1,0 +1,36 @@
+python/sglang/srt/layers/engram.py:674:    With SGLANG_ENABLE_DSV41_ENGRAM_HOST_TABLE the table lives in host memory and
+python/sglang/srt/layers/engram.py:689:        if envs.SGLANG_ENABLE_DSV41_ENGRAM_HOST_TABLE.get():
+python/sglang/srt/layers/engram.py:707:            envs.SGLANG_DSV41_ENGRAM_HOST_TABLE_LAYOUT.get()
+python/sglang/srt/layers/engram.py:717:            pin=envs.SGLANG_DSV41_ENGRAM_HOST_TABLE_PIN.get(),
+python/sglang/srt/environ.py:1408:    SGLANG_ENABLE_DSV41_ENGRAM_HOST_TABLE = EnvBool(False)
+python/sglang/srt/environ.py:1413:    SGLANG_DSV41_ENGRAM_HOST_TABLE_PIN = EnvBool(True)
+python/sglang/srt/environ.py:1419:    SGLANG_DSV41_ENGRAM_HOST_TABLE_LAYOUT = EnvStr("auto")
+---
+python/sglang/srt/disaggregation/utils.py
+python/sglang/srt/disaggregation/decode.py
+python/sglang/srt/disaggregation/common/conn.py
+python/sglang/srt/layers/engram.py
+python/sglang/srt/layers/attention/dsv4/metadata.py
+python/sglang/srt/layers/attention/dsv4/dsv41_sparse.py
+python/sglang/srt/layers/attention/deepseek_v4_backend.py
+python/sglang/srt/parser/template_detection.py
+python/sglang/srt/mem_cache/common.py
+python/sglang/srt/mem_cache/deepseek_v4_memory_pool.py
+python/sglang/srt/arg_groups/model_overrides/deepseek_v4.py
+python/sglang/srt/arg_groups/model_hook.py
+python/sglang/srt/arg_groups/deepseek_v4_hook.py
+python/sglang/srt/arg_groups/overrides.py
+python/sglang/srt/model_executor/runner/decode_cuda_graph_runner.py
+python/sglang/srt/configs/deepseek_v41.py
+python/sglang/srt/configs/model_config.py
+python/sglang/srt/entrypoints/openai/protocol.py
+python/sglang/srt/entrypoints/openai/chat_encoding.py
+python/sglang/srt/entrypoints/openai/encoding_dsv41.py
+python/sglang/srt/entrypoints/openai/serving_responses.py
+python/sglang/srt/entrypoints/openai/serving_chat.py
+python/sglang/srt/multimodal/processors/deepseek_v41.py
+python/sglang/srt/models/deepseek_v2.py
+python/sglang/srt/models/deepseek_v4.py
+python/sglang/srt/utils/hf_transformers/config.py
+python/sglang/srt/utils/hf_transformers/processor.py
+python/sglang/srt/utils/hf_transformers/common.py

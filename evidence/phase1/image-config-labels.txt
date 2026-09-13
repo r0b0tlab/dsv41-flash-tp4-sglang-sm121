@@ -1,0 +1,12 @@
+created: 2026-09-11T18:23:37.182501395Z
+env: ['NV_CUDA_CUDART_VERSION=13.0.96-1', 'CUDA_VERSION=13.0.3', 'NV_CUDA_LIB_VERSION=13.0.3-1', 'NV_NVTX_VERSION=13.0.85-1', 'NV_LIBNPP_VERSION=13.0.1.2-1']
+labels:
+  ai.sglang.build.commit = da64c5cbb8cf6bfd39be19da43573fdfd484c43a
+  ai.sglang.build.url = https://github.com/sgl-project/sglang/actions/runs/34631178591
+  ai.sglang.image.tag = lmsysorg/sglang:dev-dsv41
+  com.nvidia.cudnn.version = 9.14.0.64-1
+  maintainer = NVIDIA CORPORATION <cudatools@nvidia.com>
+  org.opencontainers.image.revision = da64c5cbb8cf6bfd39be19da43573fdfd484c43a
+  org.opencontainers.image.source = https://github.com/sgl-project/sglang
+  org.opencontainers.image.url = https://github.com/sgl-project/sglang/actions/runs/34631178591
+  org.opencontainers.image.version = lmsysorg/sglang:dev-dsv41
