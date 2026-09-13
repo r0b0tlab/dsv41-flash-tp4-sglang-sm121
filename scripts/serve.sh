@@ -24,13 +24,17 @@ LOGDIR=$REPO/logs
 mkdir -p "$LOGDIR"
 
 # --- NCCL application env (never global) ------------------------------
-# Ship the qualified fabric env verbatim into every container.
+# Ship the qualified fabric env verbatim into every container. GLOO must
+# ALSO be pinned to the fabric NIC: with only NCCL_SOCKET_IFNAME set, Gloo
+# resolves its hostname through the default route and pairs connect to
+# 127.0.0.1 -> "Connection refused" cross-node (GB10 loopback-rank pitfall).
 NCCL_ENV_FILE=$HOME/projects/crs812-cluster/hosts/crs812-nccl.env
 NCCL_ENV=""
 if [[ -f "$NCCL_ENV_FILE" ]]; then
   NCCL_ENV=$(grep -E '^export NCCL_' "$NCCL_ENV_FILE" \
              | sed -e 's/^export /-e /' -e "s/'//g" | tr '\n' ' ')
 fi
+NCCL_ENV="$NCCL_ENV -e GLOO_SOCKET_IFNAME=enP7s7"
 
 remote_env() { # rank -> env string consumed inside docker run
   cat <<EOF
