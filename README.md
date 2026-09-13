@@ -10,9 +10,9 @@ per-lookup TP all-reduce from the DSpark speculative path.
 | Lane | Result | Notes |
 |---|---|---|
 | Serve envelope | `mem_fraction_static=0.80`, `max_total_tokens=1 099 776`, KV fp8_e4m3 | capacity unchanged vs pre-fix |
-| Concurrency ladder c1→c8 | 53→160 tok/s aggregate; peak running-req 1→8 proved from rank decode logs; 0 errors | serial lane, scheduler-sampled |
-| Warm throughput lanes | short_c1 16.9, medium_c1 13.5, prose_c1 10.5, counting_c1 38.6, counting_c4 112.3 tok/s | DSpark accept-len 5.8+ at steady state; lanes.py own harness |
-| Vision canary (cvbench Count) | 38/60 = 63.3% (Wilson95 50.7–74.4) | r0b0bench-vision v1.0 contract `2b80e543…`, 1 worker, serial |
+| Concurrency ladder c1→c8 | 53→160 tok/s aggregate; peak running-req 1→8 proved from rank decode logs; 0 errors | counting-100 prompt, 300 max_tokens, thinking off, temp 0, 60 s/step, tokens from server `usage`, warm serve (accept-len ≥ 5.5) |
+| Warm throughput lanes | short_c1 16.9, medium_c1 13.5, prose_c1 10.5, counting_c1 38.6, counting_c4 112.3 tok/s | all: temp 0, tokens from server `usage`, warm serve. Per lane: short = 400 random 5-digit ids in / 256 out (random ids → DSpark accept-len ≈ 1.7, speculation near-useless); medium = ~2 K-token passage / 512 out; prose = 800 out free-form story (accept ≈ 1.1); counting = count-to-N lists (accept ≈ 4→5.8). c1 = 1 stream, c4 = 4 streams. **Not comparable across prompt classes** — effective decode ≈ accept-len × step rate (~9–10 steps/s at bs1) |
+| Vision canary (cvbench Count) | 38/60 = 63.3% (Wilson95 50.7–74.4) | r0b0bench-vision v1.0 contract `2b80e543…`, 1 worker, serial, base64 jpeg, max_tokens 32, thinking off |
 | Q200v2 text-180 | gsm8k 15/15; humaneval/hard_reasoning/ifeval **not scored** by the lite harness (needs exec sandbox + ifeval strict + manual rubric — see `evidence/phase9/q200/lane.log`) | full Q200v2 requires the r0b0bench qwen38 sandbox driver; scored separately post-publication |
 | NIAH 512k ladder | **deferred** | 1M-profile multineedle runs post-publication (ongoing, see below) |
 
