@@ -62,8 +62,10 @@ launch_rank() {
   ssh "${SSH_OPTS[@]}" "r0b0tdgx@${MGMT[$r]}" bash -s <<REMOTE
 set -euo pipefail
 for f in model.safetensors.index.json model-00047-of-00048.safetensors model-00048-of-00048.safetensors; do
-  [[ -f \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash/\$f ]] || { echo "rank $r preflight: missing \$f"; exit 3; }
+  [[ -f \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash/\$f ]] || { echo "rank \$r preflight: missing \$f"; exit 3; }
 done
+# clear any stale same-name container from a previous crashed run
+docker rm -f dsv41-rank >/dev/null 2>&1 || true
 # idle-gated: refuse if another container is already up
 [[ -z \$(docker ps -q) ]] || { echo "rank $r preflight: containers running: \$(docker ps --format '{{.Names}}')"; exit 4; }
 # Resolve THIS node's fabric interface (holds 192.168.100.<r+1>) and pin
