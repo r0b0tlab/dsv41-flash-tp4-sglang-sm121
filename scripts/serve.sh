@@ -74,18 +74,28 @@ FAB_IF=\$(ip -o addr | awk -v ip="${FAB[$r]}/" 'index(\$4, ip)==1{print \$2; exi
 [[ -n "\$FAB_IF" ]] || { echo "rank $r: no iface holds ${FAB[$r]}"; exit 2; }
 echo "rank $r fabric iface: \$FAB_IF"
 # Optional guard labels (q200v2 admission system): set DSV41_GUARD_EPOCH to
-# have every rank launched with org.r0b0tlab.* identity labels.
+# have every rank launched with org.r0b0tlab.* identity labels. Nonces are
+# computed head-side (rank is in scope here; heredoc is unquoted so this
+# expands before shipping).
 GUARD_LABEL_ARGS=()
-if [[ -n "\${DSV41_GUARD_EPOCH:-}" ]]; then
+if [[ -n "${DSV41_GUARD_EPOCH:-}" ]]; then
+  _nonce=$(python3 - "${DSV41_GUARD_CANDIDATE:-}" "${DSV41_GUARD_SOURCE_SHA:-}" \
+     "${DSV41_GUARD_EPOCH}" "$r" "${DSV41_GUARD_PROFILE_SHA:-}" \
+     "${DSV41_GUARD_IMAGE_ID:-}" <<'PY'
+import hashlib, sys
+print(hashlib.sha256("\0".join(sys.argv[1:7]).encode()).hexdigest())
+PY
+)
   GUARD_LABEL_ARGS=(
-    --label "org.r0b0tlab.candidate_id=\${DSV41_GUARD_CANDIDATE:-}"
-    --label "org.r0b0tlab.candidate_source_sha=\${DSV41_GUARD_SOURCE_SHA:-}"
-    --label "org.r0b0tlab.profile_sha256=\${DSV41_GUARD_PROFILE_SHA:-}"
-    --label "org.r0b0tlab.epoch=\${DSV41_GUARD_EPOCH}"
+    --label "org.r0b0tlab.candidate_id=${DSV41_GUARD_CANDIDATE:-}"
+    --label "org.r0b0tlab.candidate_source_sha=${DSV41_GUARD_SOURCE_SHA:-}"
+    --label "org.r0b0tlab.profile_sha256=${DSV41_GUARD_PROFILE_SHA:-}"
+    --label "org.r0b0tlab.epoch=${DSV41_GUARD_EPOCH}"
     --label "org.r0b0tlab.rank=$r"
-    --label "org.r0b0tlab.owner_nonce=\${DSV41_GUARD_NONCE:-}"
-    --label "org.r0b0tlab.image_id=\${DSV41_GUARD_IMAGE_ID:-}"
+    --label "org.r0b0tlab.owner_nonce=$_nonce"
+    --label "org.r0b0tlab.image_id=${DSV41_GUARD_IMAGE_ID:-}"
   )
+  echo "rank $r guard nonce: $_nonce"
 fi
 docker run -d --name dsv41-rank --network host --ipc host \
   --runtime nvidia --device /dev/infiniband \
