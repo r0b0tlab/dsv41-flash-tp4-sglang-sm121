@@ -37,11 +37,14 @@ FP8_BLOCK_SIZE = 32
 _SHARD_INDEX: dict | None = None
 
 
-def read_safetensors_header(path: str) -> dict:
+def read_safetensors_header(path: str) -> tuple[dict, int]:
+    """Return (header dict, data_base) where data_base is the absolute file
+    offset where tensor data begins — safetensors data_offsets are relative
+    to this point, NOT to the start of the file."""
     with open(path, "rb") as f:
         (n,) = struct.unpack("<Q", f.read(8))
         header = json.loads(f.read(n))
-    return {k: v for k, v in header.items() if k != "__metadata__"}
+    return {k: v for k, v in header.items() if k != "__metadata__"}, 8 + n
 
 
 class FileEngramStore:
@@ -57,7 +60,7 @@ class FileEngramStore:
         self.prefix = prefix
         self.rows = rows
         self.dim = dim
-        header = read_safetensors_header(shard_path)
+        header, data_base = read_safetensors_header(shard_path)
         wkey, skey = f"{prefix}.embed.weight", f"{prefix}.embed.scale"
         if wkey not in header or skey not in header:
             raise KeyError(f"{wkey}/{skey} not in {shard_path}")
@@ -86,9 +89,14 @@ class FileEngramStore:
         finally:
             os.close(fd)  # mapping holds its own reference
         raw = torch.frombuffer(self._mm, dtype=torch.uint8)
-        self._weight_view = raw[wlo:whi].view(torch.float8_e4m3fn).view(rows, dim)
+        # data_offsets are relative to the end of the safetensors header.
+        self._weight_view = (
+            raw[data_base + wlo : data_base + whi]
+            .view(torch.float8_e4m3fn).view(rows, dim)
+        )
         self._scale_view = (
-            raw[slo:shi].view(torch.float8_e8m0fnu).view(rows, dim // FP8_BLOCK_SIZE)
+            raw[data_base + slo : data_base + shi]
+            .view(torch.float8_e8m0fnu).view(rows, dim // FP8_BLOCK_SIZE)
         )
         self.weight_ptr = self._weight_view.data_ptr()
         self.scale_ptr = self._scale_view.data_ptr()

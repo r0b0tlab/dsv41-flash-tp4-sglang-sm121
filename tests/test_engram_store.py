@@ -53,24 +53,24 @@ def write_shard(path: Path, rows: int, dim: int = 256, seed: int = 0):
         }
         return json.dumps(h).encode()
 
-    # Iterate to a fixed point: header length -> base -> header length.
-    # Pad with trailing spaces (safetensors does the same) so the length is
-    # stable regardless of offset digit counts.
-    base = 8 + len(build(0))
-    for _ in range(4):
-        hb = build(base)
-        total = 8 + len(hb)
-        if total == base:
-            break
-        base = total
-    else:
-        raise AssertionError("header length did not converge")
+    # Offsets in the header are relative to the end of the header (data
+    # start), so the correct values are independent of the header length:
+    # [0, rows*dim) and [rows*dim, rows*dim + rows*dim//32). Iterate once
+    # for the header length to embed in the file, but emit data-relative
+    # offsets.
+    rel = {
+        "layers.0.engram.embed.weight": {"dtype": "F8_E4M3", "shape": [rows, dim],
+                                          "data_offsets": [0, rows * dim]},
+        "layers.0.engram.embed.scale": {"dtype": "F8_E8M0", "shape": [rows, dim // 32],
+                                         "data_offsets": [rows * dim, rows * dim + rows * dim // 32]},
+    }
+    hb = json.dumps(rel).encode()
     with open(path, "wb") as f:
         f.write(struct.pack("<Q", len(hb)))
         f.write(hb)
         f.write(w.tobytes())
         f.write(s.tobytes())
-    return w, s, base
+    return w, s, 8 + len(hb)
 
 
 def reference_dequant(w: np.ndarray, s: np.ndarray):
