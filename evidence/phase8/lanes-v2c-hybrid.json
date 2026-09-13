@@ -1,0 +1,32 @@
+{
+ "short_c1": {
+  "aggregate_tok_s": 47.32,
+  "per_stream_tok_s": 47.32,
+  "tokens": 256,
+  "wall_s": 5.41
+ },
+ "medium_c1": {
+  "aggregate_tok_s": 29.09,
+  "per_stream_tok_s": 29.09,
+  "tokens": 336,
+  "wall_s": 11.55
+ },
+ "prose_c1": {
+  "aggregate_tok_s": 22.4,
+  "per_stream_tok_s": 22.4,
+  "tokens": 584,
+  "wall_s": 26.07
+ },
+ "counting_c1": {
+  "aggregate_tok_s": 60.81,
+  "per_stream_tok_s": 60.81,
+  "tokens": 300,
+  "wall_s": 4.93
+ },
+ "counting_c4": {
+  "aggregate_tok_s": 119.49,
+  "per_stream_tok_s": 29.88,
+  "tokens": 800,
+  "wall_s": 6.7
+ }
+}
