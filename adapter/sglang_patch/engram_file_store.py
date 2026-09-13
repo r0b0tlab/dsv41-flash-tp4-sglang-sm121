@@ -155,6 +155,7 @@ def install(model_path: str) -> None:
         # NOTE: deliberately NOT calling the stock __init__ — it would
         # allocate the sharded parameters (~55 GiB unified across the two
         # layers) only for us to drop them.
+        nn.Module.__init__(self)
         self.dim = dim
         self.tp_size = 1  # full table on every rank; sharding never applies
         shard = _shard_for_layer(model_path, layer_id)
