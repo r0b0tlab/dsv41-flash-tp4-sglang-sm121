@@ -69,9 +69,10 @@ docker run -d --name dsv41-rank --network host --ipc host \
   --runtime nvidia --device /dev/infiniband \
   --cap-add CAP_IPC_LOCK --ulimit memlock=-1 \
   -e HOSTNAME=${HOST[$r]} \
-  -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \
-  $(remote_env $r) ${NCCL_ENV} \
-  -e GLOO_SOCKET_IFNAME=\$FAB_IF -e NCCL_SOCKET_IFNAME=\$FAB_IF \
+  -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \\
+  $(remote_env $r) ${NCCL_ENV} \\
+  -e GLOO_SOCKET_IFNAME=\$FAB_IF -e NCCL_SOCKET_IFNAME=\$FAB_IF \\
+  -e SGLANG_SM120_FLASHMLA_BACKEND=${SGLANG_SM120_FLASHMLA_BACKEND:-flashinfer} \
   $IMAGE \
   python3 -m sglang.launch_server \
     --model-path /model \
