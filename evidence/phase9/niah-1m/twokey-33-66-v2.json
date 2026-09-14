@@ -1,0 +1,16 @@
+{
+  "twokey": true,
+  "pass": null,
+  "aborted": true,
+  "abort_reason": "Second attempt on the corrected lane profile (max_total_tokens=1049088, max_running_requests=1, ctx 1048576): host MemAvailable fell 9.6 GiB -> 0.3 GiB with 3 NVRM NV_ERR_NO_MEMORY events at ~48% prefill (517K/1046K pending). Torn down by the node-safety watch; all four nodes recovered to 116-117 GiB without reboot. The 1M-context single-case prefill cannot coexist with N1's host residents (GNOME stack, ~10 GiB) under this model's KV allocation profile on GB10 unified memory.",
+  "prompt_tokens_target": 1046462,
+  "prefill_pending_at_abort": 516981,
+  "kv_usage_at_abort": null,
+  "window_target": 1046462,
+  "methodology": "chat API, thinking off, temp 0, max_tokens 128, needles 33%/66%, calibration 0.1390 tok/char, memory gate 14 GiB pre-submit (passed at 18.7 GiB)",
+  "attempts": [
+    {"date": "2026-09-13", "profile": "1m (max_total_tokens=1100000)", "abort_at_pending": 521077, "mem_at_abort_mib": 5127},
+    {"date": "2026-09-14", "profile": "1m-niah (max_total_tokens=1049088, max_running=1)", "abort_at_pending": 516981, "mem_at_abort_mib": 318}
+  ],
+  "next": "Requires N1 without its desktop stack (systemctl isolate multi-user or headless run) OR routing the client to another node's ingress; the KV fill itself is the model's design cost at 1M ctx"
+}
