@@ -1,0 +1,13 @@
+{
+  "generation_complete": true,
+  "generation_completed_utc": "2026-09-14T21:51:17Z",
+  "mode": "run",
+  "preexisting_files": [],
+  "preexisting_timing": false,
+  "project_root": "/home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/bfcl-hard20-root",
+  "result_sha256": "6707a5770050ef86aa3350de5f61cda1ed64afa1b7f980a87e24c7c62ce962c9",
+  "runtime_binding_sha256": "130612ffb6a191a8623887631d9f5e39f8b0ad936fb4460064bc530aa87e2eb4",
+  "schema": "r0b0tlab.qwen38.bfcl_freshness.v1",
+  "started_utc": "2026-09-14T21:02:45Z",
+  "timing_sha256": "eb498d8ef8c3912f62f4bf1ea1f1e82f20ef8bfe703935158464ae2e2eb13aa8"
+}

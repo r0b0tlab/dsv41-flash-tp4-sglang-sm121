@@ -1,0 +1,47 @@
+{
+ "schema": "r0b0tlab.dsv41flash.q200v2_closeout.v1",
+ "text_180": {
+  "total": 180,
+  "correct": 176,
+  "pct": 97.78,
+  "families": {
+   "gsm8k": {
+    "n": 80,
+    "correct": 77,
+    "pct": 96.25
+   },
+   "hard_reasoning": {
+    "n": 20,
+    "correct": 20,
+    "pct": 100.0
+   },
+   "humaneval": {
+    "n": 40,
+    "correct": 40,
+    "pct": 100.0
+   },
+   "ifeval": {
+    "n": 40,
+    "correct": 39,
+    "pct": 97.5
+   }
+  }
+ },
+ "bfcl_hard20": {
+  "total": 20,
+  "correct": 16,
+  "pct": 0.8,
+  "status": "SCORED",
+  "score_sha256": "9302e09d51eb32da19a4be7d7768c532dd8970cb8dd38044102587e58304d640"
+ },
+ "combined_200": {
+  "total": 200,
+  "correct": 192,
+  "pct": 96.0
+ },
+ "note": "BFCL hard20 is part of Q200v2 per operator direction (2026-09-14); structural-complexity proxy subset, not an official leaderboard category score.",
+ "sources": [
+  "evidence/phase9/q200v2-proper/summary.json",
+  "evidence/phase9/q200v2-proper/bfcl-hard20-root/bfcl-hard20-summary.json"
+ ]
+}

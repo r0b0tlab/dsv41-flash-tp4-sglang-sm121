@@ -1,0 +1,163 @@
+{
+  "family": "bfcl_hard20",
+  "freshness": {
+    "freshness_sha256": "e61ba3dc42108fc57fe2e76ec19030f69c8c7a834fb2987a0bdcf87877f7200b",
+    "witness": {
+      "generation_complete": true,
+      "generation_completed_utc": "2026-09-14T21:51:17Z",
+      "mode": "run",
+      "preexisting_files": [],
+      "preexisting_timing": false,
+      "project_root": "/home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/bfcl-hard20-root",
+      "result_sha256": "6707a5770050ef86aa3350de5f61cda1ed64afa1b7f980a87e24c7c62ce962c9",
+      "runtime_binding_sha256": "130612ffb6a191a8623887631d9f5e39f8b0ad936fb4460064bc530aa87e2eb4",
+      "schema": "r0b0tlab.qwen38.bfcl_freshness.v1",
+      "started_utc": "2026-09-14T21:02:45Z",
+      "timing_sha256": "eb498d8ef8c3912f62f4bf1ea1f1e82f20ef8bfe703935158464ae2e2eb13aa8"
+    }
+  },
+  "identity": {
+    "base_url": "http://127.0.0.1:30000/v1",
+    "bfcl_eval_version": "2025.12.17",
+    "candidate_id": "dsv41-tp4-sm121-overlay-q200",
+    "category": "multi_turn_base",
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "low",
+      "thinking": true
+    },
+    "dataset_sha256": "1a21a995d06fd6f20ba55de7bced30ef953ec35e998f502ec2ecf4d66ef1c43a",
+    "ground_truth_sha256": "1fee67823b317571649177dd89d63969feaae4e810cc7448ee55ba797fb7c8fc",
+    "image_id": "sha256:9ab175696a136534026ebcc7f94d7f3ab5b4bb1970706424054788a85ad26eb0",
+    "label": "BFCL v4 multi_turn_base structural-hard20",
+    "manifest_sha256": "0860da504a3db2c3cd73647ecdc2a5ecdb1793d7a5cf3f4f004912f0ef314d4e",
+    "model": "/model",
+    "profile_id": "9bff11714bb94c812043e5c51607e33f1e23ee8f4c9a8d6bca3c18fe2584cb2f",
+    "runtime_binding_sha256": "130612ffb6a191a8623887631d9f5e39f8b0ad936fb4460064bc530aa87e2eb4",
+    "selected_features_sha256": "65c7889c2f78f29bd71e2d74854a11234a20dbb02e83186ae7a4c9050b79cbca",
+    "selected_ids_sha256": "28158003bca5abf7e6922a8aa460d0bed208b3636757349460000b85812b384f",
+    "selector_policy_sha256": "03999d7f8e22669d5ec51a9920d0e79a6350005f95f7d305e5835e18479dc0f2"
+  },
+  "identity_sha256": "de06da63f8a11244bc4eedb0e7e847cbe7964f86e27b95048851ef7e52798f39",
+  "interpretation": "A deterministic structural-complexity proxy subset, not the 20 semantically hardest cases and not an official full-category leaderboard score.",
+  "label": "BFCL v4 multi_turn_base structural-hard20",
+  "results": {
+    "ids": [
+      "multi_turn_base_109",
+      "multi_turn_base_131",
+      "multi_turn_base_97",
+      "multi_turn_base_110",
+      "multi_turn_base_162",
+      "multi_turn_base_170",
+      "multi_turn_base_180",
+      "multi_turn_base_183",
+      "multi_turn_base_184",
+      "multi_turn_base_186",
+      "multi_turn_base_188",
+      "multi_turn_base_116",
+      "multi_turn_base_117",
+      "multi_turn_base_194",
+      "multi_turn_base_2",
+      "multi_turn_base_33",
+      "multi_turn_base_55",
+      "multi_turn_base_60",
+      "multi_turn_base_68",
+      "multi_turn_base_72"
+    ],
+    "result_sha256": "6707a5770050ef86aa3350de5f61cda1ed64afa1b7f980a87e24c7c62ce962c9",
+    "rows": 20,
+    "unique_ids": 20
+  },
+  "runtime_binding": {
+    "adapter": {
+      "module": "run_bfcl_hard20",
+      "path": "/home/r0b0tdgx/projects/r0b0bench/subsets/q200v2/scripts/run_bfcl_hard20.py",
+      "sha256": "5175cec23fbe3a258ec643c552623836e648b095e20e840dcd3558d76ccd3532"
+    },
+    "official_modules": {
+      "evaluation": {
+        "module": "bfcl_eval.eval_checker.eval_runner",
+        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/eval_checker/eval_runner.py",
+        "sha256": "b1033684908819ccb312d4d0e2c563359d69247412f00206013b2292b0e3ce81"
+      },
+      "generation": {
+        "module": "bfcl_eval._llm_response_generation",
+        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/_llm_response_generation.py",
+        "sha256": "45a374f2d8294b9f6c92bcc552a71e29f06c661e02e38858a5eb754fa192976f"
+      },
+      "multi_turn_checker": {
+        "module": "bfcl_eval.eval_checker.multi_turn_eval.multi_turn_checker",
+        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/eval_checker/multi_turn_eval/multi_turn_checker.py",
+        "sha256": "b3b787515eda3bf0e365e39634a8fc7f831763f010f716d35d86f96fd5aab1b5"
+      },
+      "openai_handler": {
+        "module": "bfcl_eval.model_handler.api_inference.openai_completion",
+        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/model_handler/api_inference/openai_completion.py",
+        "sha256": "f0bc8734a3173df79e52fa6d757ac6b2585f7582e2f19ac7cddf5170269dd3f7"
+      }
+    },
+    "package_tree": {
+      "distribution": "bfcl-eval",
+      "file_count": 188,
+      "manifest_sha256": "66ba84cc31826316f0bbd2e336e348b1c33ecc85f1a5c4139e237b20749538bc",
+      "version": "2025.12.17"
+    },
+    "requirements_bfcl_sha256": "58d14dc53550f928cf0e014c6a4f03e796ad87a26b398a5e10ad2313b4ce1ff2",
+    "selector_source_sha256": "6dc050915980eff9ebb49f84135c3c3a1d1ada626f157ac7b25098f11be3522a",
+    "settings": {
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "low",
+        "thinking": true
+      },
+      "http_timeout_s": 1200.0,
+      "include_input_log": true,
+      "max_retries": 1,
+      "max_tokens": 8192,
+      "num_threads": 1,
+      "partial_eval": true,
+      "run_ids": true,
+      "temperature": 0.001
+    },
+    "wrapper_sha256": "5175cec23fbe3a258ec643c552623836e648b095e20e840dcd3558d76ccd3532"
+  },
+  "schema": "r0b0tlab.qwen38.q200_v2_bfcl_hard20_run.v1",
+  "score": {
+    "accuracy": 0.8,
+    "correct_count": 16,
+    "failure_rows": 4,
+    "incorrect_count": 4,
+    "score_sha256": "9302e09d51eb32da19a4be7d7768c532dd8970cb8dd38044102587e58304d640",
+    "total_count": 20
+  },
+  "selection_boundary": {
+    "boundary_structural_key": {
+      "involved_class_count": 2,
+      "required_path_length": 7,
+      "user_turn_count": 5
+    },
+    "disclosure": "The rank-20 boundary is deterministic but arbitrary within a 20-way structural tie; numeric case ID ascending selects the first six tied cases.",
+    "rank_20_id": "multi_turn_base_72",
+    "rank_21_id": "multi_turn_base_102",
+    "selected_from_boundary_tie_count": 6,
+    "tied_source_case_count": 20
+  },
+  "selection_policy": {
+    "description": "Top 20 by frozen structural complexity; no candidate outputs or scores are inputs.",
+    "model_independent": true,
+    "sort_keys": [
+      "user_turn_count DESC",
+      "required_path_length DESC",
+      "involved_class_count DESC",
+      "numeric_case_id ASC"
+    ],
+    "take": 20
+  },
+  "status": "SCORED",
+  "timing": {
+    "error_count": 0,
+    "rows": 20,
+    "timing_sha256": "eb498d8ef8c3912f62f4bf1ea1f1e82f20ef8bfe703935158464ae2e2eb13aa8",
+    "unique_ids": 20
+  }
+}
