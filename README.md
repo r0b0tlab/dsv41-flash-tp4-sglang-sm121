@@ -22,15 +22,19 @@ after warm-up (phase-8 protocol) or numbers understate by ~4×.
 
 ## Ongoing (post-publication)
 
-- **1M-context multineedle (two-key 33/66)** on the long profile
-  (`profiles/dsv41-1m.env`, 1 048 576 ctx) — **running** (launched
-  2026-09-13T21:53Z; ~1 M-token prefill at 2048 chunked prefill takes hours).
-  Result lands in `evidence/phase9/niah-1m/twokey-33-66.json`.
+- **1M-context multineedle (two-key 33/66)** on the long profile — **attempted
+  2026-09-13, ABORTED at 50% prefill** by the node-safety guard: the 1M
+  prefill's KV fill consumed host unified memory until NVRM hit
+  `NV_ERR_NO_MEMORY` with MemAvailable at 5.1 GiB (the exact 2026-09-13
+  freeze precursor). Serve torn down cleanly; all four nodes recovered
+  without reboot. Full receipt:
+  `evidence/phase9/niah-1m/twokey-33-66.json`. **Re-run needs more host
+  headroom** (prefill rate averaged 35.6 tok/s → ~8 h for the full window on
+  this profile; reduce lane KV or free N1 host residents first).
 - **Certified Q200v2 text-180** (sandbox-graded humaneval, strict ifeval,
-  manual rubric; admission-gated two-rank memory guards) — **queued behind
-  the multineedle**, `scripts/q200v2_post_niah.sh` runs it automatically
-  after the NIAH result lands (relaunches the serve on
-  `overlay-v1-q200` with guard labels first). Evidence:
+  manual rubric; admission-gated two-rank memory guards) — **queued**, 
+  `scripts/q200v2_post_niah.sh` runs it after a serve relaunch on
+  `overlay-v1-q200` with guard labels. Evidence:
   `evidence/phase9/q200v2-proper/`.
 
 ## Reproduce
