@@ -13,7 +13,7 @@ per-lookup TP all-reduce from the DSpark speculative path.
 | Concurrency ladder c1→c8 | 53→160 tok/s aggregate; peak running-req 1→8 proved from rank decode logs; 0 errors | counting-100 prompt, 300 max_tokens, thinking off, temp 0, 60 s/step, tokens from server `usage`, warm serve (accept-len ≥ 5.5) |
 | Warm throughput lanes | short_c1 16.9, medium_c1 13.5, prose_c1 10.5, counting_c1 38.6, counting_c4 112.3 tok/s | all: temp 0, tokens from server `usage`, warm serve. Per lane: short = 400 random 5-digit ids in / 256 out (random ids → DSpark accept-len ≈ 1.7, speculation near-useless); medium = ~2 K-token passage / 512 out; prose = 800 out free-form story (accept ≈ 1.1); counting = count-to-N lists (accept ≈ 4→5.8). c1 = 1 stream, c4 = 4 streams. **Not comparable across prompt classes** — effective decode ≈ accept-len × step rate (~9–10 steps/s at bs1) |
 | Vision canary (cvbench Count) | 38/60 = 63.3% (Wilson95 50.7–74.4) | r0b0bench-vision v1.0 contract `2b80e543…`, 1 worker, serial, base64 jpeg, max_tokens 32, thinking off |
-| Q200v2 text-180 | gsm8k 15/15; humaneval/hard_reasoning/ifeval **not scored** by the lite harness (needs exec sandbox + ifeval strict + manual rubric — see `evidence/phase9/q200/lane.log`) | full Q200v2 requires the r0b0bench qwen38 sandbox driver; scored separately post-publication |
+| Q200v2 text-180 (certified runner) | **gsm8k 96.25% (77/80) · humaneval 100% (40/40, sandbox-graded) · ifeval 97.5% (39/40) · hard_reasoning 100% (20/20, independent manual review) — 176/180 = 97.8%** | native thinking (effort low), temp from server default, 1 worker, admission-gated two-rank memory guards, run identity `4138fb13…`; all 180 rows finish=stop; evidence `evidence/phase9/q200v2-proper/` |
 | NIAH 512k ladder | **deferred** | 1M-profile multineedle runs post-publication (ongoing, see below) |
 
 Cold-start note: first minutes after serve boot, DSpark accept length climbs
@@ -22,20 +22,17 @@ after warm-up (phase-8 protocol) or numbers understate by ~4×.
 
 ## Ongoing (post-publication)
 
-- **1M-context multineedle (two-key 33/66)** on the long profile — **attempted
-  2026-09-13, ABORTED at 50% prefill** by the node-safety guard: the 1M
-  prefill's KV fill consumed host unified memory until NVRM hit
-  `NV_ERR_NO_MEMORY` with MemAvailable at 5.1 GiB (the exact 2026-09-13
-  freeze precursor). Serve torn down cleanly; all four nodes recovered
-  without reboot. Full receipt:
-  `evidence/phase9/niah-1m/twokey-33-66.json`. **Re-run needs more host
-  headroom** (prefill rate averaged 35.6 tok/s → ~8 h for the full window on
-  this profile; reduce lane KV or free N1 host residents first).
-- **Certified Q200v2 text-180** (sandbox-graded humaneval, strict ifeval,
-  manual rubric; admission-gated two-rank memory guards) — **queued**, 
-  `scripts/q200v2_post_niah.sh` runs it after a serve relaunch on
-  `overlay-v1-q200` with guard labels. Evidence:
-  `evidence/phase9/q200v2-proper/`.
+- **1M-context multineedle (two-key 33/66)** — **documented limit after 3 attempts** (2026-09-13/14):
+  the KV fill during a 1M-token prefill exhausts host-side unified memory at
+  ~50% progress (~517K tokens) on every configuration tried: the stock 1m
+  profile, a corrected lane profile (max_total_tokens 1 049 088,
+  max_running_requests 1), and the same lane headless (gdm stopped). The wall
+  is the model's KV allocation profile, not host software. Each attempt was
+  aborted by the node-safety watch at the NVRM `NV_ERR_NO_MEMORY` precursor
+  with zero node losses. Full receipts:
+  `evidence/phase9/niah-1m/twokey-33-66{,-v2,-v3}.json`. 512K-window
+  operation is fully supported (see lanes above).
+- ~~Certified Q200v2~~ **COMPLETE 2026-09-14** — see headline table.
 
 ## Reproduce
 
