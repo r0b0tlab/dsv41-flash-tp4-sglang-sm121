@@ -1,1 +1,13 @@
 [21:59:27] waiting for NIAH multineedle result
+[01:49:26] waiting for NIAH multineedle result
+[01:49:26] NIAH landed: {
+  "twokey": true,
+  "pass": null,
+  "aborted": true,
+  "abort_reason": "host unified-memory exhaustion risk: NVRM NV_ERR_NO_MEMORY at 20:33 CDT with MemAvailable 5.1 GiB and falling during the 1M-to
+[01:52:26] identity: epoch=dsv41q200v2-20260914T015226Z image=sha256:584aca7da26c3d785c3ed7101c056c9cda1530fc06e8d96d7c33aeb47a418b93
+[01:52:26] shipping overlay-v1-q200 image to workers
+[02:03:39] tearing down old serve
+[02:03:51] relaunching 1m serve with guard labels
+[02:16:24] resuming chain: epoch=dsv41q200v2-20260914T015226Z image=sha256:584aca7da26c3d785c3ed7101c056c9cda1530fc06e8d96d7c33aeb47a418b93
+[02:16:24] relaunching 1m serve with guard labels

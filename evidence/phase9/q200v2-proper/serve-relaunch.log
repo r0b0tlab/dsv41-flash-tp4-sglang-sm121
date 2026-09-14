@@ -1,0 +1,9 @@
+[02:16:24] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117557MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117631MiB
+[prep] OK rank=1 MemAvailable=117631MiB ts=20260914T021625Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39

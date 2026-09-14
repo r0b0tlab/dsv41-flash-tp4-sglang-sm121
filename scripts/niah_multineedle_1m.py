@@ -61,6 +61,17 @@ def main():
     q = ("\n\nAccording to the document, what are the TWO secret passcodes? "
          "Answer with both codes in order, separated by a space.")
 
+    # Node-safety gate: refuse to submit if head unified-memory headroom is thin
+    # (2026-09-13 abort: NVRM NO_MEMORY at 5.1 GiB during prefill).
+    with open("/proc/meminfo") as f:
+        for line in f:
+            if line.startswith("MemAvailable"):
+                avail_mib = int(line.split()[1]) // 1024
+                break
+    if avail_mib < 14000:
+        raise SystemExit(f"[niah1m] REFUSED: MemAvailable {avail_mib} MiB < 14000 MiB floor")
+    print(f"[niah1m] memory gate OK ({avail_mib} MiB)", flush=True)
+
     req = urllib.request.Request(
         f"{base}/v1/chat/completions",
         data=json.dumps({

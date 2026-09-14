@@ -1,0 +1,29 @@
+[01:49:26] waiting for NIAH multineedle result
+[01:49:26] NIAH landed: {
+  "twokey": true,
+  "pass": null,
+  "aborted": true,
+  "abort_reason": "host unified-memory exhaustion risk: NVRM NV_ERR_NO_MEMORY at 20:33 CDT with MemAvailable 5.1 GiB and falling during the 1M-to
+[01:52:26] identity: epoch=dsv41q200v2-20260914T015226Z image=sha256:584aca7da26c3d785c3ed7101c056c9cda1530fc06e8d96d7c33aeb47a418b93
+[01:52:26] shipping overlay-v1-q200 image to workers
+[02:03:39] tearing down old serve
+[02:03:51] relaunching 1m serve with guard labels
+[02:03:51] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117466MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117617MiB
+[prep] OK rank=1 MemAvailable=117617MiB ts=20260914T020353Z
+/home/r0b0tdgx/dsv4.1-flash/scripts/.serve-q200.sh: line 62: _nonce: unbound variable
+[02:16:24] resuming chain: epoch=dsv41q200v2-20260914T015226Z image=sha256:584aca7da26c3d785c3ed7101c056c9cda1530fc06e8d96d7c33aeb47a418b93
+[02:16:24] relaunching 1m serve with guard labels
+[02:16:24] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117557MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117631MiB
+[prep] OK rank=1 MemAvailable=117631MiB ts=20260914T021625Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39

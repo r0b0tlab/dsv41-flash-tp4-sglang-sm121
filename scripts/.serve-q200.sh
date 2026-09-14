@@ -18,7 +18,7 @@ MGMT[3]=192.168.68.56;  FAB[3]=192.168.100.4; HOST[3]=spark-4af5
 SSH_KEY=$HOME/.ssh/id_ed25519_crs812
 SSH_OPTS=(-i "$SSH_KEY" -o IdentitiesOnly=yes -o BatchMode=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts_crs812_fabric)
 
-IMAGE=dsv41-tp4-sm121:overlay-v1
+IMAGE=dsv41-tp4-sm121:overlay-v1-q200
 DIST_PORT=20000
 LOGDIR=$REPO/logs
 mkdir -p "$LOGDIR"
