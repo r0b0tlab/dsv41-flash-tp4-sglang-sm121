@@ -1,41 +1,203 @@
-[02:39:14] launching rank 1 on r0b0tdgx1
+[03:31:03] launching rank 1 on r0b0tdgx1
 [prep] node r0b0tdgx1 rank=1 floor=24000MiB
 [prep] checkpoint index + tail shards OK
-[prep] MemAvailable=117563MiB
+[prep] MemAvailable=117436MiB
 /tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
-[prep] post-drop MemAvailable=117649MiB
-[prep] OK rank=1 MemAvailable=117649MiB ts=20260914T023915Z
+[prep] post-drop MemAvailable=117638MiB
+[prep] OK rank=1 MemAvailable=117638MiB ts=20260914T033106Z
 rank 1 fabric iface: enp1s0f0np0
 rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39
-rank 1 container up: 738dbc0fe84f Up 1 second (health: starting)
-[02:39:19] launching rank 2 on gn100-2eea
+rank 1 container up: d914d86fa123 Up Less than a second (health: starting)
+[03:31:10] launching rank 2 on gn100-2eea
 [prep] node gn100-2eea rank=2 floor=24000MiB
 [prep] checkpoint index + tail shards OK
-[prep] MemAvailable=117492MiB
+[prep] MemAvailable=117269MiB
 /tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
-[prep] post-drop MemAvailable=117534MiB
-[prep] OK rank=2 MemAvailable=117534MiB ts=20260914T023920Z
+[prep] post-drop MemAvailable=117500MiB
+[prep] OK rank=2 MemAvailable=117500MiB ts=20260914T033116Z
 rank 2 fabric iface: enp1s0f0np0
 rank 2 guard nonce: 6d1185db05f4093397d8f836379b3bf818c79bb62e589667c54c9ada2a6c97d2
-rank 2 container up: ecb649bd955d Up 1 second (health: starting)
-[02:39:24] launching rank 3 on spark-4af5
+rank 2 container up: aed6781bf61b Up Less than a second (health: starting)
+[03:31:20] launching rank 3 on spark-4af5
 [prep] node spark-4af5 rank=3 floor=24000MiB
 [prep] checkpoint index + tail shards OK
-[prep] MemAvailable=120545MiB
+[prep] MemAvailable=120379MiB
 /tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
-[prep] post-drop MemAvailable=120580MiB
-[prep] OK rank=3 MemAvailable=120580MiB ts=20260914T023925Z
+[prep] post-drop MemAvailable=120629MiB
+[prep] OK rank=3 MemAvailable=120629MiB ts=20260914T033123Z
 rank 3 fabric iface: enp1s0f0np0
 rank 3 guard nonce: eaacffa0ab3c79315cf4e1dbfeb1f687b682866db8f8d2c5ec9ebf059e82070a
-rank 3 container up: 4a2b19c966b4 Up Less than a second (health: starting)
-[02:39:28] launching rank 0 on r0b0t-dgx
+rank 3 container up: 926fdf4ead5c Up Less than a second (health: starting)
+[03:31:27] launching rank 0 on r0b0t-dgx
 [prep] node r0b0t-dgx rank=0 floor=24000MiB
 [prep] checkpoint index + tail shards OK
-[prep] MemAvailable=116560MiB
+[prep] MemAvailable=115959MiB
 /tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
-[prep] post-drop MemAvailable=116715MiB
-[prep] OK rank=0 MemAvailable=116715MiB ts=20260914T023929Z
+[prep] post-drop MemAvailable=116203MiB
+[prep] OK rank=0 MemAvailable=116203MiB ts=20260914T033131Z
 rank 0 fabric iface: enp1s0f0np0
 rank 0 guard nonce: ed4634441e798c586393e31b3a781a2729366e4071d1842739b5ff0babed050d
-rank 0 container up: 9632ffab2871 Up Less than a second (health: starting)
+rank 0 container up: 6d609d638e0f Up 1 second (health: starting)
 all ranks launched; polling /v1/models on head ...
+[04:07:29] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117203MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117427MiB
+[prep] OK rank=1 MemAvailable=117427MiB ts=20260914T040731Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 0714915fc00d2a227ba4f9ff61d35567baff099f6d9fe1e20d37252071764067
+rank 1 container up: 27d0faa7a000 Up Less than a second (health: starting)
+[04:07:36] launching rank 2 on gn100-2eea
+[prep] node gn100-2eea rank=2 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117330MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117569MiB
+[prep] OK rank=2 MemAvailable=117569MiB ts=20260914T040742Z
+rank 2 fabric iface: enp1s0f0np0
+rank 2 guard nonce: 07a2f6551a6e0c685408d7c86d145f4c15845ab48d13a8257dfc4723bedf461d
+rank 2 container up: e612b874b13b Up 1 second (health: starting)
+[04:07:46] launching rank 3 on spark-4af5
+[prep] node spark-4af5 rank=3 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=120389MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=120641MiB
+[prep] OK rank=3 MemAvailable=120641MiB ts=20260914T040749Z
+rank 3 fabric iface: enp1s0f0np0
+rank 3 guard nonce: 431064012d9a4274271b7e6470b00c92c86ca1b44c241baef0621340d39a3117
+rank 3 container up: 10b7917d3f76 Up Less than a second (health: starting)
+[04:07:54] launching rank 0 on r0b0t-dgx
+[prep] node r0b0t-dgx rank=0 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=116091MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=116322MiB
+[prep] OK rank=0 MemAvailable=116322MiB ts=20260914T040756Z
+[04:21:08] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=114104MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=114197MiB
+[prep] OK rank=1 MemAvailable=114197MiB ts=20260914T042109Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39
+rank 1 container up: bebae0bfd332 Up Less than a second (health: starting)
+[04:21:14] launching rank 2 on gn100-2eea
+[prep] node gn100-2eea rank=2 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=114220MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=114302MiB
+[prep] OK rank=2 MemAvailable=114302MiB ts=20260914T042115Z
+rank 2 fabric iface: enp1s0f0np0
+rank 2 guard nonce: 6d1185db05f4093397d8f836379b3bf818c79bb62e589667c54c9ada2a6c97d2
+rank 2 container up: d6e08638f038 Up Less than a second (health: starting)
+[04:21:20] launching rank 3 on spark-4af5
+[prep] node spark-4af5 rank=3 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117272MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117357MiB
+[prep] OK rank=3 MemAvailable=117357MiB ts=20260914T042121Z
+rank 3 fabric iface: enp1s0f0np0
+rank 3 guard nonce: eaacffa0ab3c79315cf4e1dbfeb1f687b682866db8f8d2c5ec9ebf059e82070a
+rank 3 container up: 3519e2ba9882 Up Less than a second (health: starting)
+[04:21:25] launching rank 0 on r0b0t-dgx
+[prep] node r0b0t-dgx rank=0 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=116189MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=116321MiB
+[prep] OK rank=0 MemAvailable=116321MiB ts=20260914T042127Z
+rank 0 fabric iface: enp1s0f0np0
+rank 0 guard nonce: ed4634441e798c586393e31b3a781a2729366e4071d1842739b5ff0babed050d
+rank 0 container up: d442a86dab8a Up 1 second (health: starting)
+all ranks launched; polling /v1/models on head ...
+TIMEOUT waiting for readiness; check logs/ per-rank
+[05:36:51] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117196MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117402MiB
+[prep] OK rank=1 MemAvailable=117402MiB ts=20260914T053655Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39
+rank 1 container up: 979072112a74 Up Less than a second (health: starting)
+[05:36:59] launching rank 2 on gn100-2eea
+[prep] node gn100-2eea rank=2 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117327MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117572MiB
+[prep] OK rank=2 MemAvailable=117572MiB ts=20260914T053709Z
+rank 2 fabric iface: enp1s0f0np0
+rank 2 guard nonce: 6d1185db05f4093397d8f836379b3bf818c79bb62e589667c54c9ada2a6c97d2
+rank 2 container up: 07e882bd0d84 Up Less than a second (health: starting)
+[05:37:12] launching rank 3 on spark-4af5
+[prep] node spark-4af5 rank=3 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=120390MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=120634MiB
+[prep] OK rank=3 MemAvailable=120634MiB ts=20260914T053718Z
+rank 3 fabric iface: enp1s0f0np0
+rank 3 guard nonce: eaacffa0ab3c79315cf4e1dbfeb1f687b682866db8f8d2c5ec9ebf059e82070a
+rank 3 container up: 07174f67da36 Up Less than a second (health: starting)
+[05:37:22] launching rank 0 on r0b0t-dgx
+[prep] node r0b0t-dgx rank=0 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=116071MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=116312MiB
+[prep] OK rank=0 MemAvailable=116312MiB ts=20260914T053726Z
+rank 0 fabric iface: enp1s0f0np0
+rank 0 guard nonce: ed4634441e798c586393e31b3a781a2729366e4071d1842739b5ff0babed050d
+rank 0 container up: 1248b58fc311 Up 1 second (health: starting)
+all ranks launched; polling /v1/models on head ...
+[07:08:36] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117192MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117421MiB
+[prep] OK rank=1 MemAvailable=117421MiB ts=20260914T070838Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 8cdc861494fe7f57a79442a4303f473e63a900e091fc67dae9d2250dbc533b98
+rank 1 container up: a4c268e94755 Up Less than a second (health: starting)
+[07:08:42] launching rank 2 on gn100-2eea
+[prep] node gn100-2eea rank=2 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=116735MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117541MiB
+[prep] OK rank=2 MemAvailable=117541MiB ts=20260914T070850Z
+rank 2 fabric iface: enp1s0f0np0
+rank 2 guard nonce: e60b53e005ca1313d846889a97603b837bd0efc3b576fa8a8f6ae9ba23860936
+rank 2 container up: e689eca6c1d1 Up 1 second (health: starting)
+[07:08:54] launching rank 3 on spark-4af5
+[prep] node spark-4af5 rank=3 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=120145MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=120628MiB
+[prep] OK rank=3 MemAvailable=120628MiB ts=20260914T070857Z
+rank 3 fabric iface: enp1s0f0np0
+rank 3 guard nonce: 2e84e8e1186bc70f3b5a838966c1980a03540a5bca91676c482ed184495e2fd5
+rank 3 container up: ab83234f85e6 Up Less than a second (health: starting)
+[07:09:01] launching rank 0 on r0b0t-dgx
+[prep] node r0b0t-dgx rank=0 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=115860MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=116303MiB
+[prep] OK rank=0 MemAvailable=116303MiB ts=20260914T070903Z
+rank 0 fabric iface: enp1s0f0np0
+rank 0 guard nonce: fe4b44c408d798ac666e704a5bdbe544d1fab92a0c324ec2bc2386100e893c6a
+rank 0 container up: fff95d7dd34f Up 1 second (health: starting)
+all ranks launched; polling /v1/models on head ...
+READY after 51x15s

@@ -70,3 +70,259 @@ rank 0 fabric iface: enp1s0f0np0
 rank 0 guard nonce: ed4634441e798c586393e31b3a781a2729366e4071d1842739b5ff0babed050d
 rank 0 container up: 9632ffab2871 Up Less than a second (health: starting)
 all ranks launched; polling /v1/models on head ...
+[03:05:13] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[03:05:13] serve ready
+[03:05:13] rank0=9632ffab28713e7902e903fc478a435f6e9feceb7989592a9b7afe85b126743c rank1=738dbc0fe84f3b35492684ff1e6680d4eb27a499f6bd5ecceb3ccad53568a3d4
+[03:05:14] labels verified on rank0+rank1
+[03:05:14] admission config written
+[03:05:14] starting rank0 guard
+[03:05:14] rank0 guard pid 297894
+[03:05:14] starting rank1 guard on N2
+[03:06:15] guards started
+                               [--warning-floor-gib WARNING_FLOOR_GIB]
+guard_unified_memory.py: error: the following arguments are required: --peer-profile-sha256
+[03:06:15] running certified Q200v2 text-180
+quality runner failed: rank 0: cannot read /home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/guards/rank0/ADMISSION-STATE.json: [Errno 2] No such file or directory: '/home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/guards/rank0/ADMISSION-STATE.json'
+[03:06:15] certified runner rc=2
+[03:06:15] stopping guards
+[03:09:00] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[03:09:00] serve ready
+[03:09:01] rank0=9632ffab28713e7902e903fc478a435f6e9feceb7989592a9b7afe85b126743c rank1=738dbc0fe84f3b35492684ff1e6680d4eb27a499f6bd5ecceb3ccad53568a3d4
+[03:09:01] labels verified on rank0+rank1
+[03:09:01] admission config written
+[03:09:01] starting rank0 guard
+[03:09:01] rank0 guard pid 298629
+[03:09:02] starting rank1 guard on N2
+[03:10:02] guards started
+[03:10:02] running certified Q200v2 text-180
+quality runner failed: rank 1: remote state read failed: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/guards/rank1/ADMISSION-STATE.json'
+[03:10:03] certified runner rc=2
+[03:10:03] stopping guards
+[03:11:15] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[03:11:15] serve ready
+[03:11:16] rank0=9632ffab28713e7902e903fc478a435f6e9feceb7989592a9b7afe85b126743c rank1=738dbc0fe84f3b35492684ff1e6680d4eb27a499f6bd5ecceb3ccad53568a3d4
+[03:11:16] labels verified on rank0+rank1
+[03:11:16] admission config written
+[03:11:17] starting rank0 guard
+[03:11:17] rank0 guard pid 299734
+[03:11:17] starting rank1 guard on N2
+[03:12:17] guards started
+[03:12:17] running certified Q200v2 text-180
+quality runner failed: guard lease acknowledgement timed out: rank 0: guard state is stale or future-dated
+[03:23:25] certified runner rc=2
+[03:23:25] stopping guards
+[03:31:03] resuming chain: epoch=dsv41q200v2-20260914T015226Z image=sha256:584aca7da26c3d785c3ed7101c056c9cda1530fc06e8d96d7c33aeb47a418b93
+[03:31:03] relaunching 1m serve with guard labels
+[03:31:03] launching rank 1 on r0b0tdgx1
+[prep] node r0b0tdgx1 rank=1 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117436MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117638MiB
+[prep] OK rank=1 MemAvailable=117638MiB ts=20260914T033106Z
+rank 1 fabric iface: enp1s0f0np0
+rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39
+rank 1 container up: d914d86fa123 Up Less than a second (health: starting)
+[03:31:10] launching rank 2 on gn100-2eea
+[prep] node gn100-2eea rank=2 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117269MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117500MiB
+[prep] OK rank=2 MemAvailable=117500MiB ts=20260914T033116Z
+rank 2 fabric iface: enp1s0f0np0
+rank 2 guard nonce: 6d1185db05f4093397d8f836379b3bf818c79bb62e589667c54c9ada2a6c97d2
+rank 2 container up: aed6781bf61b Up Less than a second (health: starting)
+[03:31:20] launching rank 3 on spark-4af5
+[prep] node spark-4af5 rank=3 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=120379MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=120629MiB
+[prep] OK rank=3 MemAvailable=120629MiB ts=20260914T033123Z
+rank 3 fabric iface: enp1s0f0np0
+rank 3 guard nonce: eaacffa0ab3c79315cf4e1dbfeb1f687b682866db8f8d2c5ec9ebf059e82070a
+rank 3 container up: 926fdf4ead5c Up Less than a second (health: starting)
+[03:31:27] launching rank 0 on r0b0t-dgx
+[prep] node r0b0t-dgx rank=0 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=115959MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=116203MiB
+[prep] OK rank=0 MemAvailable=116203MiB ts=20260914T033131Z
+rank 0 fabric iface: enp1s0f0np0
+rank 0 guard nonce: ed4634441e798c586393e31b3a781a2729366e4071d1842739b5ff0babed050d
+rank 0 container up: 6d609d638e0f Up 1 second (health: starting)
+all ranks launched; polling /v1/models on head ...
+[03:54:25] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[03:54:25] serve ready
+[03:54:26] rank0=6d609d638e0ff0f4f7e8d1debfa273805cc9a05e35f55fe910c51407c0ab85be rank1=d914d86fa123edd2f551a4150421487141867866b3e24b7b2a7aa66a9f832ba3
+[03:54:26] labels verified on rank0+rank1
+[03:54:26] admission config written
+[03:54:26] starting rank0 guard
+[03:54:26] rank0 guard pid 341216
+[03:54:27] starting rank1 guard on N2
+[03:55:27] guards started
+[03:55:27] running certified Q200v2 text-180
+quality runner failed: another or stale request lease exists: /home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/lease-dsv41q200v2-20260914T015226Z.lock
+[03:55:27] certified runner rc=2
+[03:55:27] stopping guards
+[03:56:34] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[03:56:34] serve ready
+[03:56:35] rank0=6d609d638e0ff0f4f7e8d1debfa273805cc9a05e35f55fe910c51407c0ab85be rank1=d914d86fa123edd2f551a4150421487141867866b3e24b7b2a7aa66a9f832ba3
+[03:56:35] labels verified on rank0+rank1
+[03:56:35] admission config written
+[03:56:35] starting rank0 guard
+[03:56:35] rank0 guard pid 342125
+[03:56:36] starting rank1 guard on N2
+[03:57:36] guards started
+[03:57:36] running certified Q200v2 text-180
+quality runner failed: guard lease acknowledgement timed out: rank 1: guard state is stale or future-dated
+[04:01:51] certified runner rc=2
+[04:01:51] stopping guards
+[04:35:38] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[04:35:38] serve ready
+[04:35:39] rank0=d442a86dab8a5e7be651cf6d3396ecb273c289038afb1079e2949ffdabfe535a rank1=bebae0bfd332a9bf3b4c7ebdb5a8b23d4f5e3da285977def3b412ad99672e0d2
+[04:35:39] labels verified on rank0+rank1
+[04:35:39] admission config written
+[04:35:40] starting rank0 guard
+[04:35:40] rank0 guard pid 378837
+[04:35:40] starting rank1 guard on N2
+[04:36:40] guards started
+[04:36:40] running certified Q200v2 text-180
+quality runner failed: guard lease acknowledgement timed out: rank 0: guard state is stale or future-dated
+[05:31:19] certified runner rc=2
+[05:31:19] stopping guards
+[06:00:59] run-only stage: epoch=dsv41q200v2-20260914T015226Z
+[06:00:59] serve ready
+[06:01:00] rank0=1248b58fc3116f6bfd864a89bc173dac1f7312cf6aa1613cf67e98981ae4125f rank1=979072112a74a7ce3de7d34d136d12aa0f44ac6add172b23a4304f2f450038e1
+[06:01:00] labels verified on rank0+rank1
+[06:01:00] admission config written
+[06:01:00] starting rank0 guard
+[06:01:00] rank0 guard pid 462933
+[06:01:01] starting rank1 guard on N2
+[06:02:01] guards started
+[06:02:01] running certified Q200v2 text-180
+{
+  "base_url": "http://127.0.0.1:30000",
+  "candidate_id": "dsv41-tp4-sm121-overlay-q200",
+  "chat_template_kwargs": {
+    "enable_thinking": true,
+    "reasoning_effort": "low",
+    "thinking": true
+  },
+  "completeness_errors": [],
+  "correct_count": 116,
+  "dataset_count": 180,
+  "dataset_sha256": "74623ab9b075120cd6f7a93059cc16d8817a6039dd20118b8f0350279f8b1ed6",
+  "families": {
+    "gsm8k": {
+      "accuracy_pct": 96.25,
+      "correct": 77,
+      "grade_complete": 80,
+      "grader_errors": 0,
+      "incorrect": 3,
+      "n": 80,
+      "transported": 80,
+      "ungraded": 0
+    },
+    "hard_reasoning": {
+      "accuracy_pct": null,
+      "correct": 0,
+      "grade_complete": 0,
+      "grader_errors": 0,
+      "incorrect": 0,
+      "n": 20,
+      "transported": 20,
+      "ungraded": 20
+    },
+    "humaneval": {
+      "accuracy_pct": null,
+      "correct": 0,
+      "grade_complete": 0,
+      "grader_errors": 40,
+      "incorrect": 0,
+      "n": 40,
+      "transported": 40,
+      "ungraded": 0
+    },
+    "ifeval": {
+      "accuracy_pct": 97.5,
+      "correct": 39,
+      "grade_complete": 40,
+      "grader_errors": 0,
+      "incorrect": 1,
+      "n": 40,
+      "transported": 40,
+      "ungraded": 0
+    }
+  },
+  "grade_complete": false,
+  "grader_error_count": 40,
+  "image_id": "sha256:584aca7da26c3d785c3ed7101c056c9cda1530fc06e8d96d7c33aeb47a418b93",
+  "incorrect_count": 4,
+  "manual_evidence": null,
+  "model": "/model",
+  "not_admitted_count": 0,
+  "not_admitted_event": null,
+  "not_admitted_ids": [],
+  "profile_id": "dsv41-1m-q200",
+  "quality_policy": {
+    "applied": false,
+    "name": "external_baseline_comparator_required",
+    "passed": null
+  },
+  "response_budget": {
+    "all_rows_stopped": true,
+    "ceiling_contact_ids": [],
+    "configured_max_tokens": 8192,
+    "finish_reason_counts": {
+      "stop": 180
+    },
+    "max_observed_completion_tokens": 5284
+  },
+  "rows": 180,
+  "run_id": "dsv41-q200v2-dsv41q200v2-20260914T015226Z",
+  "run_identity_sha256": "635ae890e375baf8006ee837c4d82126b703914df46175c3a45390b1a137c2f1",
+  "schema": "r0b0tlab.qwen38.quality_text_180_run.v2",
+  "status": "INCOMPLETE",
+  "transport_complete": true,
+  "transport_count": 180,
+  "ungraded_count": 20
+}
+[06:54:00] certified runner rc=2
+[06:54:00] stopping guards
+[07:21:36] run-only stage: epoch=dsv41q200v2-20260914T065953Z
+[07:21:36] serve ready
+[07:21:37] rank0=fff95d7dd34fe62a4d76cf4407a8c70a947dbc0839782a512e1a15d0a6cf62c5 rank1=a4c268e9475552911647dae9aa3a3f99d8fcf1837090613840059d370f73e2a4
+[07:21:37] labels verified on rank0+rank1
+[07:21:37] admission config written
+[07:21:37] starting rank0 guard
+[07:21:37] rank0 guard pid 544331
+[07:21:38] starting rank1 guard on N2
+[07:22:38] guards started
+[07:22:38] running certified Q200v2 text-180
+quality runner failed: rank 1: guard rank/epoch mismatch
+[07:22:39] certified runner rc=2
+[07:22:39] stopping guards
+[07:24:11] run-only stage: epoch=dsv41q200v2-20260914T065953Z
+[07:24:11] serve ready
+[07:24:12] rank0=fff95d7dd34fe62a4d76cf4407a8c70a947dbc0839782a512e1a15d0a6cf62c5 rank1=a4c268e9475552911647dae9aa3a3f99d8fcf1837090613840059d370f73e2a4
+[07:24:12] labels verified on rank0+rank1
+[07:24:12] admission config written
+[07:24:12] starting rank0 guard
+[07:24:12] rank0 guard pid 545567
+[07:24:13] starting rank1 guard on N2
+[07:25:13] guards started
+[07:25:13] running certified Q200v2 text-180
+quality runner failed: rank 1: guard rank/epoch mismatch
+[07:25:14] certified runner rc=2
+[07:25:14] stopping guards
