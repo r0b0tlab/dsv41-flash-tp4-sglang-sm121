@@ -110,6 +110,7 @@ python3 scripts/run_quality_set.py \
   --profile-id "dsv41-1m-q200" \
   --candidate-id "$CANDIDATE" \
   --admission-config "$EV/admission-config.json" \
+  --manual-evidence "$EV/manual-evidence.json" \
   --chat-template-kwargs '{"enable_thinking": true, "thinking": true, "reasoning_effort": "low"}' \
   --workers 1 --max-tokens 8192 \
   2>&1 | tee "$EV/quality-run.log"

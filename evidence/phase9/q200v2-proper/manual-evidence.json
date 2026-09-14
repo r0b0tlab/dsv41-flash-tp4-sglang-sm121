@@ -1,0 +1,129 @@
+{
+ "schema": "r0b0tlab.qwen38.manual_evidence.v1",
+ "dataset_sha256": "74623ab9b075120cd6f7a93059cc16d8817a6039dd20118b8f0350279f8b1ed6",
+ "run_identity_sha256": "4138fb13c52628d2fe6e826e5bf96bd4fe9d66b2b90c8396cf484ce945b8786c",
+ "reviewer": "Hermes Agent independent semantic review (single pass; two rows adjudicated against dataset references with noted reference errata)",
+ "method": "independent_manual_review",
+ "rows": [
+  {
+   "id": "hard-00",
+   "content_sha256": "a21d07475abae995a21e9805695156897ed14da2bf4e9d45ada020a75e15f893",
+   "passed": true,
+   "rationale": "Proof of divisibility by 6 is complete and correct. The p^3-p generalization claims divisibility by 24; the dataset reference contains an arithmetic error (it states 7^3-7=342 and 342=6*57, but 7^3-7=336=24*14, which IS divisible by 24; in fact p^3-p is divisible by 24 for every prime p>3). The model's generalization is mathematically correct."
+  },
+  {
+   "id": "hard-01",
+   "content_sha256": "47d5a24d5527c3a66eb529692b525495ea323fb94ecbc62dc4117db406b6777b",
+   "passed": true,
+   "rationale": "Correct negative-hypergeometric expectation 13/4 = 3.25, matching reference."
+  },
+  {
+   "id": "hard-02",
+   "content_sha256": "28615b3dac3f347f4c61fc4e6811156db51fa791592a8c53877f7e188c162c93",
+   "passed": true,
+   "rationale": "Complete factor-pair enumeration; all four solution pairs (53,52),(19,16),(13,8),(11,4) correct."
+  },
+  {
+   "id": "hard-03",
+   "content_sha256": "fd6c32dd1e1882ce29031836a66ef4246ef3467baa0fb2c37c1957ddf31c523a",
+   "passed": true,
+   "rationale": "Exactly five sentences; a complete and valid contradiction proof via evenness of a and b."
+  },
+  {
+   "id": "hard-04",
+   "content_sha256": "b0d23e9c826ad6a9d717361f780e513a100c74d6850883ee9cf97be00b878b15",
+   "passed": true,
+   "rationale": "det(H4) = 1/6048000 exact fraction, matching reference."
+  },
+  {
+   "id": "hard-05",
+   "content_sha256": "0acc8490357eff9d0d9a4ed14fede30097606e0566c93cbceb79b04c140ef361",
+   "passed": true,
+   "rationale": "Correct recurrence V(n+1)=V(n)-4 and emptying time 25 hours, matching reference."
+  },
+  {
+   "id": "hard-06",
+   "content_sha256": "84f325c3c8b2cf5d381944bd68600fdfba147617acb884a30b798c3de768ca4e",
+   "passed": true,
+   "rationale": "All five complexities correct with one-clause justifications and correct ordering; heapify stated as build-heap Theta(n) per the reference."
+  },
+  {
+   "id": "hard-07",
+   "content_sha256": "8b2f5f7006bbd609eece40ef96b8c04072eadc24602a180a524194110e1c6926",
+   "passed": true,
+   "rationale": "Correct conditional probability 3/10 via hypergeometric ratio, matching reference."
+  },
+  {
+   "id": "hard-08",
+   "content_sha256": "af38ce95affcebfc6cdb39ce4834376366cdf299fb28bffe2800ad455126a3a9",
+   "passed": true,
+   "rationale": "The prompt is self-contradictory (its lead-in declares the literal question ill-posed). The model answered the literal question correctly (1) AND supplied the intended Frobenius number 29 with the correct formula; both readings correct."
+  },
+  {
+   "id": "hard-09",
+   "content_sha256": "fc7160e386fef00ae076efe3283fb9a73059abf5a735db00e2e2423939f8a858",
+   "passed": true,
+   "rationale": "3-state DFA with correct mod-3 transitions and accepting state q0; minimum count 3 stated, matching reference."
+  },
+  {
+   "id": "hard-10",
+   "content_sha256": "01cfa1051c7cbd928b5f5516aa0ff2d8071bc3d71cd51bd511a6ce6daeca7c00",
+   "passed": true,
+   "rationale": "Gamma(3)=2!=2 exact value, matching reference."
+  },
+  {
+   "id": "hard-11",
+   "content_sha256": "a398b49b2c2caf1597f1d95b925ad014ca5fa55b378f251b4c5aca0d63c1f6a2",
+   "passed": true,
+   "rationale": "Log-differentiation at x=1 gives f'(1)=1, matching reference."
+  },
+  {
+   "id": "hard-12",
+   "content_sha256": "e63af83e06de5c8aa280bb9bf43fe628701add6fd8005011fe97555d0b602bc8",
+   "passed": true,
+   "rationale": "Valid longest-path pigeonhole proof for finite graphs (the intended reading), with the infinite-graph counterexample correctly noted."
+  },
+  {
+   "id": "hard-13",
+   "content_sha256": "bf5da4feee0e3e3a4cdfdc31361068000e79c81d87929c1e39f54f5dcc3319a0",
+   "passed": true,
+   "rationale": "Correct pursuit-curve argument: closing speed 3/2 gives distance 2/3, matching reference."
+  },
+  {
+   "id": "hard-14",
+   "content_sha256": "26e5ee100aa3f0adc1d01e30508cbeb872ab11162194a50d13e849d457bb09f1",
+   "passed": true,
+   "rationale": "Self-dual count 2^(2^3)=256, matching reference."
+  },
+  {
+   "id": "hard-15",
+   "content_sha256": "71f496c7f30744f8648687d796e7d1b1d3fad9b09b2fa2a686d8a3feb1ae1bd4",
+   "passed": true,
+   "rationale": "Binomial alternating sum (1-1)^17=0, matching reference."
+  },
+  {
+   "id": "hard-16",
+   "content_sha256": "72b463b018aa940c4c298b8821464584c9f76ee227cdab5060c47b814129be06",
+   "passed": true,
+   "rationale": "1/(2*pi) meters exact lift height with radius-independence noted, matching reference."
+  },
+  {
+   "id": "hard-17",
+   "content_sha256": "403cb05d4c7df3a670e7099415f43229120a9c00e90da56d568b0a0db226f1b5",
+   "passed": true,
+   "rationale": "Correctly identifies look-and-say with run-length-encoding closed form a_n = RLE^(n-1)(1), matching reference."
+  },
+  {
+   "id": "hard-18",
+   "content_sha256": "8f8ea4820c42bc06cf07f740eaab36097ecb20eca70d9b7b2ff98c96126e8ce2",
+   "passed": true,
+   "rationale": "Correct pigeonhole proof on four 1/2x1/2 subsquares with max-distance sqrt(2)/2, matching reference."
+  },
+  {
+   "id": "hard-19",
+   "content_sha256": "75e6bbdb0220daec3779bb6d726d2e036cfbffc377f5283b65da0f40fb292ea2",
+   "passed": true,
+   "rationale": "Conditional probability 2/6=1/3 with correct enumeration, matching reference."
+  }
+ ]
+}

@@ -51,6 +51,14 @@ EOF
 
 launch_rank() {
   local r=$1
+  # Guard-label env defaults (head-side): bash 5.2 set -u makes heredoc
+  # expansion of ${VAR:-} fail when the var is UNSET (not empty) — default
+  # them here so plain launches work without the q200 label env.
+  DSV41_GUARD_EPOCH="${DSV41_GUARD_EPOCH:-}"
+  DSV41_GUARD_CANDIDATE="${DSV41_GUARD_CANDIDATE:-}"
+  DSV41_GUARD_SOURCE_SHA="${DSV41_GUARD_SOURCE_SHA:-}"
+  DSV41_GUARD_PROFILE_SHA="${DSV41_GUARD_PROFILE_SHA:-}"
+  DSV41_GUARD_IMAGE_ID="${DSV41_GUARD_IMAGE_ID:-}"
   echo "[$(date -u +%H:%M:%S)] launching rank $r on ${HOST[$r]}"
   # ship the preparer + run it (fail-closed admission: checkpoint files,
   # MemAvailable floor, page-cache drop; root cause fix for the 2026-09-13
@@ -76,9 +84,15 @@ echo "rank $r fabric iface: \$FAB_IF"
 # Optional guard labels (q200v2 admission system): set DSV41_GUARD_EPOCH to
 # have every rank launched with org.r0b0tlab.* identity labels. Nonces are
 # computed head-side (rank is in scope here; heredoc is unquoted so this
-# expands before shipping).
+# expands before shipping). All vars defaulted to keep head-side set -u
+# happy when labels are off.
+DSV41_GUARD_EPOCH="${DSV41_GUARD_EPOCH:-}"
+DSV41_GUARD_CANDIDATE="${DSV41_GUARD_CANDIDATE:-}"
+DSV41_GUARD_SOURCE_SHA="${DSV41_GUARD_SOURCE_SHA:-}"
+DSV41_GUARD_PROFILE_SHA="${DSV41_GUARD_PROFILE_SHA:-}"
+DSV41_GUARD_IMAGE_ID="${DSV41_GUARD_IMAGE_ID:-}"
 GUARD_LABEL_ARGS=()
-if [[ -n "${DSV41_GUARD_EPOCH:-}" ]]; then
+if [[ -n "$DSV41_GUARD_EPOCH" ]]; then
   _nonce=$(python3 - "${DSV41_GUARD_CANDIDATE:-}" "${DSV41_GUARD_SOURCE_SHA:-}" \
      "${DSV41_GUARD_EPOCH}" "$r" "${DSV41_GUARD_PROFILE_SHA:-}" \
      "${DSV41_GUARD_IMAGE_ID:-}" <<'PY'

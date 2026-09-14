@@ -123,3 +123,39 @@
 [07:25:13] running certified Q200v2 text-180
 [07:25:14] certified runner rc=2
 [07:25:14] stopping guards
+[07:29:49] run-only stage: epoch=dsv41q200v2-20260914T065953Z
+[07:29:49] serve ready
+[07:29:49] rank0=fff95d7dd34fe62a4d76cf4407a8c70a947dbc0839782a512e1a15d0a6cf62c5 rank1=a4c268e9475552911647dae9aa3a3f99d8fcf1837090613840059d370f73e2a4
+[07:29:50] labels verified on rank0+rank1
+[07:29:50] admission config written
+[07:29:50] starting rank0 guard
+[07:29:50] rank0 guard pid 547143
+[07:29:50] starting rank1 guard on N2
+[07:30:51] guards started
+[07:30:51] running certified Q200v2 text-180
+[09:24:13] certified runner rc=2
+[09:24:13] stopping guards
+[09:30:00] run-only stage: epoch=dsv41q200v2-20260914T065953Z
+[09:30:00] serve ready
+[09:30:01] rank0=fff95d7dd34fe62a4d76cf4407a8c70a947dbc0839782a512e1a15d0a6cf62c5 rank1=a4c268e9475552911647dae9aa3a3f99d8fcf1837090613840059d370f73e2a4
+[09:30:01] labels verified on rank0+rank1
+[09:30:01] admission config written
+[09:30:01] starting rank0 guard
+[09:30:01] rank0 guard pid 704294
+[09:30:02] starting rank1 guard on N2
+[09:31:02] guards started
+[09:31:02] running certified Q200v2 text-180
+[09:31:31] certified runner rc=2
+[09:31:31] stopping guards
+[09:32:00] run-only stage: epoch=dsv41q200v2-20260914T065953Z
+[09:32:00] serve ready
+[09:32:00] rank0=fff95d7dd34fe62a4d76cf4407a8c70a947dbc0839782a512e1a15d0a6cf62c5 rank1=a4c268e9475552911647dae9aa3a3f99d8fcf1837090613840059d370f73e2a4
+[09:32:00] labels verified on rank0+rank1
+[09:32:00] admission config written
+[09:32:01] starting rank0 guard
+[09:32:01] rank0 guard pid 740756
+[09:32:01] starting rank1 guard on N2
+[09:33:02] guards started
+[09:33:02] running certified Q200v2 text-180
+[09:33:29] certified runner rc=0
+[09:33:29] stopping guards
