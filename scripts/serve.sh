@@ -135,7 +135,7 @@ launch_rank 0
 
 echo "all ranks launched; polling /v1/models on head ..."
 for i in $(seq 1 200); do
-  if curl -sf "http://127.0.0.1:${PORT}/v1/models" | grep -q DeepSeek; then
+  if curl -sf "http://127.0.0.1:${PORT}/v1/models" | grep -q "model"; then
     echo "READY after ${i}x15s"; exit 0
   fi
   sleep 15

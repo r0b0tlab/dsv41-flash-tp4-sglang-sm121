@@ -1,9 +1,41 @@
-[02:16:24] launching rank 1 on r0b0tdgx1
+[02:39:14] launching rank 1 on r0b0tdgx1
 [prep] node r0b0tdgx1 rank=1 floor=24000MiB
 [prep] checkpoint index + tail shards OK
-[prep] MemAvailable=117557MiB
+[prep] MemAvailable=117563MiB
 /tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
-[prep] post-drop MemAvailable=117631MiB
-[prep] OK rank=1 MemAvailable=117631MiB ts=20260914T021625Z
+[prep] post-drop MemAvailable=117649MiB
+[prep] OK rank=1 MemAvailable=117649MiB ts=20260914T023915Z
 rank 1 fabric iface: enp1s0f0np0
 rank 1 guard nonce: 262c09910b2c7a752afad56195355db51f73aee87d912e9651bf9ef932e0bd39
+rank 1 container up: 738dbc0fe84f Up 1 second (health: starting)
+[02:39:19] launching rank 2 on gn100-2eea
+[prep] node gn100-2eea rank=2 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=117492MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=117534MiB
+[prep] OK rank=2 MemAvailable=117534MiB ts=20260914T023920Z
+rank 2 fabric iface: enp1s0f0np0
+rank 2 guard nonce: 6d1185db05f4093397d8f836379b3bf818c79bb62e589667c54c9ada2a6c97d2
+rank 2 container up: ecb649bd955d Up 1 second (health: starting)
+[02:39:24] launching rank 3 on spark-4af5
+[prep] node spark-4af5 rank=3 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=120545MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=120580MiB
+[prep] OK rank=3 MemAvailable=120580MiB ts=20260914T023925Z
+rank 3 fabric iface: enp1s0f0np0
+rank 3 guard nonce: eaacffa0ab3c79315cf4e1dbfeb1f687b682866db8f8d2c5ec9ebf059e82070a
+rank 3 container up: 4a2b19c966b4 Up Less than a second (health: starting)
+[02:39:28] launching rank 0 on r0b0t-dgx
+[prep] node r0b0t-dgx rank=0 floor=24000MiB
+[prep] checkpoint index + tail shards OK
+[prep] MemAvailable=116560MiB
+/tmp/node_prepare.sh: line 44: /proc/sys/vm/drop_caches: Permission denied
+[prep] post-drop MemAvailable=116715MiB
+[prep] OK rank=0 MemAvailable=116715MiB ts=20260914T023929Z
+rank 0 fabric iface: enp1s0f0np0
+rank 0 guard nonce: ed4634441e798c586393e31b3a781a2729366e4071d1842739b5ff0babed050d
+rank 0 container up: 9632ffab2871 Up Less than a second (health: starting)
+all ranks launched; polling /v1/models on head ...
