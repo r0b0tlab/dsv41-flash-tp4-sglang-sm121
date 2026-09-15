@@ -16,6 +16,48 @@ per-lookup TP all-reduce from the DSpark speculative path.
 | Q200v2 (text-180 + BFCL-hard20, one close-out) | **text-180: 176/180 = 97.8%** (gsm8k 77/80 · humaneval 40/40 sandbox · ifeval 39/40 · hard_reasoning 20/20 manual) · **BFCL v4 multi-turn structural-hard20: 16/20 = 80%** · **combined 192/200 = 96.0%** | native thinking (effort low), 1 worker, admission-gated guards, run identity `4138fb13…`; BFCL = deterministic structural-complexity proxy, not an official category score; evidence `evidence/phase9/q200v2-proper/` incl. `q200v2-closeout.json` |
 | NIAH 512k ladder | **deferred** | 1M-profile multineedle runs post-publication (ongoing, see below) |
 
+## Throughput by workload regime (read together — not comparable across rows)
+
+This model's decode speed is dominated by **drafter predictability** (DSpark
+accept length), so the same serve measures 2–4× differently by regime. All
+numbers: server-`usage` token counts, warm serve, thinking off unless noted.
+
+**Spec-friendly regime (counting/structured text, accept-len ≈ 4–5.8)**
+| Workload | Throughput |
+|---|---|
+| counting_c1 (prod profile) | 38.6 tok/s single-stream |
+| counting_c4 | 112.3 tok/s aggregate |
+| c1→c8 counting ladder | 53 → 160 tok/s aggregate, 0 errors |
+| counting single-stream, maxperf DP-attn profile | ~19 tok/s (≈2× prod profile) |
+
+**Spec-adverse regime (random text, accept-len ≈ 1.1–2.5) — sglang bench_serving, 20 prompts, streaming**
+| Shape | prod TP=4 (c1 / c8) | maxperf DP-attn (c1 / c8) |
+|---|---|---|
+| short 128i/128o, output tok/s | 6.6 / 15.2 | 5.6 / 14.9–17.2 |
+| medium 2048i/512o, output tok/s | 6.8 / 12.1 | 6.4–6.6 / 14.6–15.0 |
+| medium TPOT (ms) | 116 / 440 | 100 / 263–310 |
+| medium median ITL (ms) | — / 302 | 75–77 / 129 |
+
+**Quality-lane throughput during the certified Q200v2 run** (thinking ON,
+effort low, 1 serial worker, per-request `elapsed_seconds` summed from the
+rows themselves — real end-to-end request wall time, includes prefill):
+
+| Lane | n | tokens out (sum) | serial tok/s | mean req wall |
+|---|---|---|---|---|
+| gsm8k | 80 | 13 230 | 14.7 | 11.2 s |
+| hard_reasoning | 20 | 12 694 | 16.8 | 37.8 s |
+| humaneval | 40 | 16 508 | 18.5 | 22.3 s |
+| ifeval | 40 | 54 602 | 15.1 | 90.4 s |
+| BFCL-hard20 (multi-turn) | 20 cases | 48 021 (1.71 M in) | 16.5 | 145.6 s/case |
+| text-180 total | 180 | 97 034 | 15.7 | 34.2 s avg |
+
+| Vision canary (cvbench Count) | 60 rows, 123.8 s serial = 0.48 rows/s, 2.06 s/row mean (thinking off) |
+
+Random-text quality-lane throughput (14.7–18.5 tok/s serial, thinking on)
+sits *above* the random-text bench baseline because natural prompts are
+partially predictable (accept ≈ 2–2.6) — between the random floor and the
+counting ceiling.
+
 Cold-start note: first minutes after serve boot, DSpark accept length climbs
 from ~1.6 to ≥5.8 as the drafter warms; throughput lanes must be measured
 after warm-up (phase-8 protocol) or numbers understate by ~4×.
