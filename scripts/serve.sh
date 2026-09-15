@@ -55,7 +55,9 @@ EOF
 DSPARK_SPS_ARGS=""
 DSPARK_SPS_MOUNT=""
 if [[ -n "${SGLANG_DSPARK_SPS_TABLE:-}" ]]; then
-  DSPARK_SPS_MOUNT="-v /tmp/sps-table.json:/sps-table.json:ro"
+  mkdir -p "$HOME/.config/dsv41"
+  cp -f /tmp/sps-table.json "$HOME/.config/dsv41/sps-table.json" 2>/dev/null || true
+  DSPARK_SPS_MOUNT="-v $HOME/.config/dsv41/sps-table.json:/sps-table.json:ro"
   DSPARK_SPS_ARGS="--speculative-dspark-sps-table-path /sps-table.json"
 fi
 launch_rank() {
@@ -126,7 +128,7 @@ docker run -d --name dsv41-rank --network host --ipc host \
   \${GUARD_LABEL_ARGS[@]} \
   -e HOSTNAME=${HOST[$r]} \
   -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \
-  \${DSPARK_SPS_MOUNT:-} \\
+  ${DSPARK_SPS_MOUNT:-} \\
   $(remote_env $r) ${NCCL_ENV} \\
   -e GLOO_SOCKET_IFNAME=\$FAB_IF -e NCCL_SOCKET_IFNAME=\$FAB_IF \\
   -e SGLANG_SM120_FLASHMLA_BACKEND=${SGLANG_SM120_FLASHMLA_BACKEND:-flashinfer} \

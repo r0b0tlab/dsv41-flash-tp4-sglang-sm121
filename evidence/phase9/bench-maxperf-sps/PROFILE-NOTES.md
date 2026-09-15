@@ -38,3 +38,18 @@ extra-request-body, streaming, warm drafter pass first, seed 42, prod image.
   under CUDA-graph capture; no NVLink). Dead end, verified twice.
 - Predictable-text single-stream (counting probe): ~19 tok/s maxperf vs ~9.4
   prod — DP-attention doubles per-stream decode where the drafter can predict.
+
+## v3/v4 amendments (2026-09-15 evening)
+- static + SPS table = documented no-op (server warns); the "MAXPERF+SPS" rows above
+  are effectively MAXPERF+instrumentation. Still the best measured config.
+- compact mode: CRASHES with the engram file store (engram requires equal verify
+  blocks per request; ragged fill violates the assert). Incompatible, not fixable
+  without engine changes.
+- cap-accept mode: boots and runs, but REGRESSES vs static with this 2-cell table
+  (c8 short 12.4 vs 17.2 tok/s; medium 13.4 vs 15.0; TPOT +30-35%) — the table was
+  profiled only at batch_tokens 6/12 (max_running=8 cap during profiling) and
+  mis-caps at real batch sizes. Raw logs: bench-maxperf-v4-capaccept/.
+- To make SPS actually pay: re-profile with max_running>=32 (wide table), then
+  re-run cap-accept. Profiler tooling + plumbing all committed.
+- FINAL RANKING (random-text decode): static-DP-attention maxperf > prod TP=4 >
+  cap-accept-with-narrow-table. Predictable-text single-stream: maxperf ~2x prod.
