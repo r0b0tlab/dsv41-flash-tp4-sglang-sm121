@@ -45,10 +45,19 @@ remote_env() { # rank -> env string consumed inside docker run
 -e DSV41_MODEL_PATH=/model \
 -e PYTORCH_CUDA_ALLOC_CONF=$PYTORCH_CUDA_ALLOC_CONF \
 -e SGLANG_FLASHINFER_MOE_FUSED_FINALIZE=$SGLANG_FLASHINFER_MOE_FUSED_FINALIZE \
+-e SGLANG_DSPARK_ENABLE_SPS_RECORD=${SGLANG_DSPARK_ENABLE_SPS_RECORD:-0} \
+-e SGLANG_RAGGED_VERIFY_MODE=${SGLANG_RAGGED_VERIFY_MODE:-static} \
+-e SGLANG_SIMULATE_ACC_LEN=${SGLANG_SIMULATE_ACC_LEN:-} \
 -e PORT=$PORT
 EOF
 }
 
+DSPARK_SPS_ARGS=""
+DSPARK_SPS_MOUNT=""
+if [[ -n "${SGLANG_DSPARK_SPS_TABLE:-}" ]]; then
+  DSPARK_SPS_MOUNT="-v /tmp/sps-table.json:/sps-table.json:ro"
+  DSPARK_SPS_ARGS="--speculative-dspark-sps-table-path /sps-table.json"
+fi
 launch_rank() {
   local r=$1
   # Guard-label env defaults (head-side): bash 5.2 set -u makes heredoc
@@ -116,7 +125,8 @@ docker run -d --name dsv41-rank --network host --ipc host \
   --cap-add CAP_IPC_LOCK --ulimit memlock=-1 \
   \${GUARD_LABEL_ARGS[@]} \
   -e HOSTNAME=${HOST[$r]} \
-  -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \\
+  -v \$HOME/models/llm/dsv41/DeepSeek-V4.1-Flash:/model:ro \
+  \${DSPARK_SPS_MOUNT:-} \\
   $(remote_env $r) ${NCCL_ENV} \\
   -e GLOO_SOCKET_IFNAME=\$FAB_IF -e NCCL_SOCKET_IFNAME=\$FAB_IF \\
   -e SGLANG_SM120_FLASHMLA_BACKEND=${SGLANG_SM120_FLASHMLA_BACKEND:-flashinfer} \
@@ -137,7 +147,7 @@ docker run -d --name dsv41-rank --network host --ipc host \
     --speculative-dspark-block-size $DSPARK_BLOCK_SIZE \
     --weight-loader-drop-cache-after-load \
     --reasoning-parser auto --tool-call-parser auto \
-    $EXTRA_SGLANG_ARGS \
+    $EXTRA_SGLANG_ARGS $DSPARK_SPS_ARGS \
   > $HOME/dsv4.1-flash-rank.log 2>&1 || { docker rm -f dsv41-rank >/dev/null 2>&1 || true; exit 5; }
 echo "rank $r container up: \$(docker ps --filter name=dsv41-rank --format '{{.ID}} {{.Status}}')"
 REMOTE
