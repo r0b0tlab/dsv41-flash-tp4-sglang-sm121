@@ -1,6 +1,6 @@
 {
   "schema": "r0b0tlab.dsv41.final-results.v1",
-  "status": "PRE_NIAH_RESULTS_VERIFIED",
+  "status": "RETRIEVAL_NOT_QUALIFIED",
   "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
   "runtime_source": "df92c15b448506575953adfbd137ab83c249e2b1",
   "measurement_host_source": "5655096cac399750f38dd7f13d5350153b5aa0a7",
@@ -199,10 +199,17 @@
   },
   "retrieval": {
     "512k": {
-      "status": "RETRY_PENDING",
-      "logical_cases": 1,
+      "status": "INFRA_FAILURE",
+      "advertised_window": 524288,
+      "target_prompt_tokens": 522174,
+      "raw_sha256": "638934ac65c08051098d5059c36a3ee93c080dcf715e1fc6c7a3a63905776766",
+      "cases": [],
+      "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
       "previous_attempt_status": "INFRA_FAILURE",
-      "same_case_replay": true
+      "logical_cases": 1,
+      "execution_attempts": 2,
+      "replayed_case_sha256": "b0c0ecebf697a1418cd517c89a973a947078435dbdcffb6f5ce9f30c83cf4b2d",
+      "qualification": "NOT_QUALIFIED"
     },
     "1m": {
       "status": "PENDING"
@@ -573,8 +580,29 @@
       "scheduled_prefix_estimate_tokens": 298752,
       "retry": "same exact logical case in a dedicated cold epoch; no new random case",
       "safety_repairs": "privileged complete kernel journal required on all ranks; initial resident-free reserve10GiB; primary error preserved across cleanup failure"
+    },
+    {
+      "lane": "niah-512k-cold-same-case",
+      "status": "INFRA_MEMORY_ALLOCATION_FAILURE",
+      "scored": false,
+      "answer_returned": false,
+      "last_logged_pending_tokens": 191166,
+      "scheduled_prefix_estimate_tokens": 331008,
+      "logical_cases": 1,
+      "attempt": 2,
+      "note": "Fresh same-profile replay passed resident-free admission but still produced a new NVRM allocation error;512K is not retrieval-qualified."
     }
   ],
+  "long_profile_policy": {
+    "profile": "1m",
+    "profile_sha256": "a40b6878f75eb4b1db2504cb5d20cbad61a6f64c56ffe425dd37f4b9653b5584",
+    "max_running_requests": 1,
+    "allocator_backend": "native",
+    "garbage_collection_threshold": 0.6,
+    "expandable_segments": false,
+    "status": "configuration oracle verified; full-model qualification pending",
+    "not_transferred_to_prod_quality_or_performance": true
+  },
   "registry": {
     "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
     "manifest_digest": "sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9",

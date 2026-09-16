@@ -55,6 +55,7 @@ def profile(name):
     assert int(d['CONTEXT_LENGTH']) in (524288,1048576)
     assert int(d['MAX_RUNNING_REQUESTS']) in (1,8)
     assert d['DSV41_ADAPTIVE_CHUNK']=='1'
+    assert d['PYTORCH_CUDA_ALLOC_CONF'] in ('expandable_segments:False','expandable_segments:False,garbage_collection_threshold:0.6')
     return d,hashlib.sha256(p.read_bytes()).hexdigest()
 
 
@@ -64,7 +65,7 @@ def make_argv(rank,p,image,labels,iface,nccl):
          'DSV41_CHUNK_BUDGET_TOKENS2':p['DSV41_CHUNK_BUDGET_TOKENS2'],'DSV41_CHUNK_MIN':'256','DSV41_CHUNK_MAX':'2048',
          'DSV41_INDEXER_SCORE_BUDGET_MIB':'256','SGLANG_RAGGED_VERIFY_MODE':'static','SGLANG_SIMULATE_ACC_LEN':'-1',
          'SGLANG_DSPARK_ENABLE_SPS_RECORD':'0','SGLANG_VIT_ENABLE_CUDA_GRAPH':'0','SGLANG_FLASHINFER_MOE_FUSED_FINALIZE':'0',
-         'PYTORCH_CUDA_ALLOC_CONF':'expandable_segments:False','SGLANG_SM120_FLASHMLA_BACKEND':'flashinfer',
+         'PYTORCH_CUDA_ALLOC_CONF':p['PYTORCH_CUDA_ALLOC_CONF'],'SGLANG_SM120_FLASHMLA_BACKEND':'flashinfer',
          **nccl,'NCCL_BUFFSIZE':p.get('NCCL_BUFFSIZE','4194304'),'GLOO_SOCKET_IFNAME':iface,'NCCL_SOCKET_IFNAME':iface,'PORT':'30000'}
     a=['docker','run','-d','--name','dsv41-rank','--network','host','--ipc','host','--runtime','nvidia','--device','/dev/infiniband','--cap-add','CAP_IPC_LOCK','--ulimit','memlock=-1','-v',str(MODEL)+':/model:ro']
     for k,v in labels.items():a+=['--label',k+'='+v]

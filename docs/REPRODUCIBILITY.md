@@ -54,7 +54,7 @@ The operator's final retrieval protocol is exactly one ordered two-key case at 3
 
     python3 scripts/niah.py --depths '' --twokey --window 522174 --out <new-512k-result.json> --identity <launch.json> --admission-config <admission-config.json>
 
-For 1M, first stop the idle prod epoch and launch a fresh `1m` profile on the same image; recheck physical capacity and semantic readiness. Use target 1046462 with the same command form. The client checks actual native chat-token counts, ordered exact answers and completion/speculation reserve. Budget a multi-hour request and keep its owner durable. A configured 1M window is not a successful retrieval result; read the measured status in RESULTS.json.
+For 1M, first stop the idle prod epoch and launch a fresh `1m` profile on the same image. This separate C1 profile keeps native graphs/precision and uses `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:False,garbage_collection_threshold:0.6` to proactively reclaim unused native allocator blocks; it does not change the production profile or inherit a full-model pass from the tiny CUDA oracle. Recheck actual effectiveness; recheck physical capacity and semantic readiness. Use target 1046462 with the same command form. The client checks actual native chat-token counts, ordered exact answers and completion/speculation reserve. Budget a multi-hour request and keep its owner durable. A configured 1M window is not a successful retrieval result; read the measured status in RESULTS.json.
 
 ## Public evidence
 

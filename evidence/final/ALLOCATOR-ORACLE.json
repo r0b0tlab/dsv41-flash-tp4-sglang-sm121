@@ -1,0 +1,45 @@
+{
+  "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+  "positive": {
+    "backend": "native",
+    "device_capability": [
+      12,
+      1
+    ],
+    "allocator_settings": {
+      "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:False,garbage_collection_threshold:0.6",
+      "max_split_size": -1,
+      "garbage_collection_threshold": 0.6,
+      "expandable_segments": false,
+      "pinned_num_register_threads": 1,
+      "release_lock_on_cudamalloc": false,
+      "pinned_use_cuda_host_register": false,
+      "graph_capture_record_stream_reuse": false,
+      "max_round_threshold": -1,
+      "max_cached_size": -1,
+      "roundup_power2_divisions": {
+        "1": 0,
+        "2": 0,
+        "4": 0,
+        "8": 0,
+        "16": 0,
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0,
+        "2048": 0,
+        "4096": 0,
+        "8192": 0,
+        "16384": 0,
+        "32768": 0
+      }
+    },
+    "equal": true
+  },
+  "invalid_threshold_1_5_rejected": true,
+  "raw_oracle_sha256": "777bda350b3e5436d4c07afedc0327546b1ceea134c99433974b5271af0f7d75",
+  "scope": "tiny native CUDA configuration/identity-matmul oracle, not a full-model memory qualification",
+  "official_reference": "https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-alloc-conf"
+}
