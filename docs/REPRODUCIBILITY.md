@@ -38,7 +38,7 @@ Do not kill a long request client and leave its server work orphaned. Never stop
 
 ## Evaluation
 
-Run one heavy lane at a time. Safety guards pause new admission on pressure and hard-stop on low memory, fresh NVRM allocation failures, or cgroup OOM. A large `MemAvailable` value alone does not prove that the GPU allocator can obtain memory; the final campaign includes an explicitly retained BFCL infrastructure-abort attempt. Do not weaken guards to turn such an attempt into a score.
+Run one heavy lane at a time. Safety guards pause new admission on pressure and hard-stop on low memory, fresh NVRM allocation failures, or cgroup OOM. Long retrieval additionally requires at least10GiB physically free (`MemFree`) on every rank at lease acknowledgement; run it in a dedicated cold epoch rather than following a long workload mix. Kernel error monitoring requires a privileged, nonempty journal: unprivileged `journalctl` can return success with no visible system records. A large `MemAvailable` value alone does not prove that the GPU allocator can obtain memory; the final campaign includes an explicitly retained BFCL infrastructure-abort attempt. Do not weaken guards to turn such an attempt into a score.
 
 Host tooling: Python 3.12, NumPy, requests, Pillow and pytest, plus `bfcl-eval==2025.12.17` for the frozen BFCL subset. The vision collector additionally uses the separately installed r0b0bench-vision source and dataset. See its own licensing and data setup instructions; data is not bundled here.
 

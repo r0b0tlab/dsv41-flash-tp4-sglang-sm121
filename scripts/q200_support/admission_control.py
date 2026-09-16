@@ -550,5 +550,11 @@ finally:
         lease = self.acquire(row_id)
         try:
             yield lease
-        finally:
+        except BaseException as primary:
+            try:
+                self.release()
+            except Exception as cleanup:
+                primary.add_note(f"Guard release also failed (lease remains fail-closed): {cleanup!r}")
+            raise
+        else:
             self.release()

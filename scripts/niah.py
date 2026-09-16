@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fixed-length NIAH using native chat tokenization and exact ordered answers."""
-import argparse,contextlib,hashlib,json,pathlib,secrets,time,urllib.request
+import argparse,contextlib,hashlib,json,math,pathlib,secrets,time,urllib.request
 from q200_support.admission_control import AdmissionCoordinator
 
 FILLER='The quarterly inventory review concluded without material discrepancies across all regional warehouses and depots.\n'
@@ -83,8 +83,31 @@ def validate_capacity(info,window,target,reserve):
     return {'physical_token_capacity':pool,'max_req_input_len':limit,'capacity_source':'get_server_info observed runtime limits; not configured max_total_tokens'}
 
 
-def generate_case(base,case,timeout,response_path,coordinator,lease_id):
-    with coordinator.request(lease_id) if coordinator else contextlib.nullcontext():
+def load_replay_case(path,expected_sha256,base,model,target,depths):
+    raw=pathlib.Path(path).read_bytes()
+    if hashlib.sha256(raw).hexdigest()!=expected_sha256:raise ValueError('replay case byte hash mismatch')
+    case=json.loads(raw);payload=case['payload']
+    if case['target']!=target or case['depths']!=depths or payload['model']!=model:raise ValueError('replay case identity mismatch')
+    if payload['max_tokens']!=128 or payload['temperature']!=0 or payload['seed']!=42 or payload['chat_template_kwargs']!=KW:raise ValueError('replay generation policy mismatch')
+    if len(payload['messages'])!=1 or payload['messages'][0]['role']!='user':raise ValueError('replay message schema mismatch')
+    text=payload['messages'][0]['content']
+    if len(case['expected'])!=len(depths) or len(set(case['expected']))!=len(depths):raise ValueError('replay answer set mismatch')
+    for i,code in enumerate(case['expected']):
+        if text.count(f'Secret record {i+1}: {code}.\n')!=1:raise ValueError('replay answer missing from original prompt')
+    ids=tokens(base,model,text)
+    if len(ids)!=case['prompt_tokens'] or hashlib.sha256(json.dumps(ids,separators=(',',':')).encode()).hexdigest()!=case['token_sha256']:raise ValueError('replay native token identity mismatch')
+    return case
+
+
+def generate_case(base,case,timeout,response_path,coordinator,lease_id,min_free_bytes=0):
+    with coordinator.request(lease_id) if coordinator else contextlib.nullcontext() as lease:
+        if min_free_bytes:
+            states=lease.get('guard_states',[]) if isinstance(lease,dict) else []
+            if not states:raise ValueError('resident free-memory admission needs acknowledged guard states')
+            for state in states:
+                free=state.get('mem_free')
+                if type(free) is not int or free<min_free_bytes:
+                    raise ValueError(f"insufficient resident free memory on rank {state.get('rank')}; no generation submitted")
         t=time.perf_counter();resp=call(base,'v1/chat/completions',case['payload'],timeout);elapsed=time.perf_counter()-t
         # Persist the genuine reply BEFORE guard release can raise or be interrupted.
         atomic(response_path,resp)
@@ -92,7 +115,8 @@ def generate_case(base,case,timeout,response_path,coordinator,lease_id):
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--base-url',default='http://127.0.0.1:30000');ap.add_argument('--model',default='/model');ap.add_argument('--window',type=int,default=522174);ap.add_argument('--depths',default='0.25,0.50,0.90');ap.add_argument('--twokey',action='store_true');ap.add_argument('--out',required=True);ap.add_argument('--timeout',type=float,default=43200);ap.add_argument('--identity');ap.add_argument('--admission-config');a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--base-url',default='http://127.0.0.1:30000');ap.add_argument('--model',default='/model');ap.add_argument('--window',type=int,default=522174);ap.add_argument('--depths',default='0.25,0.50,0.90');ap.add_argument('--twokey',action='store_true');ap.add_argument('--out',required=True);ap.add_argument('--timeout',type=float,default=43200);ap.add_argument('--identity');ap.add_argument('--admission-config');ap.add_argument('--case-file');ap.add_argument('--case-sha256');ap.add_argument('--min-free-gib',type=float,default=10.0);a=ap.parse_args()
+    if not a.admission_config or not math.isfinite(a.min_free_gib) or a.min_free_gib<=0:raise ValueError('positive resident free-memory floor and guard admission configuration required')
     out=pathlib.Path(a.out);out.parent.mkdir(parents=True,exist_ok=True)
     if out.exists():raise SystemExit('refuse to overwrite NIAH receipt; use a fresh attempt filename')
     info=call(a.base_url,'get_server_info');models=call(a.base_url,'v1/models')
@@ -101,8 +125,10 @@ def main():
     capacity=validate_capacity(info,window,a.window,reserve)
     plan=[[float(x)] for x in a.depths.split(',') if x]+([[0.33,0.66]] if a.twokey else [])
     assert plan and a.window>=4096 and all(0<d<1 for ds in plan for d in ds)
+    if bool(a.case_file)!=bool(a.case_sha256) or (a.case_file and len(plan)!=1):raise ValueError('replay requires one case and both file and exact byte hash')
     result=dict(schema='r0b0tlab.dsv41.niah.v2',status='RUNNING',advertised_window=window,target_prompt_tokens=a.window,reserve=reserve,server_info=info,results=[],prefix_policy='fresh unique nonce per case; no cold-prefill speedup claim')
-    result.update(capacity)
+    result.update(capacity,resident_free_floor_bytes=int(a.min_free_gib*2**30))
+    if a.case_file:result.update(replay_of_case_sha256=a.case_sha256,prefix_policy='same logical case replayed after infrastructure failure in a fresh epoch; no new random case')
     if a.identity:result['identity_sha256']=hashlib.sha256(pathlib.Path(a.identity).read_bytes()).hexdigest()
     atomic(out,result)
     rawdir=out.with_suffix('.cases');rawdir.mkdir(exist_ok=False)
@@ -110,10 +136,10 @@ def main():
     for i,depths in enumerate(plan):
         stage='admission'
         try:
-            case=build_case(a.base_url,a.model,a.window,depths)
+            case=load_replay_case(a.case_file,a.case_sha256,a.base_url,a.model,a.window,depths) if a.case_file else build_case(a.base_url,a.model,a.window,depths)
             atomic(rawdir/f'{i}-request.json',case)
             stage='generation'
-            resp,elapsed=generate_case(a.base_url,case,a.timeout,rawdir/f'{i}-response.json',coordinator,f'niah-{out.stem}-{i}')
+            resp,elapsed=generate_case(a.base_url,case,a.timeout,rawdir/f'{i}-response.json',coordinator,f'niah-{out.stem}-{i}',int(a.min_free_gib*2**30))
             stage='validation'
             if resp['usage']['prompt_tokens']!=case['prompt_tokens']:raise ValueError('usage does not match admitted native chat tokens')
             choice=resp['choices'][0];ok=choice['finish_reason']=='stop' and exact_answer(choice['message'].get('content'),case['expected'])
@@ -122,7 +148,7 @@ def main():
             print('NIAH',depths,'PASS' if ok else 'MODEL_MISS','tokens',case['prompt_tokens'],'seconds',round(elapsed,2),flush=True)
         except Exception as e:
             if stage=='generation' and (rawdir/f'{i}-response.json').exists():stage='guard_release_after_response'
-            result.update(status='INFRA_FAILURE',error=repr(e),error_stage=stage,failed_case=i);atomic(out,result);raise
+            result.update(status='INFRA_FAILURE',error=repr(e),error_notes=getattr(e,'__notes__',[]),error_stage=stage,failed_case=i);atomic(out,result);raise
     result.update(status='COMPLETE',total=len(plan),passed=sum(x['passed'] for x in result['results']));atomic(out,result)
     print(f'NIAH: {result["passed"]}/{result["total"]} PASS')
     if result['passed']!=result['total']:raise SystemExit(2)

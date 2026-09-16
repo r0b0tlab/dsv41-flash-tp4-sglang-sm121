@@ -13,7 +13,7 @@ Campaign state: PRE_NIAH_RESULTS_VERIFIED. This is a measured profile, not a fas
 | cvbench | 39/60 (65.00%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
 | mmvp | 205/300 (68.33%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
 | MMVP paired | 74/150 | Both answers correct in each pair |
-| NIAH 512k | PENDING | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
+| NIAH 512k | RETRY_PENDING | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
 | NIAH 1m | PENDING | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
 
 | Q200 family | Correct | Total |
@@ -95,6 +95,10 @@ Native cells use seed42 and random_range_ratio0: uniformly sampled lengths from1
 | bench-medium-c8 | 1 | FULL_WINDOW_SAMPLED | 60.3/69.0 | 27.7 | 24.15 |
 | bench-medium-c8 | 2 | FULL_WINDOW_SAMPLED | 57.4/64.0 | 26.0 | 24.05 |
 | bench-medium-c8 | 3 | FULL_WINDOW_SAMPLED | 56.4/64.0 | 24.8 | 27.14 |
+| excluded-niah-512k | 0 | FULL_WINDOW_SAMPLED | 67.0/72.0 | 44.3 | 16.76 |
+| excluded-niah-512k | 1 | FULL_WINDOW_SAMPLED | 74.7/80.0 | 51.4 | 18.32 |
+| excluded-niah-512k | 2 | FULL_WINDOW_SAMPLED | 68.1/74.0 | 47.1 | 18.42 |
+| excluded-niah-512k | 3 | FULL_WINDOW_SAMPLED | 70.2/75.0 | 46.9 | 21.30 |
 
 | Evaluation | Request-E2E output tok/s | Total lane wall seconds |
 |---|---|---|
@@ -110,6 +114,8 @@ NVML samples are not wall-outlet power. HTTP output throughput includes prefill 
 A real NVRM allocation failure occurred during the first BFCL attempt after text180. All four guards stopped the runtime; those BFCL outputs are infrastructure-invalid, not scored model failures. Text180 was preserved unchanged and unfinished lanes were retried in a fresh identical-image/profile epoch. This recovery does not claim to repair the underlying allocation failure or establish indefinite service stability.
 
 The first medium-c8 warmup later failed with an asynchronous CUDA illegal-memory-access error reported by rank0 NCCL. The three preceding native cells and completed Q200 were preserved. The missing cell is tested in another identical-image/profile epoch; the failure is retained and no originating kernel or stability repair is claimed.
+
+The first512K retrieval attempt returned no answer after GPU allocation errors; it is infrastructure-invalid, not a model miss. The same logical case is replayed in a dedicated cold epoch. Host safety fixes require complete privileged kernel-journal visibility and10GiB resident-free memory before admission, and preserve the primary transport error if guard cleanup also fails. These are admission/observability repairs, not a claim that the underlying allocator is fixed.
 
 Optional dedicated 2h mixed-workload soak: NOT_RUN. Completed serial evaluations are not relabeled as that soak.
 
@@ -135,4 +141,4 @@ Full machine-readable scores, timing/usage and source hashes: evidence/final/RES
 
 Credit: DeepSeek, SGLang, FlashInfer, PyTorch/Triton, NVIDIA CUDA/CUTLASS/NCCL and the upstream benchmark authors. See THIRD_PARTY_NOTICES.md. Package code is MIT; model/base-image/data retain their own terms.
 
-Results JSON SHA256: 28a25a6fc6ab75a4b9c93d58a4750d11a075113bd692db007369c686a09b6e1e
+Results JSON SHA256: b463cdaee4d9e573a52139c320ab94b8e42864e337707675c1b1b098ae50cf57

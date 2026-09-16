@@ -308,7 +308,6 @@ def read_nvrm_count() -> int:
     """Read the mandatory kernel OOM counter or fail closed."""
     errors: list[str] = []
     commands = (
-        ["journalctl", "-k", "--no-pager", "-o", "cat"],
         ["sudo", "-n", "journalctl", "-k", "--no-pager", "-o", "cat"],
     )
     for command in commands:
@@ -324,7 +323,9 @@ def read_nvrm_count() -> int:
         except (OSError, subprocess.SubprocessError) as exc:
             errors.append(f"{command[0]}:{type(exc).__name__}:{exc}")
             continue
-        if proc.returncode == 0:
+        # Unprivileged journalctl can return rc0 with an empty/partial journal.
+        # This safety signal requires privileged kernel visibility on every rank.
+        if proc.returncode == 0 and proc.stdout.strip() and proc.stdout.strip() != "-- No entries --":
             return proc.stdout.count("NV_ERR_NO_MEMORY")
         errors.append(f"{command[0]}:rc={proc.returncode}:{proc.stderr.strip()}")
     raise GuardError("kernel NV_ERR_NO_MEMORY telemetry is unavailable: " + " | ".join(errors))

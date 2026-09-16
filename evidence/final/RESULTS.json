@@ -199,7 +199,10 @@
   },
   "retrieval": {
     "512k": {
-      "status": "PENDING"
+      "status": "RETRY_PENDING",
+      "logical_cases": 1,
+      "previous_attempt_status": "INFRA_FAILURE",
+      "same_case_replay": true
     },
     "1m": {
       "status": "PENDING"
@@ -467,11 +470,18 @@
       "launch_record_sha256": "4c28df68f0ca9d423697af62c103f080882eeb54e1cb13d4b3023a572ed39025"
     },
     {
-      "role": "medium_c8_and_512k",
+      "role": "medium_c8_and_first_512k_attempt",
       "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
       "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
       "host_launch_source": "d1a6fbc8f2feb5d46097f05056d0522a863a3c4a",
       "launch_record_sha256": "2b2fb210bc78dd59730d05a0c56e081ca19ff45771e78f12b4dfb4442f88e849"
+    },
+    {
+      "role": "512k_same_case_cold_retry",
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+      "host_launch_source": "8437f59d7d274134072ce54245e8e2a92356f098",
+      "launch_record_sha256": "7f32c6e2d19581604f14246ca5b32be48b9fdd8283ebac6fa01bffb785c016c3"
     }
   ],
   "model": {
@@ -553,6 +563,16 @@
       "failure_during": "warmup",
       "originating_kernel": "not established; reported asynchronously by rank0 NCCL watchdog",
       "control": "fresh identical-image/profile epoch for only missing cell; no stability repair claimed"
+    },
+    {
+      "lane": "niah-512k",
+      "status": "INFRA_MEMORY_ALLOCATION_FAILURE",
+      "scored": false,
+      "answer_returned": false,
+      "last_logged_pending_tokens": 223422,
+      "scheduled_prefix_estimate_tokens": 298752,
+      "retry": "same exact logical case in a dedicated cold epoch; no new random case",
+      "safety_repairs": "privileged complete kernel journal required on all ranks; initial resident-free reserve10GiB; primary error preserved across cleanup failure"
     }
   ],
   "registry": {
