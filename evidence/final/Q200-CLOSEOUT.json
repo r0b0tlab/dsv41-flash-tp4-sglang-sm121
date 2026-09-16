@@ -1,0 +1,78 @@
+{
+  "accuracy_pct": 94.5,
+  "candidate_id": "dsv41-tp4-sm121-overlay-v2",
+  "chat_template_kwargs": {
+    "enable_thinking": true,
+    "reasoning_effort": "low",
+    "thinking": true
+  },
+  "correct_count": 189,
+  "definition": "frozen text-180 plus model-independent official BFCL v4 multi_turn_base structural-hard20 subset",
+  "families": {
+    "bfcl_hard20": {
+      "accuracy_pct": 70.0,
+      "correct": 14,
+      "grade_complete": 20,
+      "grader_errors": 0,
+      "incorrect": 6,
+      "n": 20,
+      "scorer": "official bfcl-eval partial evaluation",
+      "transported": 20,
+      "ungraded": 0
+    },
+    "gsm8k": {
+      "accuracy_pct": 96.25,
+      "correct": 77,
+      "grade_complete": 80,
+      "grader_errors": 0,
+      "incorrect": 3,
+      "n": 80,
+      "transported": 80,
+      "ungraded": 0
+    },
+    "hard_reasoning": {
+      "accuracy_pct": 95.0,
+      "correct": 19,
+      "grade_complete": 20,
+      "grader_errors": 0,
+      "incorrect": 1,
+      "n": 20,
+      "transported": 20,
+      "ungraded": 0
+    },
+    "humaneval": {
+      "accuracy_pct": 100.0,
+      "correct": 40,
+      "grade_complete": 40,
+      "grader_errors": 0,
+      "incorrect": 0,
+      "n": 40,
+      "transported": 40,
+      "ungraded": 0
+    },
+    "ifeval": {
+      "accuracy_pct": 97.5,
+      "correct": 39,
+      "grade_complete": 40,
+      "grader_errors": 0,
+      "incorrect": 1,
+      "n": 40,
+      "transported": 40,
+      "ungraded": 0
+    }
+  },
+  "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+  "incorrect_count": 11,
+  "model": "/model",
+  "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+  "schema": "r0b0tlab.qwen38.q200_v2_closeout.v1",
+  "source_artifacts": {
+    "bfcl_manifest_sha256": "0860da504a3db2c3cd73647ecdc2a5ecdb1793d7a5cf3f4f004912f0ef314d4e",
+    "bfcl_summary_sha256": "d30e5e5d5e62ee84683dc4d1f5442276a0f51f184143663c897978c944fc0cac",
+    "text_dataset_sha256": "74623ab9b075120cd6f7a93059cc16d8817a6039dd20118b8f0350279f8b1ed6",
+    "text_summary_sha256": "62a9a260272dedd9c143e6394047c63f682cd390bd6ad6512f65e47864437c9d"
+  },
+  "status": "SCORED",
+  "suite": "Q200-v2",
+  "total_count": 200
+}

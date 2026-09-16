@@ -21,16 +21,14 @@ def server_running(base):
     """Live running-request count is not exposed on /get_server_info (config
     only) with metrics disabled; sample the scheduler's own decode-log lines
     from the rank container instead (authoritative source)."""
-    try:
-        out = subprocess.run(
-            ["docker", "logs", "--since", "30s", "dsv41-rank"],
-            capture_output=True, text=True, timeout=15)
-        text = out.stdout + out.stderr  # sglang logs to stderr
-        running = [int(m) for m in re.findall(
-            r"running-req: (\d+)", text)]
-        return max(running) if running else 0
-    except Exception:
-        return -1
+    with urllib.request.urlopen(base.rstrip("/") + "/get_load", timeout=10) as r:
+        rows = json.load(r)
+    if not isinstance(rows,list) or len(rows)!=1:
+        raise RuntimeError("expected single-DP live load snapshot")
+    item=rows[0]
+    if any(type(item.get(k)) is not int for k in ("num_reqs","num_waiting_reqs")):
+        raise RuntimeError("missing authoritative load counters")
+    return item["num_reqs"] - item["num_waiting_reqs"]
 
 
 def chat(base, n, timeout=900):
@@ -48,7 +46,8 @@ def chat(base, n, timeout=900):
 
 
 def ladder_step(base, conc, dur_s=60):
-    stop = time.perf_counter() + dur_s
+    started = time.perf_counter()
+    stop = started + dur_s
     peak_running = 0
     samples = []
     done = []
@@ -78,9 +77,11 @@ def ladder_step(base, conc, dur_s=60):
         t.join()
     ok = [d for d in done if d[0] is not None]
     toks = sum(d[0] for d in ok)
-    wall = dur_s
+    wall = time.perf_counter() - started
     return {
         "concurrency": conc,
+        "actual_wall_seconds": wall,
+        "requests": done,
         "peak_server_running": peak_running,
         "server_running_samples": samples,
         "completed": len(ok),
@@ -109,6 +110,8 @@ def main():
         with open(args.out, "w") as f:
             json.dump(json_out, f, indent=1)
     print(json.dumps(json_out))
+    if any(r["errors"] or r["peak_server_running"]!=r["concurrency"] for r in results):
+        raise SystemExit("ladder has errors or unproven requested concurrency")
 
 
 if __name__ == "__main__":

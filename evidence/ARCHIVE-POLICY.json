@@ -1,0 +1,327 @@
+{
+  "policy": "Historical raw logs, response records, node guards and trace binaries are retained privately rather than redistributed. Historical summary files are sanitized projections, not original byte hashes. No runtime image bytes were modified. Source main history is not rewritten.",
+  "removed_raw_files": [
+    {
+      "path": "evidence/phase7/trace-rank0.json.gz",
+      "sha256": "3fd9e6e0a67df016bd94aa00991a0a1393da983471f138b8a3ccbf8ff5d55703",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-final/chain.log",
+      "sha256": "0983ddc25478d3ebc9a9047c31bf420ffdbb0ceada86121f18df75f16da47c09",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-final/medium-c1.log",
+      "sha256": "73821ea90d672b1974d5fa55c6a5903e9456bf33fef7e9e9fa2b4e2ca0fcf51f",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-final/medium-c8.log",
+      "sha256": "72ca3200c364b0583899576e0d80a651ffa3fb2f9f66357d79ced8fafd2e603e",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-final/short-c1.log",
+      "sha256": "d6d860f893fd94eec6768780019c71fd5ece94204f4841e57f4dcfa963b072a8",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-final/short-c8.log",
+      "sha256": "add59abd00403ac794a8f497bc454eb5d066291aea21b40aa376ab4e4614f0b5",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-nosps/bench-maxperf/chain.log",
+      "sha256": "0983ddc25478d3ebc9a9047c31bf420ffdbb0ceada86121f18df75f16da47c09",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-nosps/bench-maxperf/medium-c1.log",
+      "sha256": "73821ea90d672b1974d5fa55c6a5903e9456bf33fef7e9e9fa2b4e2ca0fcf51f",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-nosps/bench-maxperf/medium-c8.log",
+      "sha256": "72ca3200c364b0583899576e0d80a651ffa3fb2f9f66357d79ced8fafd2e603e",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-nosps/bench-maxperf/short-c1.log",
+      "sha256": "d6d860f893fd94eec6768780019c71fd5ece94204f4841e57f4dcfa963b072a8",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-nosps/bench-maxperf/short-c8.log",
+      "sha256": "add59abd00403ac794a8f497bc454eb5d066291aea21b40aa376ab4e4614f0b5",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-sps/chain.log",
+      "sha256": "d1ac0e1a49fb610330e4639634d0ff4db9dc53b58a0ff051f646022befe65137",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-sps/medium-c1.log",
+      "sha256": "9d5d3a32930b79950aba5f8053f193046b2e3db82b7b470669f031194ad6a185",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-sps/medium-c8.log",
+      "sha256": "ee186a5a5e72212b7507d191f15651f895758672fe78ec459bb3482cf6fb5eac",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-sps/short-c1.log",
+      "sha256": "973e0eaf47bef7f571c08dd4bbda71705b89ada4d6f3b0e8d4a4649c9bccf609",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-sps/short-c8.log",
+      "sha256": "22f55cb9ef16cb9e6a3ce2523b1b8ccd3c73e46d0eca44e6e36382837b19de41",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-v4-capaccept/chain.log",
+      "sha256": "15bce0e4d03484513428df5d3b6112b8328063f518de86d974b2684154398ed9",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-v4-capaccept/medium-c1.log",
+      "sha256": "271edf994976a083c4d1d0d36c0589bfdbe0617700ade914c620a0a455b03315",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-v4-capaccept/medium-c8.log",
+      "sha256": "f1a7ee71838ae8850313f51467e5adef0947fc8678df080e8ba3511c73b38058",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-v4-capaccept/short-c1.log",
+      "sha256": "84e8bdadd6396c0518c0ee9f2be9c803cd26ace0a1e5d6ed96c7f0b281f88558",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-v4-capaccept/short-c8.log",
+      "sha256": "ebf3dc93dd11dea23403695e8084988c3ee9967c946ce2a3e5cdd4c5c5a972c7",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-prod-tp4/chain.log",
+      "sha256": "0983ddc25478d3ebc9a9047c31bf420ffdbb0ceada86121f18df75f16da47c09",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-prod-tp4/medium-c1.log",
+      "sha256": "73821ea90d672b1974d5fa55c6a5903e9456bf33fef7e9e9fa2b4e2ca0fcf51f",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-prod-tp4/medium-c8.log",
+      "sha256": "72ca3200c364b0583899576e0d80a651ffa3fb2f9f66357d79ced8fafd2e603e",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-prod-tp4/short-c1.log",
+      "sha256": "d6d860f893fd94eec6768780019c71fd5ece94204f4841e57f4dcfa963b072a8",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/bench-prod-tp4/short-c8.log",
+      "sha256": "add59abd00403ac794a8f497bc454eb5d066291aea21b40aa376ab4e4614f0b5",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/concurrency_ladder/lane.log",
+      "sha256": "e90a82d1496d91ec42a5c551ae8ea7d65ca04800dc1eb3639b9b70ad68325816",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/niah-1m/run-v2.log",
+      "sha256": "9ca361cb8043817b6ab90c47d3e13e0c411ec97beb6513791d4879a492f69089",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/niah-1m/run-v3.log",
+      "sha256": "9d8fb6fcc6c01216b014ae2e6226470b21727e71bfe6ed7e160ce0c199e9584e",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/niah-1m/run.log",
+      "sha256": "12995e18418d8f215aefe9dceeceba9f44c62302b54a85a8d6212ae4357a616f",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/niah-512k.log",
+      "sha256": "14bbf7484f221648b0216460fd47a7bf359a8bef1066a5d94d25dd0fe60cf503",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/orchestrator-run.log",
+      "sha256": "812aa2be28cde82a1af82ecf929f3bedbdb7e9ee8e0fbd16bb31a329db98a528",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/orchestrator.log",
+      "sha256": "812aa2be28cde82a1af82ecf929f3bedbdb7e9ee8e0fbd16bb31a329db98a528",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200.log",
+      "sha256": "c4a1e284e3cc2fe721a61223c5c7d0c071c4bd575c05bc797fdaf114b7ae3cce",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200/lane.log",
+      "sha256": "5c53d6362b882f22cbbdb10ef2ad5e90c67b851b842c40e81793ee0c306d756d",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/admission-config.json",
+      "sha256": "0fef579e8f3d8e55e663c13c5f5ee362446d3d434fe33294b68012d49b204f35",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/bfcl-hard20-root/bfcl-hard20-freshness.json",
+      "sha256": "e61ba3dc42108fc57fe2e76ec19030f69c8c7a834fb2987a0bdcf87877f7200b",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/console.log",
+      "sha256": "13b876deae77aced67a3ff20757af5ce800c59ce108419dd750154a3c70b05e9",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/guards/rank0/ADMISSION-STATE.json",
+      "sha256": "3042833dd29d4542849926e237fa25354d652306e4d17abb61915a788894066c",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/guards/rank0/MEMORY-GUARD-STOPPED",
+      "sha256": "dd9bbb127e2e0b6385e1c89d641a21b7929e459e7e8d788c29d4184febb88ed3",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/guards/rank0/guard.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/guards/rank0/memory-guard.jsonl",
+      "sha256": "6c4d0e8c845a95ded3524700a3982e07c424e58f216b63c2d7f0782d5b517873",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/guards/rank0/memory-guard.pid",
+      "sha256": "4d2e18dd32c4d28f0f26231aebd6d71cd6a989696c28020e09b7f16e72982022",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/guards/rank0/request-state.json",
+      "sha256": "c3d850c60817a00e2b4005ba4185fa2d4e75e4b08b087e35326bd42ac73787d5",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/identity.env",
+      "sha256": "66f73b2aaec613b895ab181634339de365d47b80448f48c3c82cffd4c648e599",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/quality-run.log",
+      "sha256": "8f09e2123097401246d56689764437647fbe439a4b0521c5280516116a79a6ba",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/rows.jsonl",
+      "sha256": "b960f4f2490b6118d7e1d6857c8c862d728d83aa212942acaee4f3f8ac427cbd",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/run.log",
+      "sha256": "1af6a8e979fc3e0bbc199aa3d126f7f8caea3c840d731c6a095caedc887a5805",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/serve-relaunch.log",
+      "sha256": "60d4153107a71ec0007aed67da5436070122b658f711b3e47823035970681e33",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/rbv-run1.log",
+      "sha256": "d0323a19d6ed520993044f3b3519002efb04bc1a473b82d6b6a8a21a325abdbe",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/rbv/run1/rows.jsonl",
+      "sha256": "86a909dd921ab386b0bb54ce25033f0b6c7c6759371e67b76a36c9272a11c78b",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/short_lanes/lane.log",
+      "sha256": "5f0bfd19071090e1006decdf70400c41c4b2b025c895bb5a0e84ee2fdda5796b",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/sps/profiler.log",
+      "sha256": "679ed10aeb60c20b539528b8f4541a2dd86ce19d909b47ae24afdeefbeb9c687",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/sps/sps-table.records.jsonl",
+      "sha256": "0a36d81e86a065cf2be1901c78b18f52e7ee37dbd81c3f0e37819943ea9ac09d",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/sps/sps-table.rounds.jsonl",
+      "sha256": "69deace8f0b6628e672ccf3c5f72ae3900e30e27fedccb859cd378235f329c76",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/vision/lane.log",
+      "sha256": "86255755dc387183b8501a2656468ac9150620e8d63387b90fcdf6e0190019b5",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/vision/rows.jsonl",
+      "sha256": "3b450d6cf095d826e7f55197ea93d7f79a2a9594332703aadedfe6c8458c677b",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/warm/warm-run.log",
+      "sha256": "7f398615b3c00b37d3f4bd7ad064dea028cbff305080cf5b6ce5f1a50b8c308e",
+      "reason": "private raw operational or response evidence; retained in original campaign archive"
+    },
+    {
+      "path": "evidence/phase9/q200v2-proper/manual-evidence.json",
+      "original_private_sha256": "cda4ba384ee103dbc50d8ce1fd31d25baf19d1e933609d36d3b5a6a11c62b353",
+      "reason": "answer-bearing historical manual narrative; retain privately"
+    }
+  ],
+  "malformed_legacy_warmups": [
+    {
+      "path": "evidence/phase9/bench-maxperf-final/warmup.json",
+      "sha256": "3bfddf7655c2b375b9382d25add29448f99ccb08ae63a497c41137e70588b1ce",
+      "error": "malformed historical raw JSON; not claim eligible"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-nosps/bench-maxperf/warmup.json",
+      "sha256": "3bfddf7655c2b375b9382d25add29448f99ccb08ae63a497c41137e70588b1ce",
+      "error": "malformed historical raw JSON; not claim eligible"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-sps/warmup.json",
+      "sha256": "ac93b4aa613c3ed6ccce62bde7d8386bda0ec1182d4295cfbb91ad42037e0c59",
+      "error": "malformed historical raw JSON; not claim eligible"
+    },
+    {
+      "path": "evidence/phase9/bench-maxperf-v4-capaccept/warmup.json",
+      "sha256": "b4d5abcc5fae75e85a6220827f8f68580b786dc7341653fe4344f261cd02a85d",
+      "error": "malformed historical raw JSON; not claim eligible"
+    },
+    {
+      "path": "evidence/phase9/bench-prod-tp4/warmup.json",
+      "sha256": "3bfddf7655c2b375b9382d25add29448f99ccb08ae63a497c41137e70588b1ce",
+      "error": "malformed historical raw JSON; not claim eligible"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+  "embedded_source_revision": "df92c15b448506575953adfbd137ab83c249e2b1",
+  "source_revision_scope": "local build-provenance commit, not a public checkout promise; public recipe content equivalence proven by hashes",
+  "upstream_source_revision": "da64c5cbb8cf6bfd39be19da43573fdfd484c43a",
+  "files": {
+    "adapter/health.py": {
+      "sha256": "c619746277afd1fe11591cc6d5326bc944564d38487bf1f181f21900f7afd1a9",
+      "image_path": "/opt/dsv41/adapter/health.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "adapter/sitecustomize.py": {
+      "sha256": "c83992e6900d0437aa31aa3b99bee2d54766698edcf7927ffcb06f6a33ccac76",
+      "image_path": "/opt/dsv41/adapter/sitecustomize.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "adapter/sglang_patch/engram_file_store.py": {
+      "sha256": "da4a26b6e0c6692055aba24561ab73762a7b3637531d908911a9e14756bfb78d",
+      "image_path": "/opt/dsv41/adapter/sglang_patch/engram_file_store.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "adapter/sglang_patch/prefill_chunk_sizer.py": {
+      "sha256": "5115f289b1b4b38dce761790739f185909a235131d904a98540b1803fb7f28d2",
+      "image_path": "/opt/dsv41/adapter/sglang_patch/prefill_chunk_sizer.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "adapter/sglang_patch/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "image_path": "/opt/dsv41/adapter/sglang_patch/__init__.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "docker/q200/q200_sandbox_driver.py": {
+      "sha256": "cac0513ca9bfcf5bbaa8ef55b0b14f1bda86262faf3ab9557f7a90d49aa6bccf",
+      "image_path": "/opt/r0b0tlab/q200_sandbox_driver.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "docker/Dockerfile": {
+      "sha256": "8d96f8092e84be53ed279fd40bf5b981a404184f3af41336f9e2d1969f96e7c9"
+    },
+    ".dockerignore": {
+      "sha256": "d2aa3dd8a4e615f728d6e299277db7d00978e333846116ec290295227fdc9b0b"
+    }
+  },
+  "publication_changes": "host launch inventory/privacy and documentation only; embedded adapter and sandbox bytes unchanged"
+}

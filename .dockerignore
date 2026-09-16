@@ -1,0 +1,9 @@
+**
+!adapter/
+!adapter/*.py
+!adapter/sglang_patch/
+!adapter/sglang_patch/*.py
+!docker/
+!docker/Dockerfile
+!docker/q200/
+!docker/q200/q200_sandbox_driver.py

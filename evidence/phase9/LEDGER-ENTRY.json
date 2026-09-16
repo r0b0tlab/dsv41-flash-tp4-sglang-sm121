@@ -1,7 +1,7 @@
 {
   "schema": "r0b0tlab.dsv41flash.phase9.serial.v1",
   "entry_id": "dsv41-flash-tp4-sglang-sm121-20260913T212000Z",
-  "model_display": "DeepSeek-V4.1-Flash (fp8, unmodified) — SGLang TP=4/EP=4 + DSpark + Engram",
+  "model_display": "DeepSeek-V4.1-Flash (fp8, unmodified) \u2014 SGLang TP=4/EP=4 + DSpark + Engram",
   "hardware": "4x NVIDIA DGX Spark (GB10/SM121), CRS812 200G RoCE fabric, TP=4/EP=4, mem_fraction_static=0.80, max_total_tokens=1099776, KV fp8_e4m3",
   "image": "ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121:overlay-v1",
   "repo": "https://github.com/r0b0tlab/dsv41-flash-tp4-sglang-sm121",
@@ -9,27 +9,60 @@
   "lanes": {
     "concurrency_ladder": {
       "steps": [
-        {"c": 1, "peak_server_running": 1, "aggregate_tok_s": 53.3, "errors": 0},
-        {"c": 2, "peak_server_running": 2, "aggregate_tok_s": 86.7, "errors": 0},
-        {"c": 4, "peak_server_running": 4, "aggregate_tok_s": 120.0, "errors": 0},
-        {"c": 8, "peak_server_running": 8, "aggregate_tok_s": 160.0, "errors": 0}
+        {
+          "c": 1,
+          "peak_server_running": 1,
+          "aggregate_tok_s": 53.3,
+          "errors": 0
+        },
+        {
+          "c": 2,
+          "peak_server_running": 2,
+          "aggregate_tok_s": 86.7,
+          "errors": 0
+        },
+        {
+          "c": 4,
+          "peak_server_running": 4,
+          "aggregate_tok_s": 120.0,
+          "errors": 0
+        },
+        {
+          "c": 8,
+          "peak_server_running": 8,
+          "aggregate_tok_s": 160.0,
+          "errors": 0
+        }
       ],
       "method": "counting-100 decode, 60s/step, running-req sampled from rank scheduler decode logs"
     },
     "warm_throughput": {
-      "short_c1": 16.9, "medium_c1": 13.5, "prose_c1": 10.5,
-      "counting_c1": 38.6, "counting_c4": 112.3,
-      "units": "tok/s aggregate", "dspark_accept_len_steady": 5.85
+      "short_c1": 16.9,
+      "medium_c1": 13.5,
+      "prose_c1": 10.5,
+      "counting_c1": 38.6,
+      "counting_c4": 112.3,
+      "units": "tok/s aggregate",
+      "dspark_accept_len_steady": 5.85
     },
     "vision_canary_cvbench": {
-      "correct": 38, "rows": 60, "accuracy": 0.6333,
-      "wilson95": [0.5068, 0.7438],
-      "runner": "r0b0bench-vision v1.0", "contract_sha256": "2b80e543d489e86eb8fd2abf145ae2c5647166f8a9ef5567a243d0974c4ef210",
-      "subaxis": "Count", "workers": 1, "serial": true
+      "correct": 38,
+      "rows": 60,
+      "accuracy": 0.6333,
+      "wilson95": [
+        0.5068,
+        0.7438
+      ],
+      "runner": "r0b0bench-vision v1.0",
+      "contract_sha256": "2b80e543d489e86eb8fd2abf145ae2c5647166f8a9ef5567a243d0974c4ef210",
+      "subaxis": "Count",
+      "workers": 1,
+      "serial": true
     },
     "q200v2_text180_lite": {
-      "gsm8k": "15/15", "other_families": "NOT_SCORED (exec sandbox + ifeval strict + manual rubric required; lite harness cannot grade)",
-      "status": "partial-by-design; full Q200v2 needs r0b0bench sandbox driver — post-publication"
+      "gsm8k": "15/15",
+      "other_families": "NOT_SCORED (exec sandbox + ifeval strict + manual rubric required; lite harness cannot grade)",
+      "status": "partial-by-design; full Q200v2 needs r0b0bench sandbox driver \u2014 post-publication"
     },
     "niah": {
       "status": "DEFERRED",

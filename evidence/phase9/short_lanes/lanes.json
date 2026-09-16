@@ -1,32 +1,32 @@
 {
- "short_c1": {
-  "aggregate_tok_s": 4.22,
-  "per_stream_tok_s": 4.22,
-  "tokens": 256,
-  "wall_s": 60.64
- },
- "medium_c1": {
-  "aggregate_tok_s": 7.74,
-  "per_stream_tok_s": 7.74,
-  "tokens": 366,
-  "wall_s": 47.28
- },
- "prose_c1": {
-  "aggregate_tok_s": 7.78,
-  "per_stream_tok_s": 7.78,
-  "tokens": 584,
-  "wall_s": 75.1
- },
- "counting_c1": {
-  "aggregate_tok_s": 22.45,
-  "per_stream_tok_s": 22.45,
-  "tokens": 300,
-  "wall_s": 13.37
- },
- "counting_c4": {
-  "aggregate_tok_s": 80.81,
-  "per_stream_tok_s": 20.2,
-  "tokens": 800,
-  "wall_s": 9.9
- }
+  "short_c1": {
+    "aggregate_tok_s": 4.22,
+    "per_stream_tok_s": 4.22,
+    "tokens": 256,
+    "wall_s": 60.64
+  },
+  "medium_c1": {
+    "aggregate_tok_s": 7.74,
+    "per_stream_tok_s": 7.74,
+    "tokens": 366,
+    "wall_s": 47.28
+  },
+  "prose_c1": {
+    "aggregate_tok_s": 7.78,
+    "per_stream_tok_s": 7.78,
+    "tokens": 584,
+    "wall_s": 75.1
+  },
+  "counting_c1": {
+    "aggregate_tok_s": 22.45,
+    "per_stream_tok_s": 22.45,
+    "tokens": 300,
+    "wall_s": 13.37
+  },
+  "counting_c4": {
+    "aggregate_tok_s": 80.81,
+    "per_stream_tok_s": 20.2,
+    "tokens": 800,
+    "wall_s": 9.9
+  }
 }

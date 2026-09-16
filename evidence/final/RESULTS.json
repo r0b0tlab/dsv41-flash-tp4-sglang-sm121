@@ -1,0 +1,574 @@
+{
+  "schema": "r0b0tlab.dsv41.final-results.v1",
+  "status": "PRE_NIAH_RESULTS_VERIFIED",
+  "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+  "runtime_source": "df92c15b448506575953adfbd137ab83c249e2b1",
+  "measurement_host_source": "5655096cac399750f38dd7f13d5350153b5aa0a7",
+  "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+  "profile": "prod",
+  "context_length": 524288,
+  "engine_source": "da64c5cbb8cf6bfd39be19da43573fdfd484c43a",
+  "runtime": {
+    "tp": 4,
+    "ep": 4,
+    "dspark_k": 5,
+    "vision": true,
+    "vit_graphs": false,
+    "decode_graphs": true,
+    "mem_fraction_static": 0.8,
+    "nccl_buffsize": 1048576,
+    "chunk_budget_tokens_squared": 300000000
+  },
+  "retained_evidence_not_redone": true,
+  "restart_equivalence": {
+    "image": true,
+    "profile": true,
+    "all_rank_argv_except_owner_labels": true,
+    "semantic_canaries": "7/7"
+  },
+  "quality": {
+    "status": "SCORED",
+    "text180": {
+      "status": "SCORED",
+      "rows": 180,
+      "correct_count": 175,
+      "incorrect_count": 5,
+      "ungraded_count": 0,
+      "grader_error_count": 0,
+      "families": {
+        "gsm8k": {
+          "accuracy_pct": 96.25,
+          "correct": 77,
+          "grade_complete": 80,
+          "grader_errors": 0,
+          "incorrect": 3,
+          "n": 80,
+          "transported": 80,
+          "ungraded": 0
+        },
+        "hard_reasoning": {
+          "accuracy_pct": 95.0,
+          "correct": 19,
+          "grade_complete": 20,
+          "grader_errors": 0,
+          "incorrect": 1,
+          "n": 20,
+          "transported": 20,
+          "ungraded": 0
+        },
+        "humaneval": {
+          "accuracy_pct": 100.0,
+          "correct": 40,
+          "grade_complete": 40,
+          "grader_errors": 0,
+          "incorrect": 0,
+          "n": 40,
+          "transported": 40,
+          "ungraded": 0
+        },
+        "ifeval": {
+          "accuracy_pct": 97.5,
+          "correct": 39,
+          "grade_complete": 40,
+          "grader_errors": 0,
+          "incorrect": 1,
+          "n": 40,
+          "transported": 40,
+          "ungraded": 0
+        }
+      },
+      "transport_complete": true,
+      "grade_complete": true,
+      "dataset_sha256": "74623ab9b075120cd6f7a93059cc16d8817a6039dd20118b8f0350279f8b1ed6",
+      "run_identity_sha256": "412c6f58471fd88406d435fe568e9e462c2fe7ceca804c8d6a273741d38706a2",
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "low",
+        "thinking": true
+      },
+      "efficiency": {
+        "rows": 180,
+        "timed_rows": 180,
+        "completion_tokens": 97034,
+        "prompt_tokens": 17077,
+        "request_seconds": 5566.2480001990025,
+        "e2e_output_tok_s": 17.432568580582625,
+        "method": "server usage / sum of HTTP request elapsed; includes prefill and reasoning, excludes admission and grading"
+      },
+      "raw_rows_sha256": "b743a9c48dc9dc521ce0e0fc9db27ed5e69908dccc31546e02ddc8de2bbb0ef3"
+    },
+    "bfcl20": {
+      "status": "SCORED",
+      "correct": 14,
+      "total": 20,
+      "http_requests": 318,
+      "http_error_count": 0,
+      "source_hashes": {
+        "results": "696626bb3e14432fd11157eb477031ccaab6e9a0e147bcd93d126b7ffb7b632e",
+        "score": "fbcb3451ea8e22ceee855a4e4c772cfcbc9c7da27cf86b6901d3f0806f98ee40",
+        "timing": "85c141835259f855654b7a26497d209de4b9b7452512f2fe6dc9c9472490a99b"
+      },
+      "efficiency": {
+        "rows": 20,
+        "timed_rows": 0,
+        "completion_tokens": 0,
+        "prompt_tokens": 0,
+        "request_seconds": 0,
+        "e2e_output_tok_s": null,
+        "method": "server usage / sum of HTTP request elapsed; includes prefill and reasoning, excludes admission and grading"
+      }
+    },
+    "closure": {
+      "accuracy_pct": 94.5,
+      "candidate_id": "dsv41-tp4-sm121-overlay-v2",
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "low",
+        "thinking": true
+      },
+      "correct_count": 189,
+      "definition": "frozen text-180 plus model-independent official BFCL v4 multi_turn_base structural-hard20 subset",
+      "families": {
+        "bfcl_hard20": {
+          "accuracy_pct": 70.0,
+          "correct": 14,
+          "grade_complete": 20,
+          "grader_errors": 0,
+          "incorrect": 6,
+          "n": 20,
+          "scorer": "official bfcl-eval partial evaluation",
+          "transported": 20,
+          "ungraded": 0
+        },
+        "gsm8k": {
+          "accuracy_pct": 96.25,
+          "correct": 77,
+          "grade_complete": 80,
+          "grader_errors": 0,
+          "incorrect": 3,
+          "n": 80,
+          "transported": 80,
+          "ungraded": 0
+        },
+        "hard_reasoning": {
+          "accuracy_pct": 95.0,
+          "correct": 19,
+          "grade_complete": 20,
+          "grader_errors": 0,
+          "incorrect": 1,
+          "n": 20,
+          "transported": 20,
+          "ungraded": 0
+        },
+        "humaneval": {
+          "accuracy_pct": 100.0,
+          "correct": 40,
+          "grade_complete": 40,
+          "grader_errors": 0,
+          "incorrect": 0,
+          "n": 40,
+          "transported": 40,
+          "ungraded": 0
+        },
+        "ifeval": {
+          "accuracy_pct": 97.5,
+          "correct": 39,
+          "grade_complete": 40,
+          "grader_errors": 0,
+          "incorrect": 1,
+          "n": 40,
+          "transported": 40,
+          "ungraded": 0
+        }
+      },
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "incorrect_count": 11,
+      "model": "/model",
+      "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+      "schema": "r0b0tlab.qwen38.q200_v2_closeout.v1",
+      "source_artifacts": {
+        "bfcl_manifest_sha256": "0860da504a3db2c3cd73647ecdc2a5ecdb1793d7a5cf3f4f004912f0ef314d4e",
+        "bfcl_summary_sha256": "d30e5e5d5e62ee84683dc4d1f5442276a0f51f184143663c897978c944fc0cac",
+        "text_dataset_sha256": "74623ab9b075120cd6f7a93059cc16d8817a6039dd20118b8f0350279f8b1ed6",
+        "text_summary_sha256": "62a9a260272dedd9c143e6394047c63f682cd390bd6ad6512f65e47864437c9d"
+      },
+      "status": "SCORED",
+      "suite": "Q200-v2",
+      "total_count": 200
+    }
+  },
+  "retrieval": {
+    "512k": {
+      "status": "PENDING"
+    },
+    "1m": {
+      "status": "PENDING"
+    }
+  },
+  "soak": {
+    "status": "NOT_RUN",
+    "note": "Optional separate 2h mixed-workload soak; serial evaluation is not substituted for it."
+  },
+  "native_bench_serving": {
+    "bench-short-c1": {
+      "completed": 20,
+      "duration": 136.07337331599956,
+      "total_input_tokens": 1505,
+      "total_output_tokens": 1139,
+      "output_throughput": 8.37048404286216,
+      "request_throughput": 0.14697952665254013,
+      "mean_ttft_ms": 1869.6611191999182,
+      "median_ttft_ms": 1782.5577985004202,
+      "mean_tpot_ms": 104.94935031188616,
+      "median_itl_ms": 60.42963316667738,
+      "random_input_len": 128,
+      "random_output_len": 128,
+      "max_concurrency": 1,
+      "random_range_ratio": 0.0,
+      "total_output_tokens_retokenized": 1137,
+      "raw_sha256": "f2888255fda0f5c8eaa97201a215cd95e21ef767ed68c9448610b1d0b77854a7",
+      "retokenized_output_tok_s": 8.355786090196906,
+      "token_method": "Native harness nominal output count (falls back to requested length when stream usage is absent); independently reported decoded-text retokenization count also retained. Input/output lengths are uniformly sampled from1 through configured maxima at range_ratio0, not fixed shapes."
+    },
+    "bench-short-c8": {
+      "completed": 20,
+      "duration": 99.62831748299868,
+      "total_input_tokens": 1505,
+      "total_output_tokens": 1139,
+      "output_throughput": 11.432492576163071,
+      "request_throughput": 0.20074613829961496,
+      "mean_ttft_ms": 10687.14452739996,
+      "median_ttft_ms": 2997.481831999721,
+      "mean_tpot_ms": 1635.9629850374565,
+      "median_itl_ms": 237.1120713332857,
+      "random_input_len": 128,
+      "random_output_len": 128,
+      "max_concurrency": 8,
+      "random_range_ratio": 0.0,
+      "total_output_tokens_retokenized": 1136,
+      "raw_sha256": "c4d64faac6b9839177a264bf824dae93a0bd9fe749b6e66de4148181d245c395",
+      "retokenized_output_tok_s": 11.40238065541813,
+      "token_method": "Native harness nominal output count (falls back to requested length when stream usage is absent); independently reported decoded-text retokenization count also retained. Input/output lengths are uniformly sampled from1 through configured maxima at range_ratio0, not fixed shapes."
+    },
+    "bench-medium-c1": {
+      "completed": 20,
+      "duration": 576.6644215420001,
+      "total_input_tokens": 20321,
+      "total_output_tokens": 5875,
+      "output_throughput": 10.1879009360249,
+      "request_throughput": 0.03468221595242519,
+      "mean_ttft_ms": 6798.547655600123,
+      "median_ttft_ms": 4941.66247999965,
+      "mean_tpot_ms": 72.01420415326066,
+      "median_itl_ms": 56.08026433340759,
+      "random_input_len": 2048,
+      "random_output_len": 512,
+      "max_concurrency": 1,
+      "random_range_ratio": 0.0,
+      "total_output_tokens_retokenized": 5859,
+      "raw_sha256": "8402e80ee191eb6e4f4e35b2aab0ca4377c76ba95ce8d16c9f10fb7cc689cca4",
+      "retokenized_output_tok_s": 10.160155163262958,
+      "token_method": "Native harness nominal output count (falls back to requested length when stream usage is absent); independently reported decoded-text retokenization count also retained. Input/output lengths are uniformly sampled from1 through configured maxima at range_ratio0, not fixed shapes."
+    },
+    "bench-medium-c8": {
+      "completed": 20,
+      "duration": 829.393920540002,
+      "total_input_tokens": 20321,
+      "total_output_tokens": 5875,
+      "output_throughput": 7.0834857291634155,
+      "request_throughput": 0.02411399397162014,
+      "mean_ttft_ms": 31598.61741959976,
+      "median_ttft_ms": 18575.7175130002,
+      "mean_tpot_ms": 978.7881615307958,
+      "median_itl_ms": 522.6742442500836,
+      "random_input_len": 2048,
+      "random_output_len": 512,
+      "max_concurrency": 8,
+      "random_range_ratio": 0.0,
+      "total_output_tokens_retokenized": 5861,
+      "raw_sha256": "7491afdbf131453889f16708133c829b6ed15725046bcbc6da394b4d43832dc9",
+      "retokenized_output_tok_s": 7.066605933383282,
+      "token_method": "Native harness nominal output count (falls back to requested length when stream usage is absent); independently reported decoded-text retokenization count also retained. Input/output lengths are uniformly sampled from1 through configured maxima at range_ratio0, not fixed shapes."
+    }
+  },
+  "primary": {
+    "short_c1": {
+      "aggregate_tok_s": 30.754762446264543,
+      "per_stream_tok_s": 30.756227461441636,
+      "batch_wall_s": 8.32391407500836,
+      "repeats": 3,
+      "prompt_tokens": [
+        1220,
+        1220,
+        1220
+      ]
+    },
+    "medium_c1": {
+      "aggregate_tok_s": 11.217832614876396,
+      "per_stream_tok_s": 11.218010392266006,
+      "batch_wall_s": 34.85521788598271,
+      "repeats": 3,
+      "prompt_tokens": [
+        2070,
+        2070,
+        2070
+      ]
+    },
+    "prose_c1": {
+      "aggregate_tok_s": 6.774762855170798,
+      "per_stream_tok_s": 6.774851557192601,
+      "batch_wall_s": 74.0985346249945,
+      "repeats": 3,
+      "prompt_tokens": [
+        32,
+        32,
+        32
+      ]
+    }
+  },
+  "counting": {
+    "counting_c1": {
+      "aggregate_tok_s": 58.33032308344563,
+      "per_stream_tok_s": 58.33870151493629,
+      "batch_wall_s": 5.143122550012777,
+      "repeats": 3,
+      "prompt_tokens": [
+        30,
+        30,
+        30
+      ]
+    },
+    "counting_c4": {
+      "aggregate_tok_s": 112.74792855315273,
+      "per_stream_tok_s": 28.192431540019793,
+      "batch_wall_s": 7.095474039000692,
+      "repeats": 3,
+      "prompt_tokens": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ]
+    }
+  },
+  "ladder": {
+    "status": "VERIFIED_WITH_LOAD_COUNTER_CAVEAT",
+    "source_sha256": "2f08637a1897b72486505d2af066fdda34b45e09d38a1f698de46347b1d9f860",
+    "steps": [
+      {
+        "concurrency": 1,
+        "steady_running": 1,
+        "longest_exact_sample_run": 60,
+        "raw_max_load_count": 1,
+        "over_client_samples": 0,
+        "completed": 17,
+        "errors": 0,
+        "aggregate_tok_s": 55.551446492230845
+      },
+      {
+        "concurrency": 2,
+        "steady_running": 2,
+        "longest_exact_sample_run": 64,
+        "raw_max_load_count": 2,
+        "over_client_samples": 0,
+        "completed": 28,
+        "errors": 0,
+        "aggregate_tok_s": 85.93765658432197
+      },
+      {
+        "concurrency": 4,
+        "steady_running": 4,
+        "longest_exact_sample_run": 50,
+        "raw_max_load_count": 7,
+        "over_client_samples": 2,
+        "completed": 36,
+        "errors": 0,
+        "aggregate_tok_s": 110.47945663807411
+      },
+      {
+        "concurrency": 8,
+        "steady_running": 8,
+        "longest_exact_sample_run": 22,
+        "raw_max_load_count": 8,
+        "over_client_samples": 0,
+        "completed": 48,
+        "errors": 0,
+        "aggregate_tok_s": 136.66904923977273
+      }
+    ],
+    "total_completed": 129,
+    "method": "server-usage tokens / actual complete-client wall; sustained exact load counts, not raw maximum",
+    "caveat": "Pinned load_inquirer.py:100 counts len(get_running_batch().reqs), without filtering finished requests. Raw c4 count transiently exceeded client concurrency; raw maxima retained and only sustained exact levels qualified. Original rc1 receipt retained."
+  },
+  "k3_comparison": {
+    "short_c1": {
+      "aggregate_tok_s": 25.87449501398324,
+      "per_stream_tok_s": 25.8757745161389,
+      "batch_wall_s": 9.893912900006399,
+      "repeats": 3,
+      "prompt_tokens": [
+        1220,
+        1220,
+        1220
+      ]
+    },
+    "medium_c1": {
+      "aggregate_tok_s": 13.409853665286107,
+      "per_stream_tok_s": 13.410034554118873,
+      "batch_wall_s": 28.32001673299237,
+      "repeats": 3,
+      "prompt_tokens": [
+        2070,
+        2070,
+        2070
+      ]
+    },
+    "prose_c1": {
+      "aggregate_tok_s": 9.692107266365696,
+      "per_stream_tok_s": 9.692248171445558,
+      "batch_wall_s": 51.38281089501106,
+      "repeats": 3,
+      "prompt_tokens": [
+        32,
+        32,
+        32
+      ]
+    }
+  },
+  "selection_note": "K5 retained by the predeclared no-regression rule; K3 has higher medium/prose and geometric-mean throughput but regresses short. Not a universal speed winner.",
+  "measurement_epochs": [
+    {
+      "role": "primary_counting_vision",
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+      "host_launch_source": "36fbaf0e67547d694d815ee95df822395a749188",
+      "launch_record_sha256": "c9fc6baf5fa6156ab01a15c4b16bf2b1452f93571b285419b5debbde48077882"
+    },
+    {
+      "role": "text180",
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+      "host_launch_source": "5655096cac399750f38dd7f13d5350153b5aa0a7",
+      "launch_record_sha256": "ee6e371930a6e82a78c14cd29b7813a1eea089633e4c4d207016225c1d3a7aee"
+    },
+    {
+      "role": "bfcl_and_three_systems_cells",
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+      "host_launch_source": "5655096cac399750f38dd7f13d5350153b5aa0a7",
+      "launch_record_sha256": "4c28df68f0ca9d423697af62c103f080882eeb54e1cb13d4b3023a572ed39025"
+    },
+    {
+      "role": "medium_c8_and_512k",
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+      "host_launch_source": "d1a6fbc8f2feb5d46097f05056d0522a863a3c4a",
+      "launch_record_sha256": "2b2fb210bc78dd59730d05a0c56e081ca19ff45771e78f12b4dfb4442f88e849"
+    }
+  ],
+  "model": {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "revision": "dba1be0a40aa45a94ad051997016db3960a90277",
+    "checkpoint": "official, unmodified FP8 dense / packed FP4 experts with Engram and vision"
+  },
+  "vision": {
+    "cvbench": {
+      "rows": 60,
+      "correct": 39,
+      "accuracy": 0.65,
+      "wilson95": [
+        0.5236,
+        0.7583
+      ],
+      "subsets": {
+        "cvbench": {
+          "rows": 60,
+          "correct": 39,
+          "accuracy": 0.65
+        }
+      },
+      "thinking": false,
+      "workers": 1,
+      "raw_rows_sha256": "ea6deb1ea4a1f6e1075c74d59844d05d1f5314d0d314f0ef242efcd9d64aad2d"
+    },
+    "mmvp": {
+      "rows": 300,
+      "correct": 205,
+      "accuracy": 0.6833333333333333,
+      "wilson95": [
+        0.6287,
+        0.7334
+      ],
+      "subsets": {
+        "mmvp": {
+          "rows": 300,
+          "correct": 205,
+          "accuracy": 0.6833333333333333,
+          "paired": {
+            "pairs": 150,
+            "both_correct": 74,
+            "paired_accuracy": 0.4933
+          }
+        }
+      },
+      "thinking": false,
+      "workers": 1,
+      "raw_rows_sha256": "45e9f62e55503fe298604e8b4787960dd54dcf8a50576cb37d8a57772f4e306f"
+    }
+  },
+  "infra_attempts": [
+    {
+      "lane": "bfcl",
+      "status": "INFRA_MEMORY_ALLOCATION_FAILURE",
+      "scored": false,
+      "prior_text180_preserved": true,
+      "guard_hard_abort": true,
+      "affected_ranks": [
+        0,
+        3
+      ],
+      "note": "Fresh NVRM allocation errors during first BFCL case after completed text180; no cgroup OOM. All ranks stopped by guards. Fresh same-image/profile epoch used for incomplete lanes; no stability fix claimed."
+    },
+    {
+      "lane": "bfcl",
+      "status": "HARNESS_SHARED_RESULT_ROOT",
+      "scored": false,
+      "new_model_requests": 0,
+      "repaired": true,
+      "repair": "Fresh root bound before official imports; only file locks relocated; official frozen evaluator unchanged."
+    },
+    {
+      "lane": "bench-medium-c8",
+      "status": "RUNTIME_CUDA_ILLEGAL_ADDRESS",
+      "scored": false,
+      "measured_requests": 0,
+      "failure_during": "warmup",
+      "originating_kernel": "not established; reported asynchronously by rank0 NCCL watchdog",
+      "control": "fresh identical-image/profile epoch for only missing cell; no stability repair claimed"
+    }
+  ],
+  "registry": {
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "manifest_digest": "sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9",
+    "immutable_ref": "ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9",
+    "tag": "ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121:overlay-v2",
+    "architecture": "arm64",
+    "anonymous_manifest_config_layer_access_verified": true,
+    "anonymous_digest_pull_verified": true,
+    "verified_utc": "2026-09-16T06:06:58.334680+00:00",
+    "rebuilt": false
+  },
+  "source_hashes": {
+    "primary.json": "e44d8c47b7f4c0b9e9691f882e7f1d15c97412fc2c072089da57481600475608",
+    "counting.json": "4be3041901154218e2cebe8a7b97bf4c4c38b2e7894f39e46215f86703984c4a",
+    "ladder-verified.json": "6c2c2423d91a056428955c7b2a1f225828573f6936b3fb5d1520e4d3a0e38b51"
+  }
+}

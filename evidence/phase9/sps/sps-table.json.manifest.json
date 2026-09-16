@@ -1,5 +1,4 @@
 {
-  "base_url": "http://127.0.0.1:30000",
   "tp_size": 4,
   "dp_size": 4,
   "verify_num_draft_tokens": 6,

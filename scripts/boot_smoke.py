@@ -118,15 +118,22 @@ def main():
 
     # 6. effort control (no Jinja template: prove the knob reaches encoding).
     # V4.1 reasoning_effort scales generated reasoning, not prompt length:
-    # compare reasoning_content length on a reasoning-heavy prompt.
-    rl = {}
+    # Inspect consumed prompt IDs: output length is not monotonic in effort.
+    # /tokenize alone bypasses the chat kwargs effort normalization on this pin.
+    rendered = {}
     for effort in (5, 100):
-        r = chat(base, {"model": model, "max_tokens": 1500, "temperature": 0,
+        r = chat(base, {"model": model, "max_tokens": 1, "temperature": 0,
+                        "return_prompt_token_ids": True,
                         "chat_template_kwargs": {"thinking": True, "reasoning_effort": effort},
                         "messages": [{"role": "user", "content": "Prove that the square root of 2 is irrational."}]})
-        rl[effort] = len(r["choices"][0]["message"].get("reasoning_content") or "")
-    results.append(gate("effort-control", rl[100] > rl[5] * 1.2,
-                        f"reasoning_len 5->{rl[5]} 100->{rl[100]}"))
+        ids = r["choices"][0]["prompt_token_ids"]
+        req = urllib.request.Request(base.rstrip("/") + "/v1/detokenize",
+            data=json.dumps({"model": model, "tokens": ids}).encode(),
+            headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=30) as response:
+            rendered[effort] = json.load(response)["text"]
+    results.append(gate("effort-control", all(f"Reasoning Effort: {e} " in rendered[e] for e in (5,100)),
+                        "actual consumed prompt IDs decode to requested effort 5 / 100"))
 
     # 7. determinism: same greedy prompt x3
     outs = []

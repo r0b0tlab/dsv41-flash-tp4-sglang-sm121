@@ -8,7 +8,7 @@
       "mode": "run",
       "preexisting_files": [],
       "preexisting_timing": false,
-      "project_root": "/home/r0b0tdgx/dsv4.1-flash/evidence/phase9/q200v2-proper/bfcl-hard20-root",
+      "project_root": "<HOME>/dsv4.1-flash/evidence/phase9/q200v2-proper/bfcl-hard20-root",
       "result_sha256": "6707a5770050ef86aa3350de5f61cda1ed64afa1b7f980a87e24c7c62ce962c9",
       "runtime_binding_sha256": "130612ffb6a191a8623887631d9f5e39f8b0ad936fb4460064bc530aa87e2eb4",
       "schema": "r0b0tlab.qwen38.bfcl_freshness.v1",
@@ -17,7 +17,6 @@
     }
   },
   "identity": {
-    "base_url": "http://127.0.0.1:30000/v1",
     "bfcl_eval_version": "2025.12.17",
     "candidate_id": "dsv41-tp4-sm121-overlay-q200",
     "category": "multi_turn_base",
@@ -71,28 +70,28 @@
   "runtime_binding": {
     "adapter": {
       "module": "run_bfcl_hard20",
-      "path": "/home/r0b0tdgx/projects/r0b0bench/subsets/q200v2/scripts/run_bfcl_hard20.py",
+      "path": "<HOME>/projects/r0b0bench/subsets/q200v2/scripts/run_bfcl_hard20.py",
       "sha256": "5175cec23fbe3a258ec643c552623836e648b095e20e840dcd3558d76ccd3532"
     },
     "official_modules": {
       "evaluation": {
         "module": "bfcl_eval.eval_checker.eval_runner",
-        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/eval_checker/eval_runner.py",
+        "path": "<HOME>/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/eval_checker/eval_runner.py",
         "sha256": "b1033684908819ccb312d4d0e2c563359d69247412f00206013b2292b0e3ce81"
       },
       "generation": {
         "module": "bfcl_eval._llm_response_generation",
-        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/_llm_response_generation.py",
+        "path": "<HOME>/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/_llm_response_generation.py",
         "sha256": "45a374f2d8294b9f6c92bcc552a71e29f06c661e02e38858a5eb754fa192976f"
       },
       "multi_turn_checker": {
         "module": "bfcl_eval.eval_checker.multi_turn_eval.multi_turn_checker",
-        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/eval_checker/multi_turn_eval/multi_turn_checker.py",
+        "path": "<HOME>/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/eval_checker/multi_turn_eval/multi_turn_checker.py",
         "sha256": "b3b787515eda3bf0e365e39634a8fc7f831763f010f716d35d86f96fd5aab1b5"
       },
       "openai_handler": {
         "module": "bfcl_eval.model_handler.api_inference.openai_completion",
-        "path": "/home/r0b0tdgx/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/model_handler/api_inference/openai_completion.py",
+        "path": "<HOME>/projects/r0b0bench/.venv/lib/python3.12/site-packages/bfcl_eval/model_handler/api_inference/openai_completion.py",
         "sha256": "f0bc8734a3173df79e52fa6d757ac6b2585f7582e2f19ac7cddf5170269dd3f7"
       }
     },

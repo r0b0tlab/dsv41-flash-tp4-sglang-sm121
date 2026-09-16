@@ -1,0 +1,3842 @@
+[
+  {
+    "id": "gsm8k-000",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 101,
+      "prompt_tokens": 94,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 51,
+      "total_tokens": 195
+    },
+    "elapsed_seconds": 10.32961934900004,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "cf71caeff33b4d827a42ddab2126b1f428b573c8cdac7e4d29523640a98ca0d8",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-001",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 52,
+      "prompt_tokens": 56,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 34,
+      "total_tokens": 108
+    },
+    "elapsed_seconds": 3.912154759000032,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2c781dd7128c1ff517d8be2f5367a2f91da12843d3b62f3da5733c9bb822ffdf",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-002",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 334,
+      "prompt_tokens": 79,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 219,
+      "total_tokens": 413
+    },
+    "elapsed_seconds": 21.89363442900003,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "ebec0cbb6018618bd292cad0fac89dcfc6e112119ba893b82bf3e8549ac53a74",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-003",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 94,
+      "prompt_tokens": 64,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 61,
+      "total_tokens": 158
+    },
+    "elapsed_seconds": 7.86847214799991,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "40277ba3d481e1cd04fbbece006ebfbfe7692c6dc3acd8e180a5a031ed00ca02",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-004",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 127,
+      "prompt_tokens": 137,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 51,
+      "total_tokens": 264
+    },
+    "elapsed_seconds": 12.055705984000042,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "27c8e07d159e1975250188d57d2fc7492c41a0b77009b2a8383d0291d49be04b",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-005",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 169,
+      "prompt_tokens": 84,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 100,
+      "total_tokens": 253
+    },
+    "elapsed_seconds": 11.25388921900003,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "b7a269c0b2f6c076061d1f814b2f3f37c4189007672e4600d21dee8cddc4fd36",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-006",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 101,
+      "prompt_tokens": 71,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 39,
+      "total_tokens": 172
+    },
+    "elapsed_seconds": 7.06824522099987,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "045d318992d1115729d9da964bb522e978563f5dab40083ca77dbe75d027258e",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-007",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 312,
+      "prompt_tokens": 95,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 223,
+      "total_tokens": 407
+    },
+    "elapsed_seconds": 23.858014755999875,
+    "finish_reason": "stop",
+    "passed": false,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "73908a840370e542d8897dc3cb2dce907602c8911d9163e2c9808717e98bb6f7",
+    "grader": {
+      "passed": false,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-008",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 359,
+      "prompt_tokens": 131,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 218,
+      "total_tokens": 490
+    },
+    "elapsed_seconds": 25.610992563999844,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "9e851e3c0e1c001a63318a82daa9f7e08780b079dab2837023991fafab6f0228",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-009",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 117,
+      "prompt_tokens": 86,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 41,
+      "total_tokens": 203
+    },
+    "elapsed_seconds": 9.06337873199982,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "7868a7271cc05571fdd1a418e1a46b2ab4e26237c3a1f30bab3a6596650fe9ae",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-010",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 160,
+      "prompt_tokens": 88,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 91,
+      "total_tokens": 248
+    },
+    "elapsed_seconds": 11.415494314999933,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "490082e267d54820403d4a9c10c1f1423e5094258f986aa69546693b6ea101ae",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-011",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 109,
+      "prompt_tokens": 92,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 39,
+      "total_tokens": 201
+    },
+    "elapsed_seconds": 8.145733745999905,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "88c898264f1432af6b162133b67fa8efc0b01fa194759db48042062058cf99af",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-012",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 357,
+      "prompt_tokens": 97,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 250,
+      "total_tokens": 454
+    },
+    "elapsed_seconds": 25.113596476999874,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "6ec6d7e70a40d6c00a95f68e33802a41393d305c46ad9eef69ce94f3145c9bb9",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-013",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 207,
+      "prompt_tokens": 88,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 131,
+      "total_tokens": 295
+    },
+    "elapsed_seconds": 15.068165306000083,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "295e0f404b7aee0c282d26c5fa1e8b95a59da6808f41530a6b294743e3860b54",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-014",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 74,
+      "prompt_tokens": 79,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 61,
+      "total_tokens": 153
+    },
+    "elapsed_seconds": 6.746774525000092,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "bccb2997d07f5213e0240ec7b7cc1f28ba27b4de482e2794dbd3828e069e81e1",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-015",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 264,
+      "prompt_tokens": 120,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 173,
+      "total_tokens": 384
+    },
+    "elapsed_seconds": 18.854427745000066,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2b914318a9d0511db55a1fcabfddee06ac05466b4b6f0a99306ea5daf22aa6c0",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-016",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 251,
+      "prompt_tokens": 79,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 157,
+      "total_tokens": 330
+    },
+    "elapsed_seconds": 16.713523532999943,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "5c3b5d7d6b1575fcc62105271fbbc123dd80870a69e21035ffa16d7cc5052c53",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-017",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 125,
+      "prompt_tokens": 83,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 44,
+      "total_tokens": 208
+    },
+    "elapsed_seconds": 10.702226181000015,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "91b6eb98c3426a19c1fb4fbb5034f4ae955a31ea3d227e5e4fdd1272f51151e0",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-018",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 109,
+      "prompt_tokens": 58,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 49,
+      "total_tokens": 167
+    },
+    "elapsed_seconds": 7.651312865999898,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "ab8ef67cfc567d35bae0934c1c0cc2dcf95fc906534c1f11da8754f7f417e3ff",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-019",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 109,
+      "prompt_tokens": 94,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 74,
+      "total_tokens": 203
+    },
+    "elapsed_seconds": 9.119865380999954,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "db7a02ed5de39b08864486dfe87ad294f8e1fb0bd60080e30caac36e01fa58eb",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-020",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 280,
+      "prompt_tokens": 90,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 171,
+      "total_tokens": 370
+    },
+    "elapsed_seconds": 20.967648691000022,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "edc06836c7f2ce79192062f2961abf2ff06032a554a4b6bdb0f81e738e46a115",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-021",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 132,
+      "prompt_tokens": 74,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 70,
+      "total_tokens": 206
+    },
+    "elapsed_seconds": 12.007472289000134,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "dc3038988ffca4d61470198ccefa1405a043103d90b8b385e6d29fc6d809d638",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-022",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 47,
+      "prompt_tokens": 85,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 37,
+      "total_tokens": 132
+    },
+    "elapsed_seconds": 5.3782462229999055,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "6db7700a28a32c8aee080d53c9e99f3e27a22fff5e9da83d21b1f4ebf23dadb9",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-023",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 83,
+      "prompt_tokens": 66,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 28,
+      "total_tokens": 149
+    },
+    "elapsed_seconds": 7.332581386999891,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "6fa7705187ae6cb5f426f14cc6ab0429b0efb01876dee4a02201d1d52569364f",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-024",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 99,
+      "prompt_tokens": 67,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 45,
+      "total_tokens": 166
+    },
+    "elapsed_seconds": 7.789111407000064,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "dc3eee00060c8f42c23d378a1507c49650f2ec04969b36e496cad0e8c53ab24c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-025",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 161,
+      "prompt_tokens": 93,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 71,
+      "total_tokens": 254
+    },
+    "elapsed_seconds": 13.993934801000023,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "dbbb16422d1f4a5f079c91688e9fc4e8600686f74dd43d62303d204d4765da59",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-026",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 93,
+      "prompt_tokens": 94,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 55,
+      "total_tokens": 187
+    },
+    "elapsed_seconds": 9.477314175999936,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "1f24c01c8210531187632364fb0277490adafe5fe20d3f53716527f1ff11063b",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-027",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 135,
+      "prompt_tokens": 86,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 59,
+      "total_tokens": 221
+    },
+    "elapsed_seconds": 12.070098715000086,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "99f50c419551188e0b020937df38c4dfb4ff7bfd620e6228625dd46bc077eaf0",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-028",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 104,
+      "prompt_tokens": 77,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 48,
+      "total_tokens": 181
+    },
+    "elapsed_seconds": 12.024178376999998,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8d85d0ad15472c98457e2ba75a2f675c1a87cc3d8c1658be6d57d13cced56963",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-029",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 136,
+      "prompt_tokens": 98,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 66,
+      "total_tokens": 234
+    },
+    "elapsed_seconds": 14.701525871000058,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a7568cc9310ade791b9486eb17d99d10100c5b79518a07b4244976240f2de0a5",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-030",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 138,
+      "prompt_tokens": 65,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 43,
+      "total_tokens": 203
+    },
+    "elapsed_seconds": 14.908862632000137,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "e69d863a169f507bc6f106c4e997166007761d2348946d57eaabdabd5aa94021",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-031",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 157,
+      "prompt_tokens": 90,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 72,
+      "total_tokens": 247
+    },
+    "elapsed_seconds": 14.398794389999921,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "dab43e957db0a3b36e9d1fbf0385f0ce542fe558d1ec86a8b25ad27cc8483b18",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-032",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 84,
+      "prompt_tokens": 70,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 38,
+      "total_tokens": 154
+    },
+    "elapsed_seconds": 9.921321919999855,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a54435d250acf32b7b01a9877c218a821da5db1a5bc88e1adc2b9f977b618424",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-033",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 60,
+      "prompt_tokens": 58,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 50,
+      "total_tokens": 118
+    },
+    "elapsed_seconds": 5.890090608000037,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "1889b4d6d1e60a3a59e712fa95cbfda12a0255671411c042536e39a164913649",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-034",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 67,
+      "prompt_tokens": 70,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 58,
+      "total_tokens": 137
+    },
+    "elapsed_seconds": 6.899412581999968,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2074dd1389baf426b0f0adcbf5dce51ea38a7a9d3796cfa9970016d5591c5668",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-035",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 97,
+      "prompt_tokens": 79,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 44,
+      "total_tokens": 176
+    },
+    "elapsed_seconds": 7.198007913999845,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "cef2ee1141a36aa2efaa4c0891724772d8b4be2bfefbd4ba781f3a3115e33a0b",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-036",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 124,
+      "prompt_tokens": 72,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 52,
+      "total_tokens": 196
+    },
+    "elapsed_seconds": 11.40002544999993,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "506af4f6e5805c8fa332e0840587580dcc31eaed93bce6539557a4a8e3d6d1db",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-037",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 351,
+      "prompt_tokens": 90,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 245,
+      "total_tokens": 441
+    },
+    "elapsed_seconds": 36.033544678000226,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "1d7724f90413615d1676782125fb2c262485c866c70392133cea91306bfcfcf6",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-038",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 237,
+      "prompt_tokens": 73,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 161,
+      "total_tokens": 310
+    },
+    "elapsed_seconds": 24.0843020220002,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "c350b5e911cde33b1b76126e45bff3a8f93a724e2c9de5af5da7a0b346ccd3b6",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-039",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 234,
+      "prompt_tokens": 103,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 89,
+      "total_tokens": 337
+    },
+    "elapsed_seconds": 25.56560397699991,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "98711361c69eec1d914d349c39f43601c21050ed2b1f08605be8f552ee99bfff",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-040",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 258,
+      "prompt_tokens": 77,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 174,
+      "total_tokens": 335
+    },
+    "elapsed_seconds": 28.821268679000013,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8f42610fedca1a42825e85a293ef48915b799e17b7e687753235a901854711df",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-041",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 230,
+      "prompt_tokens": 156,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 143,
+      "total_tokens": 386
+    },
+    "elapsed_seconds": 36.2893839960002,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "9f3a7994878b6e31e880aec086c0fe977720a42ee4325474ab4ab47248ce3791",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-042",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 84,
+      "prompt_tokens": 111,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 33,
+      "total_tokens": 195
+    },
+    "elapsed_seconds": 12.082394172000022,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "6f73070d4fc1dc6c36e3f3c6461cbade2b71f31e09a587d86fddd6e585a56c1f",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-043",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 149,
+      "prompt_tokens": 83,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 78,
+      "total_tokens": 232
+    },
+    "elapsed_seconds": 19.735705360999873,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "03dae2f915fe26372072510d15e9b8228782aa363b232c7cf238950ad4a011c4",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-044",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 232,
+      "prompt_tokens": 102,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 165,
+      "total_tokens": 334
+    },
+    "elapsed_seconds": 23.410511861000032,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "0d02ef0b741ff4d8e448b9109c8120e08388912592abbd5565b7fd5dc22e8918",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-045",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 229,
+      "prompt_tokens": 122,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 133,
+      "total_tokens": 351
+    },
+    "elapsed_seconds": 24.95729564300018,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "7ac5f18398afa1b1d3f669acbb7ca37b7ac1f5fadf0b2cc8df9eb1011f6e103c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-046",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 139,
+      "prompt_tokens": 120,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 69,
+      "total_tokens": 259
+    },
+    "elapsed_seconds": 18.342134690999956,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "f100760cc4730d0a5fd47158c8a17a3750ec55e544559f0355e769d77b308719",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-047",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 219,
+      "prompt_tokens": 76,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 124,
+      "total_tokens": 295
+    },
+    "elapsed_seconds": 16.653816645999996,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "be4df3ca4f8ed88d65a0622836d75259b13a91b9b87e9a44796713efbcfdd363",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-048",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 74,
+      "prompt_tokens": 67,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 50,
+      "total_tokens": 141
+    },
+    "elapsed_seconds": 8.600845803000084,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "52bc3ce4f7a161f5c0e13fe7cb6e14fe4c91962d93c5518435a8e2fd22ad8924",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-049",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 104,
+      "prompt_tokens": 72,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 35,
+      "total_tokens": 176
+    },
+    "elapsed_seconds": 9.050730742999804,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "f48f38afe59661ac129fc01034546f82cb5d5a8c379b69492d249d9e35e2eeb4",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-050",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 110,
+      "prompt_tokens": 65,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 51,
+      "total_tokens": 175
+    },
+    "elapsed_seconds": 10.775017699999808,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "f55590a4b8eafd2f879d28368c24594e7deebe911c66f01170789a5c23d9e155",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-051",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 210,
+      "prompt_tokens": 78,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 151,
+      "total_tokens": 288
+    },
+    "elapsed_seconds": 13.069742805999795,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "e75f5738505a4a2bc79606f73fe649b6a6bd5efad978a70444a96db350c3eab2",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-052",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 178,
+      "prompt_tokens": 90,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 105,
+      "total_tokens": 268
+    },
+    "elapsed_seconds": 13.654762699999992,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "5e3b8d9b006e2443eb622543657ae574c3c6ccd2d2542e77afdab292a43642a8",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-053",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 119,
+      "prompt_tokens": 127,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 55,
+      "total_tokens": 246
+    },
+    "elapsed_seconds": 13.636268493999978,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "c6291ba3948f7fa1b5bb48236589c70eabf8bb2a27b3869762abca01f60c7de2",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-054",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 254,
+      "prompt_tokens": 111,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 191,
+      "total_tokens": 365
+    },
+    "elapsed_seconds": 18.76690227400013,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "9f06608d2b1e0cb850e01ab36eaeabe4fafb89a2fade20efd10a65c8a2880e5c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-055",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 76,
+      "prompt_tokens": 79,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 30,
+      "total_tokens": 155
+    },
+    "elapsed_seconds": 5.569330654000169,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2ce55413981ac31243935361e1554c72a4634339e57850b5e0a3fc1057a92810",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-056",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 95,
+      "prompt_tokens": 74,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 48,
+      "total_tokens": 169
+    },
+    "elapsed_seconds": 7.033916114999556,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "ce4446a16368ea6b9d02b5cfc9509edd6cf3800b3813da72bc4930086bb4b896",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-057",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 150,
+      "prompt_tokens": 102,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 83,
+      "total_tokens": 252
+    },
+    "elapsed_seconds": 11.209555569999793,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "f7f3126c91223eb8ff3738e199e571d7ab44c1a2844afed5ee99269439649005",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-058",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 495,
+      "prompt_tokens": 109,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 422,
+      "total_tokens": 604
+    },
+    "elapsed_seconds": 29.132072064000113,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "84f7c3d05477c0aff1b8f126a9bfa6ef1f7f193562dbebb3e6080cbf12629479",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-059",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 70,
+      "prompt_tokens": 61,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 27,
+      "total_tokens": 131
+    },
+    "elapsed_seconds": 5.194419937000021,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "f767c9b9ccdcad4d527f17a41c715605f6d5484733743f823c0c19ee7e0903fc",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-060",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 182,
+      "prompt_tokens": 66,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 132,
+      "total_tokens": 248
+    },
+    "elapsed_seconds": 12.915840557999672,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "4dbfde95aa3f807b925187589c79107d12690e83fe7c8bc44636ef55723d5183",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-061",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 109,
+      "prompt_tokens": 87,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 59,
+      "total_tokens": 196
+    },
+    "elapsed_seconds": 7.445583101000011,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "acc167e8ae1944775b55e4cf75abda466691d3dc7246bcb56b0f0b5d37f0d7dc",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-062",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 408,
+      "prompt_tokens": 93,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 313,
+      "total_tokens": 501
+    },
+    "elapsed_seconds": 21.19727015599983,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "d4919fc171ec355ba7544b7ec0c5391adceb860224a37734a37c9e2687869a4a",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-063",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 158,
+      "prompt_tokens": 96,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 67,
+      "total_tokens": 254
+    },
+    "elapsed_seconds": 9.583806539999841,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8972e194f00c136793d4708d02e121b8ca32f325560e2ff1d5f5cb37b64f134a",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-064",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 154,
+      "prompt_tokens": 120,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 71,
+      "total_tokens": 274
+    },
+    "elapsed_seconds": 11.805636306999986,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "35f7ef7214eb6553d668a60a87dd4c241d12f41e49ddb7206e7bc2a4ee1eecc7",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-065",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 133,
+      "prompt_tokens": 77,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 57,
+      "total_tokens": 210
+    },
+    "elapsed_seconds": 6.889874314999815,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "88a9bb8acf2240d31f42bab0cef961215915643e2f44836ad0bd2221405da53a",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-066",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 218,
+      "prompt_tokens": 88,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 139,
+      "total_tokens": 306
+    },
+    "elapsed_seconds": 12.97113760000002,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "21e12c7f0d009a6daa312f998c7c3c55f03ffd39db690277109db3c2d256cc9d",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-067",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 119,
+      "prompt_tokens": 81,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 60,
+      "total_tokens": 200
+    },
+    "elapsed_seconds": 7.5451049760004025,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "25c0f8deb30ad30474039b4778a0e9fa9d6aeff1cc4d134d37be2756c3dec27b",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-068",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 100,
+      "prompt_tokens": 66,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 40,
+      "total_tokens": 166
+    },
+    "elapsed_seconds": 6.089774637000119,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2bf3d33a80024309d03542ec2f5407c5325787694f3d90ef6c93a6d42d908b35",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-069",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 83,
+      "prompt_tokens": 80,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 39,
+      "total_tokens": 163
+    },
+    "elapsed_seconds": 5.180564531000073,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "cad396d2693233d3888f1dc3df70b32cb8f259849accad3c8794f7bf3c3d2d2f",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-070",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 220,
+      "prompt_tokens": 81,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 119,
+      "total_tokens": 301
+    },
+    "elapsed_seconds": 11.867206773999897,
+    "finish_reason": "stop",
+    "passed": false,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "d2e489c54747d789e02ea59c63450a447c1905b7bcd8b7812ec1e0d35441eda3",
+    "grader": {
+      "passed": false,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-071",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 153,
+      "prompt_tokens": 73,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 109,
+      "total_tokens": 226
+    },
+    "elapsed_seconds": 7.974166065999725,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "db04a0e4b69ad3514d2aa39de5bdca8ad2c9739e58d8bc6bca5fcc830803b89c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-072",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 81,
+      "prompt_tokens": 79,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 27,
+      "total_tokens": 160
+    },
+    "elapsed_seconds": 6.007456492000074,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "966b317ab4e2d35909a1103fba20fa92da44d33a0d3811f242362243ba35c864",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-073",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 203,
+      "prompt_tokens": 74,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 118,
+      "total_tokens": 277
+    },
+    "elapsed_seconds": 12.589828511000178,
+    "finish_reason": "stop",
+    "passed": false,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "dfd947890dd43518ad8d15d57660f34078db7d8905c2331dbd6b95b9e2fcd5e9",
+    "grader": {
+      "passed": false,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-074",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 222,
+      "prompt_tokens": 151,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 96,
+      "total_tokens": 373
+    },
+    "elapsed_seconds": 12.351044214000012,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "1459a4f80644ce6f75e1d60ef55ee86dcfa9dd97e80ce1073a2a189808938653",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-075",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 249,
+      "prompt_tokens": 95,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 170,
+      "total_tokens": 344
+    },
+    "elapsed_seconds": 17.157456059000197,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "838c41df1f35985fdf0c8165b2d00190fb65d4e15cd65f2facf151565807db60",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-076",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 160,
+      "prompt_tokens": 112,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 61,
+      "total_tokens": 272
+    },
+    "elapsed_seconds": 9.194413415999861,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "b12f7edb8aa90bb24c1d87cfceaa6c65789a9f90f216f6704898fcb3169009bb",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-077",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 130,
+      "prompt_tokens": 73,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 72,
+      "total_tokens": 203
+    },
+    "elapsed_seconds": 6.367250523000166,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "1d275b7ac723d242beef3d1cbbef4c7407a9cb8b5dfacb748f7f87f78f005cf5",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-078",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 271,
+      "prompt_tokens": 71,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 153,
+      "total_tokens": 342
+    },
+    "elapsed_seconds": 14.958439093999914,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "e15aaf303da54b70bf35395f565e781836a5f9f0f89cd475068129f51414233c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "gsm8k-079",
+    "family": "gsm8k",
+    "usage": {
+      "completion_tokens": 52,
+      "prompt_tokens": 75,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 24,
+      "total_tokens": 127
+    },
+    "elapsed_seconds": 3.2629280810001546,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "bd4c9cd66834a6438acf3688c1126a6023d371b1f0feefd6eb8c49b4aa529241",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "humaneval-000",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 436,
+      "prompt_tokens": 174,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 265,
+      "total_tokens": 610
+    },
+    "elapsed_seconds": 28.751152176000232,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "0ea4e0462e0985bced4268f451d13ada6cf586ded4b84ac1ce88008f0286ea5a",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-001",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 538,
+      "prompt_tokens": 167,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 413,
+      "total_tokens": 705
+    },
+    "elapsed_seconds": 35.44406997900023,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "45fdeaad45a345aa486d969cab232388602a08a1a6cd854725ebb35d4dda8947",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-002",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 193,
+      "prompt_tokens": 131,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 102,
+      "total_tokens": 324
+    },
+    "elapsed_seconds": 14.511849853000058,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "029220b47b8f0be3c68c840f5396b450f116e3c6da677a8f5d4853e808b098e4",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-003",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 192,
+      "prompt_tokens": 165,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 42,
+      "total_tokens": 357
+    },
+    "elapsed_seconds": 10.236789433000013,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8eca8e7b55ea16e4e87b2b84c679528b668058d2fac61505c09a77e26df98caf",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-004",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 244,
+      "prompt_tokens": 163,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 89,
+      "total_tokens": 407
+    },
+    "elapsed_seconds": 15.512709314999938,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "26da7e08137469736d1d0cad17062a4bba1f4f18b7b785051af627906ee3c035",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-005",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 176,
+      "prompt_tokens": 142,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 45,
+      "total_tokens": 318
+    },
+    "elapsed_seconds": 7.716779992999818,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "5d181bdc267476e2d661e05218459017b99c877ba65d3f08e52f9cc79ad99f70",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-006",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 296,
+      "prompt_tokens": 162,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 194,
+      "total_tokens": 458
+    },
+    "elapsed_seconds": 21.258741769000153,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "49a60635d8a04e21dca6c4f47251f341e17df83a79057f5d7af8e37db0cc657b",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-007",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 165,
+      "prompt_tokens": 141,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 58,
+      "total_tokens": 306
+    },
+    "elapsed_seconds": 8.512163361000148,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "c5cdf9b7531a6e47b9643d72359f7dec793e83c6b213642fbb46edc8bc18ab24",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-008",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 213,
+      "prompt_tokens": 157,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 160,
+      "total_tokens": 370
+    },
+    "elapsed_seconds": 13.280700226000135,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "998b978e0fc640d3ca366b8ed1cc7fb94c43283a6d0149274dc2199af5a79c72",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-009",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 213,
+      "prompt_tokens": 146,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 70,
+      "total_tokens": 359
+    },
+    "elapsed_seconds": 10.206942544999947,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "7d1eff5d5a895d9b07cf75d660e8aab7a5b2fef9c2a14d952de9025f3f960234",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-010",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 678,
+      "prompt_tokens": 192,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 596,
+      "total_tokens": 870
+    },
+    "elapsed_seconds": 43.05238198400002,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "39550fac96aa031ef36db558cee33bf98fc2c5d9ff59bee072948622d564a7e3",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-011",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 302,
+      "prompt_tokens": 124,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 205,
+      "total_tokens": 426
+    },
+    "elapsed_seconds": 18.420596946999922,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8b37e35f5d30b95083038c7825f3033620a3d796810a560d72c0ac01ed84ebdc",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-012",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 232,
+      "prompt_tokens": 149,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 111,
+      "total_tokens": 381
+    },
+    "elapsed_seconds": 14.322877303000041,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "750cbeab1375e25cd5ccac1747520d4271ea7e8965c68cc1436799e73b4a0370",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-013",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 246,
+      "prompt_tokens": 117,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 146,
+      "total_tokens": 363
+    },
+    "elapsed_seconds": 11.82149424399995,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "4fb98e93faec83901182a841b4bdc99904ee50713bc9bda76bbd5fb1982546a3",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-014",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 482,
+      "prompt_tokens": 105,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 408,
+      "total_tokens": 587
+    },
+    "elapsed_seconds": 23.252475223000147,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "309e699ececa0701a1fa082a747425692265421972a7011089736d359b7a0a63",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-015",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 132,
+      "prompt_tokens": 118,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 44,
+      "total_tokens": 250
+    },
+    "elapsed_seconds": 5.457584646999749,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "bcc39eaea1cfc9ac8ea47588f1ed8430664b461c78d532f2d2d65f33d666b6bd",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-016",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 121,
+      "prompt_tokens": 118,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 43,
+      "total_tokens": 239
+    },
+    "elapsed_seconds": 6.050607892999778,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "9f726030396077cdf445de9f217cb76a5189b29560e0a51306f15cdfad50dc9e",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-017",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 283,
+      "prompt_tokens": 220,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 216,
+      "total_tokens": 503
+    },
+    "elapsed_seconds": 17.087770529999943,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2b69c944101f9c2e1811e799cdec950d660fa81bd7e3433f153641cbf3a50084",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-018",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 501,
+      "prompt_tokens": 140,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 362,
+      "total_tokens": 641
+    },
+    "elapsed_seconds": 28.080342989999735,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a247ad091e09a01701c4a7354d043a62f05ea21c2293477c184bdbaf021159c3",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-019",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 411,
+      "prompt_tokens": 151,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 214,
+      "total_tokens": 562
+    },
+    "elapsed_seconds": 21.770898600000237,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "6160720cae8a2992a603644032b7603045bdd50f1c2c916a48e9cc5198bafaa3",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-020",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 586,
+      "prompt_tokens": 217,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 324,
+      "total_tokens": 803
+    },
+    "elapsed_seconds": 23.57243244900019,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a5fa800261d211a1d7e41a0551a2895c99a01a2e7722225526d6b8213b4664c4",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-021",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 729,
+      "prompt_tokens": 171,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 570,
+      "total_tokens": 900
+    },
+    "elapsed_seconds": 30.53291804599985,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8b4a1cec38c6a472f64bf258cafeac58e0974db8cddb9a91c14c18a60a8f7185",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-022",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 552,
+      "prompt_tokens": 141,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 451,
+      "total_tokens": 693
+    },
+    "elapsed_seconds": 27.694474123999953,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "9895f44e5864d480a102cb0ee253d3a9b52f3723dccfb22540358540a0be375a",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-023",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 103,
+      "prompt_tokens": 88,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 57,
+      "total_tokens": 191
+    },
+    "elapsed_seconds": 4.870815682000284,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "d4da8209ed4da3bd540867af01d1f8143dd365bf7f3e08410c0d0d7be1a8aed3",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-024",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 453,
+      "prompt_tokens": 97,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 351,
+      "total_tokens": 550
+    },
+    "elapsed_seconds": 19.968882015999952,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "0607751e5e9cb8183fed781d98c36d2d19c7f4e06aab9b1fc8516d91a4f237ac",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-025",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 470,
+      "prompt_tokens": 171,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 284,
+      "total_tokens": 641
+    },
+    "elapsed_seconds": 22.102765584999815,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "91fb56b0e0fe3037e8b54bb36be0ae94d003c75ecf3ce4608ed6455605342076",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-026",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 161,
+      "prompt_tokens": 134,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 47,
+      "total_tokens": 295
+    },
+    "elapsed_seconds": 6.020818093999878,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "050b5e418b7227b124d166b3510dd5be996ac2c6c64d0bc45b0b92a2f596d8c4",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-027",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 156,
+      "prompt_tokens": 94,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 102,
+      "total_tokens": 250
+    },
+    "elapsed_seconds": 7.14371385000004,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "14450aede34d5abfcf278e5a15756f294ee6d5e817aba7f41c83cafa4a4acd30",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-028",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 125,
+      "prompt_tokens": 109,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 56,
+      "total_tokens": 234
+    },
+    "elapsed_seconds": 4.098134392999782,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "b4ced1017c7f45299223d8221fabe8e92bbb08aedac0ad03ca6ea6bc69443b73",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-029",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 155,
+      "prompt_tokens": 136,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 51,
+      "total_tokens": 291
+    },
+    "elapsed_seconds": 5.537166135000007,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "4b0b13c1ed099ef1c79dbae8f0def3ff678bfddbedfe798501311de107fc2fdf",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-030",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 183,
+      "prompt_tokens": 163,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 53,
+      "total_tokens": 346
+    },
+    "elapsed_seconds": 6.181402431000151,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "c6040d2674a5f5669c433d1642fde0eb7d84df11fbcdaa39e30cd0fc6a4fccc4",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-031",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 292,
+      "prompt_tokens": 145,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 69,
+      "total_tokens": 437
+    },
+    "elapsed_seconds": 10.34673514799988,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "66d8dd31a7400cf5c4deffc572aa6cfa065c3bedaafefda8ff085c2f87cadfc3",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-032",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 2298,
+      "prompt_tokens": 310,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1819,
+      "total_tokens": 2608
+    },
+    "elapsed_seconds": 108.5626699139998,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "73103175fb7ee4d6cdded5f32231e40ffe88e43b24d5e4cd3be6b921ac34c8b0",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-033",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 530,
+      "prompt_tokens": 199,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 355,
+      "total_tokens": 729
+    },
+    "elapsed_seconds": 21.62730730500016,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a303bffadce87dcca40366d43765dca456b7ae38195be7fb399a7f9eb924d430",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-034",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 130,
+      "prompt_tokens": 119,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 52,
+      "total_tokens": 249
+    },
+    "elapsed_seconds": 4.525017604999903,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "3b64bd4ab02ecde345860107e9e1cffe060f6bce7c4b6cf312b7b9c57196761a",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-035",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 126,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 36,
+      "total_tokens": 246
+    },
+    "elapsed_seconds": 4.312851944000158,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8fbfb93f4ed7dcd31f27a5242e77a4b21f58a0b89991ef4c99124890db66f58d",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-036",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 387,
+      "prompt_tokens": 126,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 263,
+      "total_tokens": 513
+    },
+    "elapsed_seconds": 17.137932055999954,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "7e0cdbc51ce6bb6a20fd6f859ee050bd690b51b593a85e06c44ca2a9405081ca",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-037",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 236,
+      "prompt_tokens": 172,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 81,
+      "total_tokens": 408
+    },
+    "elapsed_seconds": 8.487296506999883,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "160884db25704c43d180c632988374bbf8b1193403981461b98884bb44de8f18",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-038",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 235,
+      "prompt_tokens": 207,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 128,
+      "total_tokens": 442
+    },
+    "elapsed_seconds": 12.33512229400003,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "fe7862abf8f4e137c1a4a8aacbf752891d2dae40bd7daf119432cfde820d27fc",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "humaneval-039",
+    "family": "humaneval",
+    "usage": {
+      "completion_tokens": 2553,
+      "prompt_tokens": 138,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 2186,
+      "total_tokens": 2691
+    },
+    "elapsed_seconds": 96.30662784800006,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "387de9b5c708f600560276b46a0faa68da11952ba5ec1138d67468b56e173226",
+    "grader": {
+      "failure_class": null,
+      "passed": true,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "ifeval-000",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 3587,
+      "prompt_tokens": 106,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 3082,
+      "total_tokens": 3693
+    },
+    "elapsed_seconds": 188.40449734000003,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "15bf5e2decdb783337af4d6d145d1677edf314feb37d1c134a05841474599d42",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-001",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 2563,
+      "prompt_tokens": 68,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1985,
+      "total_tokens": 2631
+    },
+    "elapsed_seconds": 131.51389677699945,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "9f19eedb35e6b486f8fcc55927932260b981a489146ee89cfb224c2855ec16a6",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-002",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1438,
+      "prompt_tokens": 68,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1126,
+      "total_tokens": 1506
+    },
+    "elapsed_seconds": 69.56875625799967,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "d9cade8f13a90526bb7fe156c8a8d2e483a57922eff6e25ce5ceb6bea72909cb",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-003",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 602,
+      "prompt_tokens": 106,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 464,
+      "total_tokens": 708
+    },
+    "elapsed_seconds": 28.979047249999894,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "315a3e0a63cc90a33588c05d88d2edc1760bf4fe5ab5520925b51661de2d9ff7",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-004",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 107,
+      "prompt_tokens": 70,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 98,
+      "total_tokens": 177
+    },
+    "elapsed_seconds": 6.451946756000325,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "09d342af2d02b4d15697d0455faa3f61f47b81e78f14046a638e618ec8fbd159",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-005",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1279,
+      "prompt_tokens": 103,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 961,
+      "total_tokens": 1382
+    },
+    "elapsed_seconds": 77.75941121300002,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "7b5b414ea36cf59a5a4b091f2a4ea70e710f6491cb084dcbdcff818e1e09bd85",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-006",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 917,
+      "prompt_tokens": 72,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 599,
+      "total_tokens": 989
+    },
+    "elapsed_seconds": 50.24488586000007,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "da03e61fd6ff4b55dcabe27739177fd5d337e5317789e4a7804e85e7e28d5e5b",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-007",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1551,
+      "prompt_tokens": 75,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1183,
+      "total_tokens": 1626
+    },
+    "elapsed_seconds": 79.94511481200061,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "cc7ea6d45aaee6d68cad3e74582562be6891031c1c2add9b5ea7b33b5fdf6e1c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-008",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 356,
+      "prompt_tokens": 47,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 268,
+      "total_tokens": 403
+    },
+    "elapsed_seconds": 20.26257000500027,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "04dfc70cd22c50b123665510b0b724ebe91753952bf4fa813239edb4f4859122",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-009",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 3947,
+      "prompt_tokens": 75,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 3282,
+      "total_tokens": 4022
+    },
+    "elapsed_seconds": 157.03103845799978,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "4fe93652ce58e9ac55f754c85ef30fdcc2a5f6c1ab6e5993647d197810a6ccde",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-010",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1004,
+      "prompt_tokens": 51,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 171,
+      "total_tokens": 1055
+    },
+    "elapsed_seconds": 73.69358443300007,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "98ecddab1ca98b767e200aae41215a1a701137214e4844d1e88a22901c20db1f",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-011",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 794,
+      "prompt_tokens": 65,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 420,
+      "total_tokens": 859
+    },
+    "elapsed_seconds": 50.169502530999125,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "033cd7477215ff8656a955d31d650e888049ebc04152a80b69f3ba8a31ed855c",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-012",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 401,
+      "prompt_tokens": 66,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 156,
+      "total_tokens": 467
+    },
+    "elapsed_seconds": 36.40562925999984,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "e77c287a0a702e47060bfa4abfc9f4071689d319bf422d261d9166cbb1f853ea",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-013",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 3309,
+      "prompt_tokens": 59,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 2166,
+      "total_tokens": 3368
+    },
+    "elapsed_seconds": 267.70177342199986,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "de1508ed1eecd858fd7d9b1abc3da96ea85dc12c8f4fcf6b1e9152c2dd3441e2",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-014",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 2231,
+      "prompt_tokens": 47,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1880,
+      "total_tokens": 2278
+    },
+    "elapsed_seconds": 102.41241764799997,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "432d38c4b9d67a1537ab9b34b4c51508cf8fa66f5b48d0e4680a4d1ad289bf38",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-015",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 738,
+      "prompt_tokens": 65,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 491,
+      "total_tokens": 803
+    },
+    "elapsed_seconds": 41.090500401999634,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "49eaa4ef98d15bc976e7dd7f81ff4f7a245b81313595c83f25d7129af86cea9d",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-016",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 272,
+      "prompt_tokens": 58,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 265,
+      "total_tokens": 330
+    },
+    "elapsed_seconds": 17.487286086000495,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "e1071b40f5489816888291c670d326e87ee4d4233b42da4e0562ca777215ba1a",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-017",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 154,
+      "prompt_tokens": 57,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 120,
+      "total_tokens": 211
+    },
+    "elapsed_seconds": 8.481234003999816,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "6131c04fc6ee3eb9002009d9facaf1d249f28c171a361ee7ab7f16242f49d399",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-018",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 655,
+      "prompt_tokens": 51,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 516,
+      "total_tokens": 706
+    },
+    "elapsed_seconds": 36.5237331899998,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "62d0d261c72e4e6aa311306bdcc6dfce3a3a9a3ffe14ff399809088a74b78d1d",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-019",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 333,
+      "prompt_tokens": 56,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 297,
+      "total_tokens": 389
+    },
+    "elapsed_seconds": 17.758169838999493,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "7dc022a8d9e8cd634e5ac11c6c5e0d563ec76af094d3d64803387c00279b5481",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-020",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 817,
+      "prompt_tokens": 74,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 631,
+      "total_tokens": 891
+    },
+    "elapsed_seconds": 50.02965517299981,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8505e59fa00c6983b681eb27670e3ad9ddb9f513f28a2dab3796b4d3533786f6",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-021",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 163,
+      "prompt_tokens": 75,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 132,
+      "total_tokens": 238
+    },
+    "elapsed_seconds": 11.393599547000122,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "50736e58ba7aa22e53ae04aa6727e44cd261921cdad7ecf319982d2eaa3737fd",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-022",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 421,
+      "prompt_tokens": 118,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 315,
+      "total_tokens": 539
+    },
+    "elapsed_seconds": 23.31694245500057,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a2cf71a9396bbb2f5b66d3eb22a61c1e0da3bb535c4a6f072a13177061f1735e",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-023",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 3394,
+      "prompt_tokens": 56,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 3271,
+      "total_tokens": 3450
+    },
+    "elapsed_seconds": 139.98041110800023,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "81980d78e47ca17c380753f678e4f7b0a29dea0fe5d62003b0118079043ff3fb",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-024",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1657,
+      "prompt_tokens": 53,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 995,
+      "total_tokens": 1710
+    },
+    "elapsed_seconds": 105.90257863700026,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "fe6356db7b6d978cb0029386b2c524f9d2d8002006b46571371067093731c931",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-025",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 2525,
+      "prompt_tokens": 77,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 2078,
+      "total_tokens": 2602
+    },
+    "elapsed_seconds": 109.23261009199996,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "d495813d945ea16efc5094cb6cec59840df4428f1f34aa772823eba76e873a7d",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-026",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 592,
+      "prompt_tokens": 66,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 468,
+      "total_tokens": 658
+    },
+    "elapsed_seconds": 33.923508130999835,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "5c9e85f2c2d5e5de679445bb848c0f752a44b12c4d4e31343a78f7fa864f5832",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-027",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 389,
+      "prompt_tokens": 95,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 343,
+      "total_tokens": 484
+    },
+    "elapsed_seconds": 17.32092491700041,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "67f7b9d979107f76d264fb110b8273f0eaff859869dc881920738383db4d220a",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-028",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 513,
+      "prompt_tokens": 110,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 460,
+      "total_tokens": 623
+    },
+    "elapsed_seconds": 28.547990369000217,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "752026c2d8aca0738fa8dd8fcff0da25f6291aafbbdd0022204517dc2a15f094",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-029",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 282,
+      "prompt_tokens": 63,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 211,
+      "total_tokens": 345
+    },
+    "elapsed_seconds": 16.58835084400016,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a866a22e4cc428ed30508ddae9555f662b0d441921d2dab61d190b6e791c8124",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-030",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 474,
+      "prompt_tokens": 59,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 374,
+      "total_tokens": 533
+    },
+    "elapsed_seconds": 26.221852008000496,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "fb848dfbbe46f1d964986344a0f11bd9c6067b2db3e7dc2cb39c09c56448a691",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-031",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 5284,
+      "prompt_tokens": 57,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 3636,
+      "total_tokens": 5341
+    },
+    "elapsed_seconds": 277.7893168549999,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "2d0c088a74809eb14ef6cc692b43e34694a13a9fa927d0d006be6fd2bfdbefbd",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-032",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 560,
+      "prompt_tokens": 49,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 512,
+      "total_tokens": 609
+    },
+    "elapsed_seconds": 39.798921902000075,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "1a1ceb1a6aad2c8da1fd446d2db4098c068d3634a57abcf62144462b9643fbd3",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-033",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1782,
+      "prompt_tokens": 101,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1749,
+      "total_tokens": 1883
+    },
+    "elapsed_seconds": 84.76508659800038,
+    "finish_reason": "stop",
+    "passed": false,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "fb18a93fb4acb1aff7dfb6240ac200b86cd1e62a79cdf9ca18e1562ab7d01192",
+    "grader": {
+      "passed": false,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-034",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 709,
+      "prompt_tokens": 81,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 506,
+      "total_tokens": 790
+    },
+    "elapsed_seconds": 54.095747176999794,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "83d9665b07a039afca84e13447d5d3a56beffd115e915afccac3b140c9e6f8e5",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-035",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 522,
+      "prompt_tokens": 62,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 491,
+      "total_tokens": 584
+    },
+    "elapsed_seconds": 20.577572649000103,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "c847aa1457f37699b71f35cb10477b80c8644bcfe5df290bd831c8319d77b359",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-036",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 3030,
+      "prompt_tokens": 65,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 2574,
+      "total_tokens": 3095
+    },
+    "elapsed_seconds": 170.21608570599983,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "eae0547a8a57128d2c01748598a666a3f4f6100beadc8a187629025bc693035d",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-037",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 3403,
+      "prompt_tokens": 71,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 2067,
+      "total_tokens": 3474
+    },
+    "elapsed_seconds": 278.199258697,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8ec4cbc44614a352a977b567b16112c280c4978b209ee456140c8468e1493105",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-038",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 628,
+      "prompt_tokens": 63,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 492,
+      "total_tokens": 691
+    },
+    "elapsed_seconds": 36.70749703999991,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "bbf8c2b2b4ba21308c2bdd288b272f070429df64d3a7ed42dd6b00de50094b6b",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "ifeval-039",
+    "family": "ifeval",
+    "usage": {
+      "completion_tokens": 1219,
+      "prompt_tokens": 92,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 953,
+      "total_tokens": 1311
+    },
+    "elapsed_seconds": 52.404169265000746,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "bea301f5e3eb850fc92f9dcefc3a889787fed6be9822f240704a2715c2700ee3",
+    "grader": {
+      "passed": true,
+      "status": "scored"
+    }
+  },
+  {
+    "id": "hard-00",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 844,
+      "prompt_tokens": 70,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 503,
+      "total_tokens": 914
+    },
+    "elapsed_seconds": 36.45264641199992,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a21d07475abae995a21e9805695156897ed14da2bf4e9d45ada020a75e15f893",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-01",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 928,
+      "prompt_tokens": 68,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 867,
+      "total_tokens": 996
+    },
+    "elapsed_seconds": 47.62123822100057,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "47d5a24d5527c3a66eb529692b525495ea323fb94ecbc62dc4117db406b6777b",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-02",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 501,
+      "prompt_tokens": 56,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 263,
+      "total_tokens": 557
+    },
+    "elapsed_seconds": 26.860961680999935,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "28615b3dac3f347f4c61fc4e6811156db51fa791592a8c53877f7e188c162c93",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-03",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 408,
+      "prompt_tokens": 46,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 246,
+      "total_tokens": 454
+    },
+    "elapsed_seconds": 16.250927585999307,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "fd6c32dd1e1882ce29031836a66ef4246ef3467baa0fb2c37c1957ddf31c523a",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-04",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 784,
+      "prompt_tokens": 58,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 732,
+      "total_tokens": 842
+    },
+    "elapsed_seconds": 38.72232992800036,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "b0d23e9c826ad6a9d717361f780e513a100c74d6850883ee9cf97be00b878b15",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-05",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 805,
+      "prompt_tokens": 76,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 650,
+      "total_tokens": 881
+    },
+    "elapsed_seconds": 57.70485293999991,
+    "finish_reason": "stop",
+    "passed": false,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "0acc8490357eff9d0d9a4ed14fede30097606e0566c93cbceb79b04c140ef361",
+    "grader": {
+      "status": "scored",
+      "passed": false,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-06",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 1298,
+      "prompt_tokens": 69,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1053,
+      "total_tokens": 1367
+    },
+    "elapsed_seconds": 73.71547485200063,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "84f325c3c8b2cf5d381944bd68600fdfba147617acb884a30b798c3de768ca4e",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-07",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 131,
+      "prompt_tokens": 59,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 87,
+      "total_tokens": 190
+    },
+    "elapsed_seconds": 7.267227698999704,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8b2f5f7006bbd609eece40ef96b8c04072eadc24602a180a524194110e1c6926",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-08",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 1599,
+      "prompt_tokens": 85,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1496,
+      "total_tokens": 1684
+    },
+    "elapsed_seconds": 72.36005903399928,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "af38ce95affcebfc6cdb39ce4834376366cdf299fb28bffe2800ad455126a3a9",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-09",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 1529,
+      "prompt_tokens": 63,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 1236,
+      "total_tokens": 1592
+    },
+    "elapsed_seconds": 79.79194251499939,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "fc7160e386fef00ae076efe3283fb9a73059abf5a735db00e2e2423939f8a858",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-10",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 68,
+      "prompt_tokens": 50,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 26,
+      "total_tokens": 118
+    },
+    "elapsed_seconds": 4.139328985999782,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "01cfa1051c7cbd928b5f5516aa0ff2d8071bc3d71cd51bd511a6ce6daeca7c00",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-11",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 311,
+      "prompt_tokens": 47,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 155,
+      "total_tokens": 358
+    },
+    "elapsed_seconds": 14.712746890000744,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "a398b49b2c2caf1597f1d95b925ad014ca5fa55b378f251b4c5aca0d63c1f6a2",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-12",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 981,
+      "prompt_tokens": 50,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 688,
+      "total_tokens": 1031
+    },
+    "elapsed_seconds": 59.05940209900018,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "e63af83e06de5c8aa280bb9bf43fe628701add6fd8005011fe97555d0b602bc8",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-13",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 528,
+      "prompt_tokens": 65,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 390,
+      "total_tokens": 593
+    },
+    "elapsed_seconds": 33.39622022200001,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "bf5da4feee0e3e3a4cdfdc31361068000e79c81d87929c1e39f54f5dcc3319a0",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-14",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 173,
+      "prompt_tokens": 47,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 121,
+      "total_tokens": 220
+    },
+    "elapsed_seconds": 8.505455107000671,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "26e5ee100aa3f0adc1d01e30508cbeb872ab11162194a50d13e849d457bb09f1",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-15",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 83,
+      "prompt_tokens": 52,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 45,
+      "total_tokens": 135
+    },
+    "elapsed_seconds": 3.2903998080000747,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "71f496c7f30744f8648687d796e7d1b1d3fad9b09b2fa2a686d8a3feb1ae1bd4",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-16",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 378,
+      "prompt_tokens": 60,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 218,
+      "total_tokens": 438
+    },
+    "elapsed_seconds": 20.175915640000312,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "72b463b018aa940c4c298b8821464584c9f76ee227cdab5060c47b814129be06",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-17",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 734,
+      "prompt_tokens": 60,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 645,
+      "total_tokens": 794
+    },
+    "elapsed_seconds": 36.775130827000794,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "403cb05d4c7df3a670e7099415f43229120a9c00e90da56d568b0a0db226f1b5",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-18",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 397,
+      "prompt_tokens": 52,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 226,
+      "total_tokens": 449
+    },
+    "elapsed_seconds": 22.582659043000604,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "8f8ea4820c42bc06cf07f740eaab36097ecb20eca70d9b7b2ff98c96126e8ce2",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  },
+  {
+    "id": "hard-19",
+    "family": "hard_reasoning",
+    "usage": {
+      "completion_tokens": 214,
+      "prompt_tokens": 52,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 124,
+      "total_tokens": 266
+    },
+    "elapsed_seconds": 8.023830352000004,
+    "finish_reason": "stop",
+    "passed": true,
+    "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+    "profile_id": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
+    "content_sha256": "75e6bbdb0220daec3779bb6d726d2e036cfbffc377f5283b65da0f40fb292ea2",
+    "grader": {
+      "status": "scored",
+      "passed": true,
+      "method": "independent_manual_review"
+    }
+  }
+]

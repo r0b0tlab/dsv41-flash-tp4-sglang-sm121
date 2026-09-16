@@ -1,0 +1,16 @@
+{
+  "method": "independent_manual_review",
+  "rows": 20,
+  "correct": 19,
+  "scope": "Strict whole-response correctness; actual question takes precedence over erroneous reference.",
+  "reference_correction_ids": [
+    "hard-00",
+    "hard-02",
+    "hard-08"
+  ],
+  "incorrect_additional_claim_ids": [
+    "hard-05"
+  ],
+  "manual_evidence_sha256": "1500dd90e48e06b89b2ee64a26eddf0d120dd7d9a1af6c9da0c1f943b878b3cb",
+  "oracle_checks_sha256": "14d7d7b7ebb2a00e987928310037b2ed38e1108625cd5c84deeffbe5538cab33"
+}

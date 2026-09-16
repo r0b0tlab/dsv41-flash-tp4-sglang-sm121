@@ -9,7 +9,6 @@
   "prefill_rate_tok_s_avg": 35.6,
   "window_target": 1046462,
   "elapsed_s": null,
-  "out": null,
   "methodology": "chat API, thinking off, temp 0, max_tokens 128, needles at 33%/66% depth, filler calibrated 0.1390 tok/char on live tokenizer",
   "next": "re-run with a higher host headroom floor: either lower max_total_tokens for the lane or free N1 host residents first; single-case client, tmux owner"
 }

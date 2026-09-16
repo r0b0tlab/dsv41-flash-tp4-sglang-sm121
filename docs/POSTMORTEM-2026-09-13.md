@@ -2,7 +2,7 @@
 
 ## Impact
 
-Both N1 (r0b0t-dgx, head) and N3 (gn100-2eea) became unresponsive during
+Both N1 (node0, head) and N3 (node2) became unresponsive during
 concurrent phase-9 benchmark lanes (~12:30–13:49 CDT). Both nodes were
 power-cycled at ~14:29–14:30 CDT. The dsv41-rank container exited 255 on N1;
 six qwen38fn containers on N1 had been SIGKILLed in the preceding 26 h.

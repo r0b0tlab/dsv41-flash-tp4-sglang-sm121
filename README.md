@@ -1,95 +1,138 @@
-# dsv4.1-flash — DeepSeek-V4.1-Flash TP=4 SGLang on 4×GB10 (SM121)
+# DeepSeek-V4.1-Flash on 4×GB10 / SGLang TP4
 
-Publication package: SGLang TP=4/EP=4 serving of `deepseek-ai/DeepSeek-V4.1-Flash`
-(fp8 checkpoint, unmodified) on the 4-node CRS812 DGX Spark (GB10/SM121)
-cluster, with a from-scratch **Engram** local NVMe store that removes the
-per-lookup TP all-reduce from the DSpark speculative path.
+r0b0tlab · @mr_r0b0t — official checkpoint, vision retained, local file-backed Engram lookup, static DSpark K5. Original adapter and reproducible runtime package; no model weights distributed.
 
-## Headline results (phase 9, final fingerprint, serial lanes)
+Campaign state: PRE_NIAH_RESULTS_VERIFIED. This is a measured profile, not a fastest-hardware or long-term-stability claim.
 
-| Lane | Result | Notes |
+## Final-image results
+
+| Lane | Result | Scope |
 |---|---|---|
-| Serve envelope | `mem_fraction_static=0.80`, `max_total_tokens=1 099 776`, KV fp8_e4m3 | capacity unchanged vs pre-fix |
-| Concurrency ladder c1→c8 | 53→160 tok/s aggregate; peak running-req 1→8 proved from rank decode logs; 0 errors | counting-100 prompt, 300 max_tokens, thinking off, temp 0, 60 s/step, tokens from server `usage`, warm serve (accept-len ≥ 5.5) |
-| Warm throughput lanes | short_c1 16.9, medium_c1 13.5, prose_c1 10.5, counting_c1 38.6, counting_c4 112.3 tok/s | all: temp 0, tokens from server `usage`, warm serve. Per lane: short = 400 random 5-digit ids in / 256 out (random ids → DSpark accept-len ≈ 1.7, speculation near-useless); medium = ~2 K-token passage / 512 out; prose = 800 out free-form story (accept ≈ 1.1); counting = count-to-N lists (accept ≈ 4→5.8). c1 = 1 stream, c4 = 4 streams. **Not comparable across prompt classes** — effective decode ≈ accept-len × step rate (~9–10 steps/s at bs1) |
-| Vision canary (cvbench Count) | 38/60 = 63.3% (Wilson95 50.7–74.4) | r0b0bench-vision v1.0 contract `2b80e543…`, 1 worker, serial, base64 jpeg, max_tokens 32, thinking off |
-| Q200v2 (text-180 + BFCL-hard20, one close-out) | **text-180: 176/180 = 97.8%** (gsm8k 77/80 · humaneval 40/40 sandbox · ifeval 39/40 · hard_reasoning 20/20 manual) · **BFCL v4 multi-turn structural-hard20: 16/20 = 80%** · **combined 192/200 = 96.0%** | native thinking (effort low), 1 worker, admission-gated guards, run identity `4138fb13…`; BFCL = deterministic structural-complexity proxy, not an official category score; evidence `evidence/phase9/q200v2-proper/` incl. `q200v2-closeout.json` |
-| NIAH 512k ladder | **deferred** | 1M-profile multineedle runs post-publication (ongoing, see below) |
+| Q200v2 | 189/200 (94.50%) | Text180 + official BFCL structural-hard20; thinking on, effort low |
+| Text180 | 175/180 | All rows normally terminated; independent manual review included |
+| cvbench | 39/60 (65.00%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
+| mmvp | 205/300 (68.33%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
+| MMVP paired | 74/150 | Both answers correct in each pair |
+| NIAH 512k | PENDING | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
+| NIAH 1m | PENDING | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
 
-## Throughput by workload regime (read together — not comparable across rows)
+| Q200 family | Correct | Total |
+|---|---|---|
+| bfcl_hard20 | 14 | 20 |
+| gsm8k | 77 | 80 |
+| hard_reasoning | 19 | 20 |
+| humaneval | 40 | 40 |
+| ifeval | 39 | 40 |
 
-This model's decode speed is dominated by **drafter predictability** (DSpark
-accept length), so the same serve measures 2–4× differently by regime. All
-numbers: server-`usage` token counts, warm serve, thinking off unless noted.
+Manual review corrects erroneous frozen references for three cases. One answer is rejected for an incorrect additional continuous-time claim despite a correct discrete recurrence. See MANUAL-REVIEW-POLICY.json; scores are bound to unchanged response hashes. Historical overlay-v1 192/200 is not the score of this image.
 
-**Spec-friendly regime (counting/structured text, accept-len ≈ 4–5.8)**
-| Workload | Throughput |
+## Throughput: read each workload separately
+
+Custom primary/counting rates use server usage tokens and real complete-client elapsed time. Thinking is off. Primary/counting values are medians of three measured repetitions after one excluded warmup. They include request prefill, not pure decode. Fixed-token synthetic rows are intentionally capped and are not semantic-answer quality scores.
+
+| Workload | K5 aggregate output tok/s | K3 comparison tok/s |
+|---|---|---|
+| short_c1 | 30.75 | 25.87 |
+| medium_c1 | 11.22 | 13.41 |
+| prose_c1 | 6.77 | 9.69 |
+
+K5 retained by the predeclared no-regression rule; K3 has higher medium/prose and geometric-mean throughput but regresses short. Not a universal speed winner.
+
+| Counting workload | Aggregate output tok/s |
 |---|---|
-| counting_c1 (prod profile) | 38.6 tok/s single-stream |
-| counting_c4 | 112.3 tok/s aggregate |
-| c1→c8 counting ladder | 53 → 160 tok/s aggregate, 0 errors |
-| counting single-stream, maxperf DP-attn profile | ~19 tok/s (≈2× prod profile) |
+| counting_c1 | 58.33 |
+| counting_c4 | 112.75 |
 
-**Spec-adverse regime (random text, accept-len ≈ 1.1–2.5) — sglang bench_serving, 20 prompts, streaming**
-| Shape | prod TP=4 (c1 / c8) | maxperf DP-attn (c1 / c8) |
-|---|---|---|
-| short 128i/128o, output tok/s | 6.6 / 15.2 | 5.6 / 14.9–17.2 |
-| medium 2048i/512o, output tok/s | 6.8 / 12.1 | 6.4–6.6 / 14.6–15.0 |
-| medium TPOT (ms) | 116 / 440 | 100 / 263–310 |
-| medium median ITL (ms) | — / 302 | 75–77 / 129 |
-
-**Quality-lane throughput during the certified Q200v2 run** (thinking ON,
-effort low, 1 serial worker, per-request `elapsed_seconds` summed from the
-rows themselves — real end-to-end request wall time, includes prefill):
-
-| Lane | n | tokens out (sum) | serial tok/s | mean req wall |
+| Requested concurrency | Sustained observed | Completed | Errors | Aggregate output tok/s |
 |---|---|---|---|---|
-| gsm8k | 80 | 13 230 | 14.7 | 11.2 s |
-| hard_reasoning | 20 | 12 694 | 16.8 | 37.8 s |
-| humaneval | 40 | 16 508 | 18.5 | 22.3 s |
-| ifeval | 40 | 54 602 | 15.1 | 90.4 s |
-| BFCL-hard20 (multi-turn) | 20 cases | 48 021 (1.71 M in) | 16.5 | 145.6 s/case |
-| text-180 total | 180 | 97 034 | 15.7 | 34.2 s avg |
+| 1 | 1 | 17 | 0 | 55.55 |
+| 2 | 2 | 28 | 0 | 85.94 |
+| 4 | 4 | 36 | 0 | 110.48 |
+| 8 | 8 | 48 | 0 | 136.67 |
 
-| Vision canary (cvbench Count) | 60 rows, 123.8 s serial = 0.48 rows/s, 2.06 s/row mean (thinking off) |
+Load-counter caveat: Pinned load_inquirer.py:100 counts len(get_running_batch().reqs), without filtering finished requests. Raw c4 count transiently exceeded client concurrency; raw maxima retained and only sustained exact levels qualified. Original rc1 receipt retained.
 
-Random-text quality-lane throughput (14.7–18.5 tok/s serial, thinking on)
-sits *above* the random-text bench baseline because natural prompts are
-partially predictable (accept ≈ 2–2.6) — between the random floor and the
-counting ceiling.
+## Native SGLang bench_serving
 
-Cold-start note: first minutes after serve boot, DSpark accept length climbs
-from ~1.6 to ≥5.8 as the drafter warms; throughput lanes must be measured
-after warm-up (phase-8 protocol) or numbers understate by ~4×.
+| Cell | Completed | Sampled input/output maxima | Retokenized E2E tok/s | Harness nominal tok/s | Mean TTFT ms |
+|---|---|---|---|---|---|
+| bench-short-c1 | 20 | 128/128 | 8.36 | 8.37 | 1869.7 |
+| bench-short-c8 | 20 | 128/128 | 11.40 | 11.43 | 10687.1 |
+| bench-medium-c1 | 20 | 2048/512 | 10.16 | 10.19 | 6798.5 |
+| bench-medium-c8 | 20 | 2048/512 | 7.07 | 7.08 | 31598.6 |
 
-## Ongoing (post-publication)
+Native cells use seed42 and random_range_ratio0: uniformly sampled lengths from1 to the displayed maxima, with ShareGPT-derived text, not fixed-length shapes. Harness nominal output counts can fall back to requested lengths if stream usage is absent; the decoded-response retokenized E2E rate is shown separately. Nominal input totals exclude any extra chat-template tokens. These rows are not interchangeable with the custom primary or quality workload rates.
 
-- **1M-context multineedle (two-key 33/66)** — **documented limit after 3 attempts** (2026-09-13/14):
-  the KV fill during a 1M-token prefill exhausts host-side unified memory at
-  ~50% progress (~517K tokens) on every configuration tried: the stock 1m
-  profile, a corrected lane profile (max_total_tokens 1 049 088,
-  max_running_requests 1), and the same lane headless (gdm stopped). The wall
-  is the model's KV allocation profile, not host software. Each attempt was
-  aborted by the node-safety watch at the NVRM `NV_ERR_NO_MEMORY` precursor
-  with zero node losses. Full receipts:
-  `evidence/phase9/niah-1m/twokey-33-66{,-v2,-v3}.json`. 512K-window
-  operation is fully supported (see lanes above).
-- ~~Certified Q200v2~~ **COMPLETE 2026-09-14** — text-180 **and** BFCL-hard20
-  both SCORED; combined close-out 192/200 = 96.0% (see headline table).
+## Telemetry and reliability
 
-## Reproduce
+| Lane | Rank | Coverage | GPU °C mean/max | NVML mean W | Min available GiB |
+|---|---|---|---|---|---|
+| text180 | 0 | FULL_WINDOW_SAMPLED | 60.2/70.0 | 26.7 | 22.95 |
+| text180 | 1 | FULL_WINDOW_SAMPLED | 64.1/73.0 | 31.3 | 24.87 |
+| text180 | 2 | FULL_WINDOW_SAMPLED | 63.5/72.0 | 29.6 | 24.83 |
+| text180 | 3 | FULL_WINDOW_SAMPLED | 61.8/71.0 | 28.5 | 27.64 |
+| bench-medium-c1 | 0 | FULL_WINDOW_SAMPLED | 57.6/64.0 | 27.6 | 19.53 |
+| bench-medium-c1 | 1 | FULL_WINDOW_SAMPLED | 63.6/71.0 | 32.6 | 23.41 |
+| bench-medium-c1 | 2 | FULL_WINDOW_SAMPLED | 60.8/67.0 | 30.2 | 23.18 |
+| bench-medium-c1 | 3 | FULL_WINDOW_SAMPLED | 59.1/65.0 | 29.1 | 26.15 |
+| excluded-bench-medium-c8 | 0 | FULL_WINDOW_SAMPLED | 50.6/55.0 | 12.1 | 19.21 |
+| excluded-bench-medium-c8 | 1 | FULL_WINDOW_SAMPLED | 59.6/63.0 | 21.3 | 23.44 |
+| excluded-bench-medium-c8 | 2 | FULL_WINDOW_SAMPLED | 58.1/61.0 | 20.0 | 23.22 |
+| excluded-bench-medium-c8 | 3 | FULL_WINDOW_SAMPLED | 56.1/59.0 | 19.1 | 26.17 |
+| bench-short-c1 | 0 | FULL_WINDOW_SAMPLED | 54.1/60.0 | 21.7 | 19.43 |
+| bench-short-c1 | 1 | FULL_WINDOW_SAMPLED | 60.1/66.0 | 25.8 | 23.35 |
+| bench-short-c1 | 2 | FULL_WINDOW_SAMPLED | 58.9/63.0 | 24.4 | 23.11 |
+| bench-short-c1 | 3 | FULL_WINDOW_SAMPLED | 56.5/61.0 | 23.3 | 25.97 |
+| bench-short-c8 | 0 | FULL_WINDOW_SAMPLED | 53.1/64.0 | 21.7 | 19.61 |
+| bench-short-c8 | 1 | FULL_WINDOW_SAMPLED | 60.9/67.0 | 26.8 | 23.41 |
+| bench-short-c8 | 2 | FULL_WINDOW_SAMPLED | 59.3/65.0 | 25.4 | 23.21 |
+| bench-short-c8 | 3 | FULL_WINDOW_SAMPLED | 57.0/66.0 | 24.1 | 26.15 |
+| bfcl-hard20 | 0 | FULL_WINDOW_SAMPLED | 53.8/62.0 | 23.2 | 20.42 |
+| bfcl-hard20 | 1 | FULL_WINDOW_SAMPLED | 58.8/68.0 | 27.3 | 22.79 |
+| bfcl-hard20 | 2 | FULL_WINDOW_SAMPLED | 57.2/67.0 | 25.7 | 22.56 |
+| bfcl-hard20 | 3 | FULL_WINDOW_SAMPLED | 55.6/64.0 | 24.7 | 26.01 |
+| bench-medium-c8 | 0 | FULL_WINDOW_SAMPLED | 54.6/61.0 | 23.4 | 20.54 |
+| bench-medium-c8 | 1 | FULL_WINDOW_SAMPLED | 60.3/69.0 | 27.7 | 24.15 |
+| bench-medium-c8 | 2 | FULL_WINDOW_SAMPLED | 57.4/64.0 | 26.0 | 24.05 |
+| bench-medium-c8 | 3 | FULL_WINDOW_SAMPLED | 56.4/64.0 | 24.8 | 27.14 |
+
+| Evaluation | Request-E2E output tok/s | Total lane wall seconds |
+|---|---|---|
+| text180 | 17.43 | 6696.2 |
+| bench-medium-c1 | 10.19 | 645.3 |
+| bench-short-c1 | 8.37 | 215.4 |
+| bench-short-c8 | 11.43 | 165.7 |
+| bfcl-hard20 | 16.82 | 4879.6 |
+| bench-medium-c8 | 7.08 | 898.0 |
+
+NVML samples are not wall-outlet power. HTTP output throughput includes prefill and reasoning; not pure decode. No prefill-only rate inferred. Stopped-epoch samples excluded by exact lane bounds.
+
+A real NVRM allocation failure occurred during the first BFCL attempt after text180. All four guards stopped the runtime; those BFCL outputs are infrastructure-invalid, not scored model failures. Text180 was preserved unchanged and unfinished lanes were retried in a fresh identical-image/profile epoch. This recovery does not claim to repair the underlying allocation failure or establish indefinite service stability.
+
+The first medium-c8 warmup later failed with an asynchronous CUDA illegal-memory-access error reported by rank0 NCCL. The three preceding native cells and completed Q200 were preserved. The missing cell is tested in another identical-image/profile epoch; the failure is retained and no originating kernel or stability repair is claimed.
+
+Optional dedicated 2h mixed-workload soak: NOT_RUN. Completed serial evaluations are not relabeled as that soak.
+
+## Runtime and reproduction
+
+| Identity | Value |
+|---|---|
+| Image config ID | sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f |
+| Embedded local source | df92c15b448506575953adfbd137ab83c249e2b1 |
+| Upstream SGLang | da64c5cbb8cf6bfd39be19da43573fdfd484c43a |
+| Prod profile SHA256 | 24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a |
+| Advertised prod window | 524288 |
+
+Verified registry reference: ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9
 
 ```bash
-docker pull ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121:overlay-v1   # anonymous pull
-scripts/serve.sh prod        # launches ranks on all 4 nodes (workers first)
-scripts/bench_orchestrator.sh prod   # serial phase-9 lanes with memory gates
+docker pull ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9
 ```
 
-Requirements per node: GB10/SM121, Docker + NVIDIA runtime, RDMA fabric
-(CRS812), checkpoint at `~/models/llm/dsv41/DeepSeek-V4.1-Flash`, ≥24 GiB
-MemAvailable at launch (enforced by `scripts/node_prepare.sh`).
+Follow docs/REPRODUCIBILITY.md for private inventory, image verification, guarded launch/stop and serial evaluation. Public inventory is intentionally empty; no private host topology is embedded. The Dockerfile and adapter source match the immutable runtime as recorded in RUNTIME-PROVENANCE.json. Host-only publication changes are not a runtime rebuild.
 
-See `docs/POSTMORTEM-2026-09-13.md` for the N1/N3 freeze root cause and the
-node-preparation invariants enforced by this package (admission floor +
-`--weight-loader-drop-cache-after-load` + serial lanes + no leftover
-cluster services on serving nodes).
+Full machine-readable scores, timing/usage and source hashes: evidence/final/RESULTS.json, TEXT180-SCORES.json, VISION-SCORES.json, PERFORMANCE-ROWS.json, TELEMETRY.json and MANIFEST.sha256. Raw prompts/responses, host logs and credentials remain private. Historical phase directories are not current qualification.
+
+Credit: DeepSeek, SGLang, FlashInfer, PyTorch/Triton, NVIDIA CUDA/CUTLASS/NCCL and the upstream benchmark authors. See THIRD_PARTY_NOTICES.md. Package code is MIT; model/base-image/data retain their own terms.
+
+Results JSON SHA256: 28a25a6fc6ab75a4b9c93d58a4750d11a075113bd692db007369c686a09b6e1e

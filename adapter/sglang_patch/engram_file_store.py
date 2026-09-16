@@ -86,6 +86,7 @@ class FileEngramStore:
         fd = os.open(shard_path, os.O_RDONLY)
         try:
             self._mm = mmap.mmap(fd, 0, prot=mmap.PROT_READ, flags=mmap.MAP_SHARED)
+            self._mm.madvise(mmap.MADV_RANDOM)
         finally:
             os.close(fd)  # mapping holds its own reference
         raw = torch.frombuffer(self._mm, dtype=torch.uint8)
@@ -190,22 +191,6 @@ def install(model_path: str) -> None:
 
     _fm._flash_mla_sm120_prefill = _prefill_via_triton
     logger.info("dsv41 sm12x hybrid sparse-MLA: flashinfer decode + triton prefill")
-
-    import sglang.srt.layers.attention.dsv4.metadata as _meta
-    _orig_post = _meta.PagedIndexerMetadata.__post_init__
-
-    def _traced_post(self):
-        _orig_post(self)
-        if getattr(self, "deep_gemm_metadata", "unset") is None:
-            import logging, traceback
-            logging.getLogger(__name__).error(
-                "DSV41 DIAG: PagedIndexerMetadata.deep_gemm_metadata is None "
-                "(compress_ratio=%s rows=%s) stack:\n%s",
-                self.compress_ratio, self.c4_seq_lens.shape,
-                "".join(traceback.format_stack()[-12:-1]),
-            )
-
-    _meta.PagedIndexerMetadata.__post_init__ = _traced_post
 
     def patched_init(self, num_embeddings: int, dim: int, layer_id: int):
         # NOTE: deliberately NOT calling the stock __init__ — it would

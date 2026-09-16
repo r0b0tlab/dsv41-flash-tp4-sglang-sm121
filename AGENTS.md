@@ -1,17 +1,7 @@
 # Agent notes
 
-Load skills before working here: `sglang-sm121-nvfp4`, `inference-release-engineering`,
-`gb10-cluster-host-ops`, `dsv4-sm121-native-serve-qualify`.
+This repository serves the official DeepSeek-V4.1-Flash checkpoint on four GB10 nodes, TP4/EP4, with vision and a local file-backed Engram store. Do not substitute checkpoints or transfer scores between image/profile identities.
 
-Cluster: 4-node CRS812 (see ~/projects/crs812-cluster/VERDICT.md). N1 head
-192.168.68.59/f100.1, N2 192.168.68.51/f100.2, N3 192.168.68.78/f100.3,
-N4 192.168.68.56/f100.4. SSH: `~/.ssh/id_ed25519_crs812` +
-`known_hosts_crs812_fabric`.
+Read README.md and docs/REPRODUCIBILITY.md. Private topology belongs in ignored cluster.local.json, never source. All heavy lanes serialize; use a durable tmux owner and all-rank memory guards. The overlay-v2 campaign permits no further rebuild. Raw prompts/responses and host records stay private; publish sanitized score/timing ledgers.
 
-Rules:
-- Nothing mutating on N1 while the qwen3.8 bench runs (user gate).
-- Long processes under tmux, one durable owner.
-- All code in this repo is written from scratch. Reference implementations
-  (LMSYS blog/cookbook, community Spark recipes) are credited in the plan's
-  References section only — never copy their code.
-- Engram design: local per-node NVMe store, no collectives in the lookup path.
+All adapter code is written from scratch. Preserve upstream attribution and the no-collective Engram lookup design. Host-side publication portability changes do not change or rebuild the qualified runtime image.

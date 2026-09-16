@@ -4,17 +4,36 @@
   "aborted": true,
   "verdict": "1M-context single-case multineedle is NOT executable on this 4x GB10 TP=4 deployment as configured: the KV fill during a 1M-token prefill consumes ~9 GiB of host-side unified memory per node by ~50% progress (520K tokens), colliding with the ~9-10 GiB post-launch host floor. Three attempts on progressively leaner configurations all hit the identical wall (~515-521K tokens pending, MemAvailable <500 MiB, NVRM NV_ERR_NO_MEMORY): (1) prod 1m profile 1100000 max-total-tokens with desktop stack, (2) corrected lane profile 1049088 max-total-tokens + max_running_requests=1 with desktop stack, (3) same lane profile headless (gdm stopped, GNOME gone). Attempt 3 proves the desktop stack is NOT the cause: the wall is the model's own KV allocation profile. Attempt 2's abort at nearly the same prefill depth headless confirms reproducibility.",
   "prompt_tokens_target": 1046462,
-  "wall_pending_tokens": {"attempt1": 521077, "attempt2": 516981, "attempt3": 516981},
+  "wall_pending_tokens": {
+    "attempt1": 521077,
+    "attempt2": 516981,
+    "attempt3": 516981
+  },
   "methodology": "chat API, thinking off, temp 0, max_tokens 128, needles at 33%/66% depth, filler calibrated 0.1390 tok/char on live tokenizer, 14 GiB client-side pre-submit memory gate (passed every attempt), background watch with NVRM trigger",
   "attempts": [
-    {"date": "2026-09-13T21:53Z", "profile": "1m (max_total_tokens=1100000, max_running=2)", "abort": "MemAvailable 5.1 GiB + NVRM", "pending_at_abort": 521077},
-    {"date": "2026-09-14T05:02Z", "profile": "1m-niah (max_total_tokens=1049088, max_running=1)", "abort": "MemAvailable 0.3 GiB + 3 NVRM", "pending_at_abort": 516981},
-    {"date": "2026-09-14T07:44Z", "profile": "1m-niah headless (gdm stopped)", "abort": "MemAvailable 0.4 GiB + 1 NVRM", "pending_at_abort": 516981}
+    {
+      "date": "2026-09-13T21:53Z",
+      "profile": "1m (max_total_tokens=1100000, max_running=2)",
+      "abort": "MemAvailable 5.1 GiB + NVRM",
+      "pending_at_abort": 521077
+    },
+    {
+      "date": "2026-09-14T05:02Z",
+      "profile": "1m-niah (max_total_tokens=1049088, max_running=1)",
+      "abort": "MemAvailable 0.3 GiB + 3 NVRM",
+      "pending_at_abort": 516981
+    },
+    {
+      "date": "2026-09-14T07:44Z",
+      "profile": "1m-niah headless (gdm stopped)",
+      "abort": "MemAvailable 0.4 GiB + 1 NVRM",
+      "pending_at_abort": 516981
+    }
   ],
   "node_recovery": "all four nodes returned to 116-120 GiB MemAvailable after each teardown; no reboots required",
   "paths_forward": [
     "chunked-prefill microbatch KV spilling (requires engine support for host KV offload at 1M ctx on this architecture)",
-    "a 2-case split harness that prefills in two radix-cached halves (needs prefix-cache hit across requests — untested here)",
+    "a 2-case split harness that prefills in two radix-cached halves (needs prefix-cache hit across requests \u2014 untested here)",
     "serving the lane from a node with fewer host residents does not help (attempt 3)"
   ],
   "status": "documented-limit; 512K-window operation fully supported (see phase-9 lanes)"

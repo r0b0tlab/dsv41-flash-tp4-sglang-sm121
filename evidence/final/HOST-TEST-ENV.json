@@ -1,0 +1,12 @@
+{
+  "python": "3.12.3",
+  "architecture": "aarch64",
+  "packages": {
+    "torch": "2.12.1",
+    "numpy": "1.26.4",
+    "pytest": "9.1.0",
+    "bfcl-eval": "2025.12.17",
+    "requests": "2.34.2"
+  },
+  "note": "Host verification environment; serving dependencies are pinned by immutable image."
+}
