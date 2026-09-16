@@ -1,4 +1,4 @@
-# Reproducing the overlay-v2 campaign
+# Reproducing the overlay-v4 production campaign
 
 ## Identity and boundaries
 
@@ -24,7 +24,7 @@ Alternatively set `DSV41_CLUSTER_CONFIG` to another private inventory path. The 
 
 ## Long-context qualification warning
 
-The configured512K production window and1M diagnostic window are NOT retrieval-qualified: neither completed its requested full-window two-key test. Allocation failures and recovery attempts are retained in RESULTS.json. The1M native-GC policy did not resolve the failure. The launch commands below reproduce tested configurations, not a guarantee of stable full-window service.
+The configured 512k production window is retrieval-qualified on overlay-v4 (exclusive C1, chunk 256, K-slice cap 2048) for exactly one ordered two-key 33/66 case. Overlay-v2 512k on the historical C8 profile remains INFRA_FAILURE. 1M remains not qualified (overlay-v2 allocation failure; overlay-v4 1M not run). Q200/vision/throughput stay bound to overlay-v2 and are not transferred to overlay-v4. Launching `prod` reproduces the qualified 512k envelope, not the historical C8 quality profile (`prod-c8`).
 
 ## Launch and stop
 

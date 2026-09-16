@@ -152,17 +152,7 @@ def install(model_path: str) -> None:
     if getattr(up.EngramEmbedding, "_dsv41_file_store", False):
         return
 
-    # TEMP DIAGNOSTIC (remove after root-cause): trace any PagedIndexerMetadata
-    # whose deep_gemm_metadata comes out None — the decode indexer passes it
-    # straight to deep_gemm which rejects None.
-    # ROOT CAUSE FOUND (2026-09-13): upstream's SM120 model hook force-sets
-    # SGLANG_FP8_PAGED_MQA_LOGITS_TORCH=1 (no tcgen05/TMEM => no DeepGEMM
-    # indexer on SM12x), which nulls deep_gemm_metadata — but the V4.1
-    # low-ratio decode dispatch (_is_sm100_or_newer, major>=10) still routes
-    # SM121 into the DeepGEMM fp8_fp4 kernel with that None. Fix: exclude
-    # SM12x from that module's DeepGEMM-indexer gate so decode takes the
-    # upstream Triton fallback (_low_ratio_index_topk_sm90_decode), exactly
-    # the knob the hook documents for stock DeepGEMM builds.
+    # SM12x: force _is_sm100_or_newer False so decode uses Triton; prefill uses K-sliced Torch indexer.
     import sglang.srt.layers.attention.deepseek_v4_backend as _dbe
     _cap = torch.cuda.get_device_capability()
     if _cap[0] >= 12:  # SM12x: consumer/GB10 Blackwell without tcgen05
@@ -219,10 +209,6 @@ def install(model_path: str) -> None:
         # The mmap views already hold the authoritative bytes; safetensors
         # get_tensor() yields lazy mmap views, so returning here reads none.
         return None
-
-    def patched_finish_load(self, label: str = ""):
-        if self.host_table is not None:
-            self.host_table.finish_load(label)
 
     up.EngramEmbedding.__init__ = patched_init
     up.EngramEmbedding._dsv41_file_store = True

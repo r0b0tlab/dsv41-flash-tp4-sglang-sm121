@@ -10,11 +10,30 @@ from sglang_patch.prefill_chunk_sizer import BudgetChunkSizer, patch_scheduler, 
 
 
 def test_budget_and_page_alignment():
-    s=BudgetChunkSizer(300_000_000,256,2048)
-    assert [s.predict(v) for v in [0,100000,200000,524288,1046462]] == [2048,2048,1280,512,256]
+    s=BudgetChunkSizer(300_000_000,256,512)
+    assert [s.predict(v) for v in [0,100000,200000,524288,1046462]] == [512,512,512,512,256]
     for l in range(0,1048577,733):
         t=s.predict(l)
-        assert t % 256 == 0 and 256<=t<=2048 and t*(l+t)<=300_000_000
+        assert t % 256 == 0 and 256<=t<=512 and t*(l+t)<=300_000_000
+
+
+def test_sizer_never_exceeds_static_chunk():
+    s = BudgetChunkSizer(300_000_000, 256, 512)  # cmax == static first chunk
+    assert s.predict(0) == 512
+    assert s.predict(100_000) == 512
+    assert s.predict(298_752) == 512
+    assert s.predict(524_288) == 512
+    assert s.predict(1_046_462) == 256
+    for history in range(0, 1_048_577, 733):
+        t = s.predict(history)
+        assert 256 <= t <= 512 and t % 256 == 0
+
+
+def test_default_settings_are_shrink_only():
+    cfg = settings({})
+    assert cfg['cmax'] == 512
+    assert cfg['score_mib'] == 1024
+    assert cfg['k_chunk_max'] == 2048
 
 
 @pytest.mark.parametrize('args',[(float('nan'),256,2048),(float('inf'),256,2048),(-1,256,2048),(3e8,0,2048),(3e8,100,2048),(3e8,256,1),(True,256,2048),(3e8,256,2048,0)])
@@ -24,8 +43,10 @@ def test_invalid_constructor(args):
 
 def test_impossible_floor_and_negative_history_fail():
     s=BudgetChunkSizer(3e8,256,2048)
-    for history in [-1,10**7,True,1.25]:
+    for history in [-1,True,1.25]:
         with pytest.raises(ValueError):s.predict(history)
+    assert s.predict(0)==2048
+    assert s.predict(10**7)>=256
 
 
 def test_strict_environment():

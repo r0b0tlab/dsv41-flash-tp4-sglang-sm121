@@ -5,11 +5,15 @@ import sys
 try:
     adaptive = os.environ.get('DSV41_ADAPTIVE_CHUNK','0')
     engram = os.environ.get('DSV41_ENGRAM_FILE_STORE','0')
-    if adaptive not in ('0','1') or engram not in ('0','1'):
+    kslice = os.environ.get('DSV41_TORCH_INDEXER_KSLICE','0')
+    if adaptive not in ('0','1') or engram not in ('0','1') or kslice not in ('0','1'):
         raise ValueError('DSV41 hook switches must be 0 or 1')
     if adaptive == '1':
         from sglang_patch.prefill_chunk_sizer import install as install_chunk
         install_chunk()
+    elif kslice == '1':
+        from sglang_patch.torch_indexer_budget import install as install_kslice
+        install_kslice()
     if engram == '1':
         model_path=os.environ.get('DSV41_MODEL_PATH','')
         if not model_path:

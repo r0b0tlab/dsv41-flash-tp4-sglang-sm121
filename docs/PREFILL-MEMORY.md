@@ -1,15 +1,39 @@
 # Bounded prefill work on GB10
 
-The pinned SGLang V4 low-ratio prefill indexer materializes query-by-prefix scores and candidate masks. This is distinct from the persistent KV pool. The old 1M aborts cannot establish a hardware-wide KV limit: an approximately 14-byte/query/key transient coefficient reported by independent GB10 testing is consistent with their scale, but has not been causally measured on this deployment.
+Active SM121 prefill is `_low_ratio_index_topk_torch`, selected because the
+adapter forces `_is_sm100_or_newer` false (no tcgen05 / DeepGEMM fp8_fp4 MQA
+on SM12x). Decode/verify stay on `_low_ratio_index_topk_sm90_decode` (Triton).
+The dense-FP4 path (`_low_ratio_index_topk_dense`) and its 14 B×T×L coefficient
+are **not** the measured byte model on this deployment.
 
-The closeout adapter uses a conservative integer budget: T * (history + T) <= 300,000,000 token-squared. Page size is 256; continuation chunks range from 256 to 2048. At history 0/100000/200000/524288/1046462 the chosen sizes are 2048/2048/1280/512/256. Impossible minimum chunks fail closed. Static first chunks are 512 for 512K and 256 for 1M, including cache-hit first chunks. Final profiles serialize prefill requests so a second long cached prefix does not invalidate the chosen bound.
+The Torch indexer dequants visible compressed-K via
+`get_low_ratio_index_k_dequant(layer, slots_j)` and scores with
+`indexer.scores` → `[query_rows, visible_keys]` (heads already reduced). The
+einsum intermediate is `[query_rows, index_n_heads, visible_keys]` bf16.
+Upstream `_TORCH_INDEXER_SCORE_BUDGET_BYTES` only chunks **query** rows; K
+dequant of the full prefix stayed unbounded. Overlay-v3 slices K, takes
+per-slice topk, and merges (union of per-slice topk is exact).
 
-The candidate-copy budget is 256 MiB, not an assertion that all transient allocations fit in 256 MiB. CUDA graph replay, model semantics, telemetry and full-window retrieval still require live qualification. MADV_RANDOM is a locality hint, not a measured speedup. Mapped Engram pages consume real unified memory through the page cache.
+The adaptive chunk hook **does fire** even when `/get_server_info` reports
+`enable_dynamic_chunking: false` (that flag is the PP sizer). Scheduler line
+3678 uses `self.dynamic_chunk_sizer` whenever `chunked_req` is set. Overlay-v2
+set `cmax=2048` while the static first chunk was 512, so continuations **grew**
+(`predict(0)==2048`; last 512k prefills logged `#new-token: 768` at processed
+≈298752, which equals `BudgetChunkSizer(3e8,256,2048).predict(298752)`).
+Overlay-v3 is shrink-only: `cmax` is capped at `--chunked-prefill-size`
+(512 prod-c8 / 256 on production exclusive C1). Continuation chunks never exceed the
+static first chunk. Token² is a scheduler bound, not a total-memory guarantee.
 
-The active SM121 adapter makes this backend's `_is_sm100_or_newer()` false. The pinned dispatcher therefore selects `_low_ratio_index_topk_torch` for prefill, not the SM100 dense-FP4 branch. That active path chunks query rows by `256 MiB / (heads * visible_keys * 2)` for its BF16 per-head scores; candidate masks and other tensors have separate lifetimes. The14-byte model is not a verified byte formula for this active path, and the scheduler budget is not a total-memory guarantee.
+The candidate-copy / score budget default is restored to 1024 MiB (upstream
+1 GiB). Overlay-v3 used that budget to size K slices, which yields
+k_chunk=65536 at T=256 / H=32 and a `[T,H,K]` einsum of 1 GiB — 256k NIAH
+NVRM'd in ~2 min. Overlay-v4 caps `k_chunk` at 2048 independently
+(`DSV41_INDEXER_K_CHUNK_MAX`); einsum ~32 MiB. Token² is a scheduler bound,
+not a total-memory guarantee.
 
-Both522174-token executions on the production profile ended in GPU allocation failures, including a fresh same-case retry with13.585GiB initial resident-free memory on the head. The second failure was caught by the corrected privileged kernel guard. No512K retrieval answer was returned. Do not label this a universal KV wall or claim that the budget sizer has solved long-memory behavior.
-
-The separate1M C1 profile now tests PyTorch's documented native `garbage_collection_threshold:0.6`, keeping `expandable_segments:False`. Exact-image CUDA allocation and identity-matmul probes read back that setting and reject an invalid threshold. This is proactive reclamation of unused allocator blocks, not a precision/graph fallback; the full1M attempt also failed, with last logged pending707774 of1046462 tokens (scheduled-prefix estimate338688). Native GC0.6 did not resolve the tested allocation failure. No request answer was returned and neither advertised window is qualified. Production quality/performance retain their original allocator setting. Further causal memory/kernel investigation and requalification remain necessary; no hardware-wide maximum is inferred.
-
-References: pinned engine da64c5cbb8cf6bfd39be19da43573fdfd484c43a, python/sglang/srt/managers/scheduler.py (dynamic_chunk_sizer.predict); python/sglang/srt/layers/attention/deepseek_v4_backend.py (_low_ratio_index_topk_dense, _publish_or_consume_candidates). Independent discussion: https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/blob/79f656a65f189239cc575bf5c5d1b5cf579d4c41/docs/chunked-prefill-memory.md . No community adapter code is copied.
+References: pinned engine da64c5cbb8cf6bfd39be19da43573fdfd484c43a,
+python/sglang/srt/managers/scheduler.py (`dynamic_chunk_sizer.predict`);
+python/sglang/srt/layers/attention/deepseek_v4_backend.py
+(`_low_ratio_index_topk_torch`). Independent discussion:
+https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/blob/79f656a65f189239cc575bf5c5d1b5cf579d4c41/docs/chunked-prefill-memory.md .
+No community adapter code is copied.

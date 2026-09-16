@@ -53,11 +53,15 @@ def render(d):
         para(telemetry['method'])
     para('A real NVRM allocation failure occurred during the first BFCL attempt after text180. All four guards stopped the runtime; those BFCL outputs are infrastructure-invalid, not scored model failures. Text180 was preserved unchanged and unfinished lanes were retried in a fresh identical-image/profile epoch. This recovery does not claim to repair the underlying allocation failure or establish indefinite service stability.')
     para('The first medium-c8 warmup later failed with an asynchronous CUDA illegal-memory-access error reported by rank0 NCCL. The three preceding native cells and completed Q200 were preserved. The missing cell is tested in another identical-image/profile epoch; the failure is retained and no originating kernel or stability repair is claimed.')
-    para('Both512K execution attempts returned no answer after GPU allocation errors, including the identical-case replay in a cold epoch.512K is NOT retrieval-qualified; this is infrastructure failure, not a model retrieval miss. Host safety fixes require privileged kernel-journal visibility and10GiB resident-free admission and preserve primary errors. The separate1M C1 profile uses native allocator proactive reclamation at threshold0.6 with expansion off; the exact-image CUDA oracle verified the setting, but the full1M request also failed with a GPU allocation error before returning an answer. Neither512K nor1M is retrieval-qualified. The policy did not resolve the tested failure and is not transferred to production quality/performance.')
+    para(d['retrieval_note'])
     para('Optional dedicated 2h mixed-workload soak: '+d['soak']['status']+'. Completed serial evaluations are not relabeled as that soak.')
-    para('Final disposition: long-context qualification is BLOCKED on this frozen runtime. Both requested logical cases were attempted, but neither returned a gradeable answer. All four GPUs are released; the image, checkpoints and raw evidence are retained. No further image rebuild or node reboot was performed.')
+    para(d['disposition_note'])
     title('Runtime and reproduction')
-    table(['Identity','Value'],[['Image config ID',d['image_id']],['Embedded local source',d['runtime_source']],['Upstream SGLang',d['engine_source']],['Prod profile SHA256',d['profile_sha256']],['Advertised prod window',d['context_length']]])
+    ident=[['Production image config ID',d['image_id']],['Production embedded source',d['runtime_source']],['Upstream SGLang',d['engine_source']],['Production profile SHA256',d['profile_sha256']],['Advertised prod window',d['context_length']]]
+    hist=d.get('historical_overlay_v2')
+    if hist:
+        ident += [['Historical overlay-v2 image',hist['image_id']],['Historical C8 profile SHA256',hist['profile_sha256']]]
+    table(['Identity','Value'],ident)
     if d.get('registry'):
         r=d['registry'];para('Verified registry reference: '+r['immutable_ref']);md.append('```bash\ndocker pull '+r['immutable_ref']+'\n```\n')
     else:para('New registry publication is pending. Do not treat an older overlay-v1 tag as this image.')

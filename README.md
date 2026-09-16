@@ -2,7 +2,7 @@
 
 r0b0tlab · @mr_r0b0t — official checkpoint, vision retained, local file-backed Engram lookup, static DSpark K5. Original adapter and reproducible runtime package; no model weights distributed.
 
-Campaign state: RETRIEVAL_NOT_QUALIFIED. This is a measured profile, not a fastest-hardware or long-term-stability claim.
+Campaign state: 512K_RETRIEVAL_QUALIFIED. This is a measured profile, not a fastest-hardware or long-term-stability claim.
 
 ## Final-image results
 
@@ -13,7 +13,7 @@ Campaign state: RETRIEVAL_NOT_QUALIFIED. This is a measured profile, not a faste
 | cvbench | 39/60 (65.00%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
 | mmvp | 205/300 (68.33%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
 | MMVP paired | 74/150 | Both answers correct in each pair |
-| NIAH 512k | INFRA_FAILURE | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
+| NIAH 512k | PASS | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
 | NIAH 1m | INFRA_FAILURE | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
 
 | Q200 family | Correct | Total |
@@ -131,26 +131,28 @@ A real NVRM allocation failure occurred during the first BFCL attempt after text
 
 The first medium-c8 warmup later failed with an asynchronous CUDA illegal-memory-access error reported by rank0 NCCL. The three preceding native cells and completed Q200 were preserved. The missing cell is tested in another identical-image/profile epoch; the failure is retained and no originating kernel or stability repair is claimed.
 
-Both512K execution attempts returned no answer after GPU allocation errors, including the identical-case replay in a cold epoch.512K is NOT retrieval-qualified; this is infrastructure failure, not a model retrieval miss. Host safety fixes require privileged kernel-journal visibility and10GiB resident-free admission and preserve primary errors. The separate1M C1 profile uses native allocator proactive reclamation at threshold0.6 with expansion off; the exact-image CUDA oracle verified the setting, but the full1M request also failed with a GPU allocation error before returning an answer. Neither512K nor1M is retrieval-qualified. The policy did not resolve the tested failure and is not transferred to production quality/performance.
+Overlay-v2 512k (same logical case, two execution attempts) returned no answer after GPU allocation errors and remains INFRA_FAILURE on that image and C8 profile. Overlay-v4 production (exclusive C1, chunk 256, independent K-slice cap 2048) completed the same logical case: usage.prompt_tokens=522174, finish_reason=stop, exact two-key 33/66 match, NVRM 0 on all ranks. Q200/vision/throughput stay bound to overlay-v2 and are not transferred. 1M remains INFRA_FAILURE on overlay-v2; overlay-v4 1M was not run.
 
 Optional dedicated 2h mixed-workload soak: NOT_RUN. Completed serial evaluations are not relabeled as that soak.
 
-Final disposition: long-context qualification is BLOCKED on this frozen runtime. Both requested logical cases were attempted, but neither returned a gradeable answer. All four GPUs are released; the image, checkpoints and raw evidence are retained. No further image rebuild or node reboot was performed.
+Production profile is the exclusive C1 512k retrieval envelope on overlay-v4. Overlay-v2 remains the measured quality/throughput/vision image. Historical C8 profile is profiles/dsv41-prod-c8.env. Optional dedicated 2h mixed-workload soak: NOT_RUN.
 
 ## Runtime and reproduction
 
 | Identity | Value |
 |---|---|
-| Image config ID | sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f |
-| Embedded local source | df92c15b448506575953adfbd137ab83c249e2b1 |
+| Production image config ID | sha256:c010623e97f75bd2be82fda556c667dad64839242f46d58e55be576a16c05d32 |
+| Production embedded source | cc38a672aa78ced3702addc10b321b2e87a9773f |
 | Upstream SGLang | da64c5cbb8cf6bfd39be19da43573fdfd484c43a |
-| Prod profile SHA256 | 24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a |
+| Production profile SHA256 | b424efadb052a7477a8db43f6c138aff01000dd33a2127e1cf0252a9ecc7f3fe |
 | Advertised prod window | 524288 |
+| Historical overlay-v2 image | sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f |
+| Historical C8 profile SHA256 | 24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a |
 
-Verified registry reference: ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9
+Verified registry reference: ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:537a7bc04a1de6cdaf2086556984a9ee26d15f479dbb2e7799f88bd52a321740
 
 ```bash
-docker pull ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:6853a22bb652da644d8933d0b879fee04ef9ce424ad48891737636fe7dcf7de9
+docker pull ghcr.io/r0b0tlab/dsv41-flash-tp4-sglang-sm121@sha256:537a7bc04a1de6cdaf2086556984a9ee26d15f479dbb2e7799f88bd52a321740
 ```
 
 Follow docs/REPRODUCIBILITY.md for private inventory, image verification, guarded launch/stop and serial evaluation. Public inventory is intentionally empty; no private host topology is embedded. The Dockerfile and adapter source match the immutable runtime as recorded in RUNTIME-PROVENANCE.json. Host-only publication changes are not a runtime rebuild.
@@ -159,4 +161,4 @@ Full machine-readable scores, timing/usage and source hashes: evidence/final/RES
 
 Credit: DeepSeek, SGLang, FlashInfer, PyTorch/Triton, NVIDIA CUDA/CUTLASS/NCCL and the upstream benchmark authors. See THIRD_PARTY_NOTICES.md. Package code is MIT; model/base-image/data retain their own terms.
 
-Results JSON SHA256: 9cf9f56829a394f26e5d69e5907a6ac4fa5abd4ee652c8e66670879301534829
+Results JSON SHA256: ca1f86bf6a4ae023d5169ead7e4d51da5d73d4dc463b1af510ea2e7d1ca02d68

@@ -45,7 +45,7 @@ def idle(loads,dp=1):
 
 
 def profile(name):
-    if name not in ('prod','prod-k3','1m'):raise ValueError('unknown final profile')
+    if name not in ('prod','prod-k3','prod-c8','1m'):raise ValueError('unknown final profile')
     p=ROOT/'profiles'/f'dsv41-{name}.env'
     data=run(['bash','-c','set -a; source "$1"; env -0','profile',str(p)])
     d=dict(x.split('=',1) for x in data.split('\0') if '=' in x)
@@ -56,14 +56,28 @@ def profile(name):
     assert int(d['MAX_RUNNING_REQUESTS']) in (1,8)
     assert d['DSV41_ADAPTIVE_CHUNK']=='1'
     assert d['PYTORCH_CUDA_ALLOC_CONF'] in ('expandable_segments:False','expandable_segments:False,garbage_collection_threshold:0.6')
+    if name=='prod':
+        assert d['MAX_RUNNING_REQUESTS']=='1'
+        assert d['CHUNKED_PREFILL_SIZE']=='256'
+        assert d['CONTEXT_LENGTH']=='524288'
+        assert d['DSV41_CHUNK_MAX']=='256'
+        assert d['DSV41_INDEXER_K_CHUNK_MAX']=='2048'
+        assert d['DSV41_TORCH_INDEXER_KSLICE']=='1'
+    if name=='prod-c8':
+        assert d['MAX_RUNNING_REQUESTS']=='8'
+        assert 'garbage_collection_threshold' not in d['PYTORCH_CUDA_ALLOC_CONF']
     return d,hashlib.sha256(p.read_bytes()).hexdigest()
 
 
 def make_argv(rank,p,image,labels,iface,nccl):
     if not image.startswith('sha256:') or len(image)!=71 or any(c not in '0123456789abcdef' for c in image[7:]):raise ValueError('immutable image config ID required')
     env={'DSV41_ENGRAM_FILE_STORE':'1','DSV41_MODEL_PATH':'/model','DSV41_ADAPTIVE_CHUNK':'1',
-         'DSV41_CHUNK_BUDGET_TOKENS2':p['DSV41_CHUNK_BUDGET_TOKENS2'],'DSV41_CHUNK_MIN':'256','DSV41_CHUNK_MAX':'2048',
-         'DSV41_INDEXER_SCORE_BUDGET_MIB':'256','SGLANG_RAGGED_VERIFY_MODE':'static','SGLANG_SIMULATE_ACC_LEN':'-1',
+         'DSV41_CHUNK_BUDGET_TOKENS2':p['DSV41_CHUNK_BUDGET_TOKENS2'],'DSV41_CHUNK_MIN':p.get('DSV41_CHUNK_MIN','256'),
+         'DSV41_CHUNK_MAX':p['DSV41_CHUNK_MAX'],
+         'DSV41_INDEXER_SCORE_BUDGET_MIB':p['DSV41_INDEXER_SCORE_BUDGET_MIB'],
+         'DSV41_INDEXER_K_CHUNK_MAX':p.get('DSV41_INDEXER_K_CHUNK_MAX','2048'),
+         'DSV41_TORCH_INDEXER_KSLICE':p.get('DSV41_TORCH_INDEXER_KSLICE','0'),
+         'SGLANG_RAGGED_VERIFY_MODE':'static','SGLANG_SIMULATE_ACC_LEN':'-1',
          'SGLANG_DSPARK_ENABLE_SPS_RECORD':'0','SGLANG_VIT_ENABLE_CUDA_GRAPH':'0','SGLANG_FLASHINFER_MOE_FUSED_FINALIZE':'0',
          'PYTORCH_CUDA_ALLOC_CONF':p['PYTORCH_CUDA_ALLOC_CONF'],'SGLANG_SM120_FLASHMLA_BACKEND':'flashinfer',
          **nccl,'NCCL_BUFFSIZE':p.get('NCCL_BUFFSIZE','4194304'),'GLOO_SOCKET_IFNAME':iface,'NCCL_SOCKET_IFNAME':iface,'PORT':'30000'}
@@ -77,7 +91,8 @@ def make_argv(rank,p,image,labels,iface,nccl):
 
 
 def labels_for(rank,epoch,source,phash,image):
-    candidate='dsv41-tp4-sm121-overlay-v2'
+    overlay_v2='sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f'
+    candidate='dsv41-tp4-sm121-overlay-v2' if image==overlay_v2 else 'dsv41-tp4-sm121-overlay-v4'
     nonce=hashlib.sha256('\0'.join([candidate,source,epoch,str(rank),phash,image]).encode()).hexdigest()
     return {'org.r0b0tlab.'+k:v for k,v in dict(candidate_id=candidate,candidate_source_sha=source,profile_sha256=phash,epoch=epoch,rank=str(rank),owner_nonce=nonce,image_id=image).items()}
 

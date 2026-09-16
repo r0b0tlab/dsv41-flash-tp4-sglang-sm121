@@ -1,6 +1,6 @@
 {
-  "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
-  "embedded_source_revision": "df92c15b448506575953adfbd137ab83c249e2b1",
+  "image_id": "sha256:c010623e97f75bd2be82fda556c667dad64839242f46d58e55be576a16c05d32",
+  "embedded_source_revision": "cc38a672aa78ced3702addc10b321b2e87a9773f",
   "source_revision_scope": "local build-provenance commit, not a public checkout promise; public recipe content equivalence proven by hashes",
   "upstream_source_revision": "da64c5cbb8cf6bfd39be19da43573fdfd484c43a",
   "files": {
@@ -11,20 +11,26 @@
       "matches_build_commit": true
     },
     "adapter/sitecustomize.py": {
-      "sha256": "c83992e6900d0437aa31aa3b99bee2d54766698edcf7927ffcb06f6a33ccac76",
+      "sha256": "1117cf21a4d5f4967cc1f126dc91fcfe148121c8aa7c77477a0c78bb08f865b6",
       "image_path": "/opt/dsv41/adapter/sitecustomize.py",
       "matches_installed_image": true,
       "matches_build_commit": true
     },
     "adapter/sglang_patch/engram_file_store.py": {
-      "sha256": "da4a26b6e0c6692055aba24561ab73762a7b3637531d908911a9e14756bfb78d",
+      "sha256": "09cae28445bbcf166590b65ac6857da27cf77fb6e2622261dbd522c1f14b1562",
       "image_path": "/opt/dsv41/adapter/sglang_patch/engram_file_store.py",
       "matches_installed_image": true,
       "matches_build_commit": true
     },
     "adapter/sglang_patch/prefill_chunk_sizer.py": {
-      "sha256": "5115f289b1b4b38dce761790739f185909a235131d904a98540b1803fb7f28d2",
+      "sha256": "26143d114c22d3b49031f8b243647f20b8d75f23057e777adcce4d707c283cd0",
       "image_path": "/opt/dsv41/adapter/sglang_patch/prefill_chunk_sizer.py",
+      "matches_installed_image": true,
+      "matches_build_commit": true
+    },
+    "adapter/sglang_patch/torch_indexer_budget.py": {
+      "sha256": "62835cb1747e12f91eab9b860610587d308973e4f4fb91f80fe33ef4a8261df9",
+      "image_path": "/opt/dsv41/adapter/sglang_patch/torch_indexer_budget.py",
       "matches_installed_image": true,
       "matches_build_commit": true
     },
@@ -47,5 +53,5 @@
       "sha256": "d2aa3dd8a4e615f728d6e299277db7d00978e333846116ec290295227fdc9b0b"
     }
   },
-  "publication_changes": "host launch inventory/privacy and documentation only; embedded adapter and sandbox bytes unchanged"
+  "publication_changes": "overlay-v4 adapter (independent K-slice cap 2048, shrink-only chunks) plus host production-profile promotion; Dockerfile/sandbox bytes unchanged from overlay-v2"
 }

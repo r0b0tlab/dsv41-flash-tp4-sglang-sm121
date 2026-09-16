@@ -6,8 +6,11 @@ EV=ROOT/'evidence/final'
 def load(p):return json.loads(p.read_text())
 def check():
     d=load(EV/'RESULTS.json');q=load(EV/'Q200-CLOSEOUT.json')
+    hist=d['historical_overlay_v2']
     assert q['status']=='SCORED' and q['total_count']==200
-    assert q['image_id']==d['image_id'] and q['profile_id']==d['profile_sha256']
+    assert q['image_id']==hist['image_id'] and q['profile_id']==hist['profile_sha256']
+    assert d['image_id']=='sha256:c010623e97f75bd2be82fda556c667dad64839242f46d58e55be576a16c05d32'
+    assert d['status']=='512K_RETRIEVAL_QUALIFIED'
     scores=load(EV/'TEXT180-SCORES.json');bfcl=load(EV/'BFCL20-SCORES.json')
     assert len(scores)==len({r['id'] for r in scores})==180
     assert len(bfcl)==len({r['case_id'] for r in bfcl})==20
@@ -34,7 +37,9 @@ def check():
     prov=load(EV/'RUNTIME-PROVENANCE.json');assert prov['image_id']==d['image_id']
     for name,v in prov['files'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==v['sha256'],name
     assert hashlib.sha256((ROOT/'profiles/dsv41-prod.env').read_bytes()).hexdigest()==d['profile_sha256']
+    assert hashlib.sha256((ROOT/'profiles/dsv41-prod-c8.env').read_bytes()).hexdigest()==hist['profile_sha256']
     assert d['registry']['image_id']==d['image_id'] and d['registry']['anonymous_digest_pull_verified']
+    assert d['retrieval']['512k']['status']=='PASS' and d['retrieval']['512k']['image_id']==d['image_id']
     tracked=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT).decode().split('\0')
     private=re.compile(r'/(?:home|Users)/[^/\s]+|\b192[.]168[.]\d+[.]\d+\b|\b10[.]\d+[.]\d+[.]\d+\b|\b172[.](?:1[6-9]|2\d|3[01])[.]\d+[.]\d+\b|(?:ghp|gho|hf|sk)_[A-Za-z0-9]{24,}')
     bad=[]

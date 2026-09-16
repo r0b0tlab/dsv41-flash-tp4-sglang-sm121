@@ -35,20 +35,22 @@ class BudgetChunkSizer:
         # Integer arithmetic avoids cancellation at long prefixes.
         t=min(self.cmax,(math.isqrt(history_len*history_len+4*self.budget)-history_len)//2)
         t=t//self.page*self.page
-        if t<self.cmin:
-            raise ValueError('minimum prefill chunk exceeds declared budget at this prefix')
-        return t
+        return max(self.cmin, min(self.cmax, t))
 
 
 def settings(env=None):
     env=os.environ if env is None else env
     cfg=dict(budget=float(env.get('DSV41_CHUNK_BUDGET_TOKENS2','3e8')),
              cmin=int(env.get('DSV41_CHUNK_MIN','256')),
-             cmax=int(env.get('DSV41_CHUNK_MAX','2048')),
-             score_mib=int(env.get('DSV41_INDEXER_SCORE_BUDGET_MIB','256')))
+             cmax=int(env.get('DSV41_CHUNK_MAX','512')),
+             score_mib=int(env.get('DSV41_INDEXER_SCORE_BUDGET_MIB','1024')),
+             k_chunk_max=int(env.get('DSV41_INDEXER_K_CHUNK_MAX','2048')))
     s=BudgetChunkSizer(cfg['budget'],cfg['cmin'],cfg['cmax'])
+    s.predict(0)
     s.predict(1048576)
     if not 1<=cfg['score_mib']<=1024:raise ValueError('indexer copy budget must be 1..1024 MiB')
+    if type(cfg['k_chunk_max']) is not int or not 1<=cfg['k_chunk_max']<=16384:
+        raise ValueError('indexer K-slice cap must be 1..16384')
     return cfg
 
 
@@ -65,8 +67,9 @@ def patch_scheduler(module,cfg):
             raise RuntimeError('DSV41 budget hook cannot replace an existing PP sizer')
         if self.page_size!=256 or self.chunked_prefill_size not in (256,512):
             raise RuntimeError('DSV41 budget requires page256 and static-first chunk256/512')
-        self.dynamic_chunk_sizer=BudgetChunkSizer(cfg['budget'],cfg['cmin'],cfg['cmax'])
-        LOG.warning('DSV41_ADAPTIVE_CHUNK_ACTIVE budget=%s min=%s max=%s first=%s',cfg['budget'],cfg['cmin'],cfg['cmax'],self.chunked_prefill_size)
+        cmax=min(cfg['cmax'], int(self.chunked_prefill_size))
+        self.dynamic_chunk_sizer=BudgetChunkSizer(cfg['budget'],cfg['cmin'],cmax)
+        LOG.warning('DSV41_ADAPTIVE_CHUNK_ACTIVE budget=%s min=%s max=%s first=%s',cfg['budget'],cfg['cmin'],cmax,self.chunked_prefill_size)
     patched._dsv41_budget=dict(cfg)
     cls.maybe_init_dynamic_chunk_sizer=patched
 
@@ -77,6 +80,9 @@ def _apply(name,module,cfg):
         if not hasattr(module,'_TORCH_INDEXER_SCORE_BUDGET_BYTES'):
             raise RuntimeError('SGLang indexer budget constant missing')
         module._TORCH_INDEXER_SCORE_BUDGET_BYTES=cfg['score_mib']<<20
+        module._TORCH_INDEXER_K_CHUNK_MAX=cfg['k_chunk_max']
+        from sglang_patch.torch_indexer_budget import apply_to_backend
+        apply_to_backend(module)
 
 
 class _AfterImport(importlib.abc.MetaPathFinder):
