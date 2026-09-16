@@ -2288,6 +2288,223 @@
           }
         }
       }
+    },
+    "excluded-1m-epoch-niah-1m": {
+      "completed": true,
+      "phase_pass": false,
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "a40b6878f75eb4b1db2504cb5d20cbad61a6f64c56ffe425dd37f4b9653b5584",
+      "lane_wall_seconds": 1948.7512729167938,
+      "thermal_by_rank": {
+        "0": {
+          "samples": 389,
+          "coverage": "FULL_WINDOW_SAMPLED",
+          "nominal_interval_seconds": 5,
+          "largest_internal_gap_seconds": 5.0010011196136475,
+          "start_gap_seconds": 4.721710681915283,
+          "end_gap_seconds": 3.89339017868042,
+          "gpu_query_errors": 0,
+          "host_query_errors": 8,
+          "gpu_temperature_C": {
+            "min": 48.0,
+            "mean": 67.4987146529563,
+            "median": 68.0,
+            "p95": 72.0,
+            "max": 74.0
+          },
+          "nvml_reported_power_W": {
+            "min": 5.3,
+            "mean": 42.44200514138817,
+            "median": 45.56,
+            "p95": 55.58,
+            "max": 57.74
+          },
+          "gpu_utilization_percent": {
+            "min": 0.0,
+            "mean": 91.76863753213368,
+            "median": 96.0,
+            "p95": 96.0,
+            "max": 96.0
+          },
+          "sm_clock_MHz": {
+            "min": 208.0,
+            "mean": 2447.658097686375,
+            "median": 2489.0,
+            "p95": 2509.0,
+            "max": 2554.0
+          },
+          "mem_available_bytes": {
+            "min": 12613443584,
+            "mean": 22918608595.907455,
+            "median": 20646232064,
+            "p95": 25749024768,
+            "max": 121706577920
+          },
+          "mem_free_bytes": {
+            "min": 3178323968,
+            "mean": 13406062355.084833,
+            "median": 11237089280,
+            "p95": 16044507136,
+            "max": 112280281088
+          }
+        },
+        "1": {
+          "samples": 389,
+          "coverage": "FULL_WINDOW_SAMPLED",
+          "nominal_interval_seconds": 5,
+          "largest_internal_gap_seconds": 5.001076936721802,
+          "start_gap_seconds": 4.700759649276733,
+          "end_gap_seconds": 3.8742449283599854,
+          "gpu_query_errors": 0,
+          "host_query_errors": 5,
+          "gpu_temperature_C": {
+            "min": 52.0,
+            "mean": 74.74550128534705,
+            "median": 76.0,
+            "p95": 80.0,
+            "max": 82.0
+          },
+          "nvml_reported_power_W": {
+            "min": 5.94,
+            "mean": 49.50323907455013,
+            "median": 53.2,
+            "p95": 63.34,
+            "max": 65.72
+          },
+          "gpu_utilization_percent": {
+            "min": 0.0,
+            "mean": 92.63753213367609,
+            "median": 96.0,
+            "p95": 96.0,
+            "max": 96.0
+          },
+          "sm_clock_MHz": {
+            "min": 208.0,
+            "mean": 2446.228791773779,
+            "median": 2483.0,
+            "p95": 2502.0,
+            "max": 2528.0
+          },
+          "mem_available_bytes": {
+            "min": 15304867840,
+            "mean": 24811747901.861183,
+            "median": 23369314304,
+            "p95": 27026526208,
+            "max": 122698838016
+          },
+          "mem_free_bytes": {
+            "min": 6294286336,
+            "mean": 15666888535.526993,
+            "median": 14350331904,
+            "p95": 17565364224,
+            "max": 113692602368
+          }
+        },
+        "2": {
+          "samples": 389,
+          "coverage": "FULL_WINDOW_SAMPLED",
+          "nominal_interval_seconds": 5,
+          "largest_internal_gap_seconds": 5.000882387161255,
+          "start_gap_seconds": 4.7402284145355225,
+          "end_gap_seconds": 3.8765642642974854,
+          "gpu_query_errors": 0,
+          "host_query_errors": 3,
+          "gpu_temperature_C": {
+            "min": 48.0,
+            "mean": 68.15681233933162,
+            "median": 69.0,
+            "p95": 73.0,
+            "max": 74.0
+          },
+          "nvml_reported_power_W": {
+            "min": 5.77,
+            "mean": 45.82578406169666,
+            "median": 48.47,
+            "p95": 59.46,
+            "max": 62.28
+          },
+          "gpu_utilization_percent": {
+            "min": 0.0,
+            "mean": 91.16966580976863,
+            "median": 96.0,
+            "p95": 96.0,
+            "max": 96.0
+          },
+          "sm_clock_MHz": {
+            "min": 208.0,
+            "mean": 2478.3393316195375,
+            "median": 2489.0,
+            "p95": 2515.0,
+            "max": 2541.0
+          },
+          "mem_available_bytes": {
+            "min": 15290544128,
+            "mean": 24235936507.393314,
+            "median": 23347732480,
+            "p95": 27009888256,
+            "max": 122567639040
+          },
+          "mem_free_bytes": {
+            "min": 6359080960,
+            "mean": 15205796003.208227,
+            "median": 14442438656,
+            "p95": 17675599872,
+            "max": 113644527616
+          }
+        },
+        "3": {
+          "samples": 389,
+          "coverage": "FULL_WINDOW_SAMPLED",
+          "nominal_interval_seconds": 5,
+          "largest_internal_gap_seconds": 5.001089334487915,
+          "start_gap_seconds": 4.716740131378174,
+          "end_gap_seconds": 3.8791775703430176,
+          "gpu_query_errors": 0,
+          "host_query_errors": 1,
+          "gpu_temperature_C": {
+            "min": 52.0,
+            "mean": 70.8611825192802,
+            "median": 72.0,
+            "p95": 76.0,
+            "max": 77.0
+          },
+          "nvml_reported_power_W": {
+            "min": 12.53,
+            "mean": 45.14254498714653,
+            "median": 47.94,
+            "p95": 58.31,
+            "max": 60.48
+          },
+          "gpu_utilization_percent": {
+            "min": 0.0,
+            "mean": 93.74807197943444,
+            "median": 96.0,
+            "p95": 96.0,
+            "max": 96.0
+          },
+          "sm_clock_MHz": {
+            "min": 2405.0,
+            "mean": 2475.781491002571,
+            "median": 2483.0,
+            "p95": 2502.0,
+            "max": 2548.0
+          },
+          "mem_available_bytes": {
+            "min": 18375524352,
+            "mean": 27031101145.172237,
+            "median": 26912288768,
+            "p95": 30111637504,
+            "max": 125613146112
+          },
+          "mem_free_bytes": {
+            "min": 9485860864,
+            "mean": 17807985729.80977,
+            "median": 17587331072,
+            "p95": 20882460672,
+            "max": 116731260928
+          }
+        }
+      }
     }
   }
 }

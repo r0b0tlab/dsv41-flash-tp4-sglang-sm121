@@ -22,6 +22,10 @@ Copy `cluster.example.json` to ignored `cluster.local.json`, then replace every 
 
 Alternatively set `DSV41_CLUSTER_CONFIG` to another private inventory path. The same runtime and support-directory paths must be writable on every rank. The configured user needs non-interactive Docker access and narrowly authorized cache-reclaim/kernel-log access. The guard's peer SSH key and known-hosts paths must exist on every rank. Missing inventory fails before Docker or model load; copying the null-valued example cannot target a real or invented host accidentally.
 
+## Long-context qualification warning
+
+The configured512K production window and1M diagnostic window are NOT retrieval-qualified: neither completed its requested full-window two-key test. Allocation failures and recovery attempts are retained in RESULTS.json. The1M native-GC policy did not resolve the failure. The launch commands below reproduce tested configurations, not a guarantee of stable full-window service.
+
 ## Launch and stop
 
 Pull the recorded registry digest on all ranks, and verify that `docker image inspect` returns the recorded config ID everywhere. Launch under tmux from a clean checkout:

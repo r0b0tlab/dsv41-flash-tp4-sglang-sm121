@@ -14,7 +14,7 @@ Campaign state: RETRIEVAL_NOT_QUALIFIED. This is a measured profile, not a faste
 | mmvp | 205/300 (68.33%) | Thinking off; one worker; bounded CV-Bench first60 / full MMVP300 |
 | MMVP paired | 74/150 | Both answers correct in each pair |
 | NIAH 512k | INFRA_FAILURE | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
-| NIAH 1m | PENDING | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
+| NIAH 1m | INFRA_FAILURE | Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder |
 
 | Q200 family | Correct | Total |
 |---|---|---|
@@ -111,6 +111,10 @@ Native cells use seed42 and random_range_ratio0: uniformly sampled lengths from1
 | excluded-cold-retry-epoch-niah-512k | 1 | FULL_WINDOW_SAMPLED | 68.2/80.0 | 45.9 | 13.99 |
 | excluded-cold-retry-epoch-niah-512k | 2 | FULL_WINDOW_SAMPLED | 66.4/74.0 | 43.7 | 13.65 |
 | excluded-cold-retry-epoch-niah-512k | 3 | FULL_WINDOW_SAMPLED | 68.2/75.0 | 42.8 | 16.74 |
+| excluded-1m-epoch-niah-1m | 0 | FULL_WINDOW_SAMPLED | 67.5/74.0 | 42.4 | 11.75 |
+| excluded-1m-epoch-niah-1m | 1 | FULL_WINDOW_SAMPLED | 74.7/82.0 | 49.5 | 14.25 |
+| excluded-1m-epoch-niah-1m | 2 | FULL_WINDOW_SAMPLED | 68.2/74.0 | 45.8 | 14.24 |
+| excluded-1m-epoch-niah-1m | 3 | FULL_WINDOW_SAMPLED | 70.9/77.0 | 45.1 | 17.11 |
 
 | Evaluation | Request-E2E output tok/s | Total lane wall seconds |
 |---|---|---|
@@ -127,9 +131,11 @@ A real NVRM allocation failure occurred during the first BFCL attempt after text
 
 The first medium-c8 warmup later failed with an asynchronous CUDA illegal-memory-access error reported by rank0 NCCL. The three preceding native cells and completed Q200 were preserved. The missing cell is tested in another identical-image/profile epoch; the failure is retained and no originating kernel or stability repair is claimed.
 
-Both512K execution attempts returned no answer after GPU allocation errors, including the identical-case replay in a cold epoch.512K is NOT retrieval-qualified; this is infrastructure failure, not a model retrieval miss. Host safety fixes require privileged kernel-journal visibility and10GiB resident-free admission and preserve primary errors. The separate1M C1 profile uses native allocator proactive reclamation at threshold0.6 with expansion off; an exact-image CUDA oracle verifies the setting, but full-model effectiveness is not assumed or transferred to production quality/performance.
+Both512K execution attempts returned no answer after GPU allocation errors, including the identical-case replay in a cold epoch.512K is NOT retrieval-qualified; this is infrastructure failure, not a model retrieval miss. Host safety fixes require privileged kernel-journal visibility and10GiB resident-free admission and preserve primary errors. The separate1M C1 profile uses native allocator proactive reclamation at threshold0.6 with expansion off; the exact-image CUDA oracle verified the setting, but the full1M request also failed with a GPU allocation error before returning an answer. Neither512K nor1M is retrieval-qualified. The policy did not resolve the tested failure and is not transferred to production quality/performance.
 
 Optional dedicated 2h mixed-workload soak: NOT_RUN. Completed serial evaluations are not relabeled as that soak.
+
+Final disposition: long-context qualification is BLOCKED on this frozen runtime. Both requested logical cases were attempted, but neither returned a gradeable answer. All four GPUs are released; the image, checkpoints and raw evidence are retained. No further image rebuild or node reboot was performed.
 
 ## Runtime and reproduction
 
@@ -153,4 +159,4 @@ Full machine-readable scores, timing/usage and source hashes: evidence/final/RES
 
 Credit: DeepSeek, SGLang, FlashInfer, PyTorch/Triton, NVIDIA CUDA/CUTLASS/NCCL and the upstream benchmark authors. See THIRD_PARTY_NOTICES.md. Package code is MIT; model/base-image/data retain their own terms.
 
-Results JSON SHA256: c84475a3527ab26647aeabf2f7d297ac60859cf177e2ec8a166c058ce43f9c14
+Results JSON SHA256: 9cf9f56829a394f26e5d69e5907a6ac4fa5abd4ee652c8e66670879301534829

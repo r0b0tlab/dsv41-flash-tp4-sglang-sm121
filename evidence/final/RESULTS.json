@@ -209,10 +209,22 @@
       "logical_cases": 1,
       "execution_attempts": 2,
       "replayed_case_sha256": "b0c0ecebf697a1418cd517c89a973a947078435dbdcffb6f5ce9f30c83cf4b2d",
-      "qualification": "NOT_QUALIFIED"
+      "qualification": "NOT_QUALIFIED",
+      "answer_returned": false,
+      "scored": false
     },
     "1m": {
-      "status": "PENDING"
+      "status": "INFRA_FAILURE",
+      "advertised_window": 1048576,
+      "target_prompt_tokens": 1046462,
+      "raw_sha256": "d5243d3521ef9c40158fe4946e0f336330765ed3df24c6724b4613debb1eaf21",
+      "cases": [],
+      "profile_sha256": "a40b6878f75eb4b1db2504cb5d20cbad61a6f64c56ffe425dd37f4b9653b5584",
+      "qualification": "NOT_QUALIFIED",
+      "answer_returned": false,
+      "scored": false,
+      "logical_cases": 1,
+      "execution_attempts": 1
     }
   },
   "soak": {
@@ -489,6 +501,13 @@
       "profile_sha256": "24aaa458977e94a7ce6b21548cbf55fba4c10baa99a2709fd41686ab7c71967a",
       "host_launch_source": "8437f59d7d274134072ce54245e8e2a92356f098",
       "launch_record_sha256": "7f32c6e2d19581604f14246ca5b32be48b9fdd8283ebac6fa01bffb785c016c3"
+    },
+    {
+      "role": "1m_retrieval",
+      "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
+      "profile_sha256": "a40b6878f75eb4b1db2504cb5d20cbad61a6f64c56ffe425dd37f4b9653b5584",
+      "host_launch_source": "f8f83b7429eafc6cef714fa88dc478231f5a71ea",
+      "launch_record_sha256": "700cc0365fdfadfbc948e02c6091e21ae693c154a7fc625c8a800cffcd26e42c"
     }
   ],
   "model": {
@@ -591,6 +610,17 @@
       "logical_cases": 1,
       "attempt": 2,
       "note": "Fresh same-profile replay passed resident-free admission but still produced a new NVRM allocation error;512K is not retrieval-qualified."
+    },
+    {
+      "lane": "niah-1m",
+      "status": "INFRA_MEMORY_ALLOCATION_FAILURE",
+      "scored": false,
+      "answer_returned": false,
+      "last_logged_pending_tokens": 707774,
+      "scheduled_prefix_estimate_tokens": 338688,
+      "logical_cases": 1,
+      "attempt": 1,
+      "note": "C1/native-GC0.6 profile admitted, canaries passed, then new rank0 NVRM allocation error; no full-window answer."
     }
   ],
   "long_profile_policy": {
@@ -600,8 +630,9 @@
     "allocator_backend": "native",
     "garbage_collection_threshold": 0.6,
     "expandable_segments": false,
-    "status": "configuration oracle verified; full-model qualification pending",
-    "not_transferred_to_prod_quality_or_performance": true
+    "status": "COMPONENT_ORACLE_PASS_FULL_MODEL_INFRA_FAILURE",
+    "not_transferred_to_prod_quality_or_performance": true,
+    "effectiveness": "native proactive cache reclamation did not resolve the tested1M prefill allocation failure"
   },
   "registry": {
     "image_id": "sha256:5b246919f183289ab2a147f0ba7f22c54a72c52748082ce4cd2ec8303d38fa1f",
@@ -613,6 +644,14 @@
     "anonymous_digest_pull_verified": true,
     "verified_utc": "2026-09-16T06:06:58.334680+00:00",
     "rebuilt": false
+  },
+  "campaign_verdict": "NOT_COMPLETE_LONG_CONTEXT_BLOCKED",
+  "requested_retrieval_cases_attempted": 2,
+  "retrieval_answers_received": 0,
+  "resource_disposition": {
+    "all_four_gpus_released": true,
+    "image_and_checkpoints_retained": true,
+    "poweroff_or_reboot_performed": false
   },
   "source_hashes": {
     "primary.json": "e44d8c47b7f4c0b9e9691f882e7f1d15c97412fc2c072089da57481600475608",
