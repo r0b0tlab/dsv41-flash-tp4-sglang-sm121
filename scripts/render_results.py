@@ -20,7 +20,7 @@ def render(d):
     if text.get('status')=='SCORED':rows.append(['Text180',f"{text['correct_count']}/{text['rows']}",'All rows normally terminated; independent manual review included'])
     for name,v in d['vision'].items():rows.append([name,f"{v['correct']}/{v['rows']} ({100*v['accuracy']:.2f}%)",'Thinking off; one worker; bounded CV-Bench first60 / full MMVP300'])
     mm=d['vision']['mmvp']['subsets']['mmvp']['paired'];rows.append(['MMVP paired',f"{mm['both_correct']}/{mm['pairs']}",'Both answers correct in each pair'])
-    for name,v in d['retrieval'].items():rows.append(['NIAH '+name,v['status'],'Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder'])
+    for name,v in d['retrieval'].items():rows.append(['NIAH '+name,v['status'],v.get('scope','Exactly one ordered two-key 33%/66% case; not a 25/50/90 ladder')])
     table(['Lane','Result','Scope'],rows)
     if q.get('closure'):table(['Q200 family','Correct','Total'],[[name,s['correct'],s['n']] for name,s in q['closure']['families'].items()])
     para('Manual review corrects erroneous frozen references for three cases. One answer is rejected for an incorrect additional continuous-time claim despite a correct discrete recurrence. See MANUAL-REVIEW-POLICY.json; scores are bound to unchanged response hashes. Historical overlay-v1 192/200 is not the score of this image.')
